@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace KeedSupport_UI
 {
-    public partial class Form3 : Form
+    public partial class FrmMenuPrincipal : Form
     {
-        public Form3()
+        public FrmMenuPrincipal()
         {
             InitializeComponent();
             label1.Visible = false;

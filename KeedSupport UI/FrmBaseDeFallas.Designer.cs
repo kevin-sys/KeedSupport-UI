@@ -74,7 +74,7 @@
             // 
             // TxtFalla
             // 
-            this.TxtFalla.Location = new System.Drawing.Point(44, 247);
+            this.TxtFalla.Location = new System.Drawing.Point(83, 233);
             this.TxtFalla.Name = "TxtFalla";
             this.TxtFalla.Size = new System.Drawing.Size(229, 96);
             this.TxtFalla.TabIndex = 4;
@@ -96,7 +96,7 @@
             // 
             // TxtSintomas
             // 
-            this.TxtSintomas.Location = new System.Drawing.Point(353, 247);
+            this.TxtSintomas.Location = new System.Drawing.Point(352, 247);
             this.TxtSintomas.Name = "TxtSintomas";
             this.TxtSintomas.Size = new System.Drawing.Size(229, 96);
             this.TxtSintomas.TabIndex = 7;
@@ -231,6 +231,7 @@
             this.Controls.Add(this.BtnGuardar);
             this.Name = "FrmBaseDeFallas";
             this.Text = "FrmBaseDeFallas";
+            this.Load += new System.EventHandler(this.FrmBaseDeFallas_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

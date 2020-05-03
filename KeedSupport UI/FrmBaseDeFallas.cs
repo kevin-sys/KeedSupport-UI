@@ -45,8 +45,13 @@ namespace KeedSupport_UI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form3 form3 = new Form3();
+            FrmMenuPrincipal form3 = new FrmMenuPrincipal();
             form3.Show();
+        }
+
+        private void FrmBaseDeFallas_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

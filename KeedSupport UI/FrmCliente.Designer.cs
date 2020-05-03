@@ -458,7 +458,7 @@
             this.Controls.Add(this.TxtPrimerNombre);
             this.Name = "FrmCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Registrar cliente";
             this.Load += new System.EventHandler(this.FrmCliente_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

@@ -1,6 +1,6 @@
 ﻿namespace KeedSupport_UI
 {
-    partial class Form3
+    partial class FrmMenuPrincipal
     {
         /// <summary>
         /// Required designer variable.
@@ -186,7 +186,7 @@
             this.panel6.Size = new System.Drawing.Size(310, 232);
             this.panel6.TabIndex = 1;
             // 
-            // Form3
+            // FrmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -201,7 +201,7 @@
             this.Controls.Add(this.BtnMenu);
             this.Controls.Add(this.panel_menu);
             this.IsMdiContainer = true;
-            this.Name = "Form3";
+            this.Name = "FrmMenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form3";
             this.panel_menu.ResumeLayout(false);
