@@ -19,7 +19,6 @@ namespace Entity
         public string Color { get; set; }
         public string Accesorios { get; set; }
         public string Falla { get; set; }
-        public string EstadoEquipo { get; set; }
         public string EstadoReparacion { get; set; }
         public string Solucion { get; set; }
 

@@ -40,10 +40,7 @@ namespace KeedSupport_UI
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
 
-            Cliente cliente = MapearCliente();
-            ClienteService service = new ClienteService();
-            string mensaje = service.Guardar(cliente);
-            MessageBox.Show(mensaje, "Mensaje de Guardado", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            
         }
 
         private void TxtPrimerNombre_TextChanged(object sender, EventArgs e)
@@ -190,6 +187,14 @@ namespace KeedSupport_UI
         private void FrmCliente_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void BtnGuardarCliente_Click(object sender, EventArgs e)
+        {
+            Cliente cliente = MapearCliente();
+            ClienteService service = new ClienteService();
+            string mensaje = service.Guardar(cliente);
+            MessageBox.Show(mensaje, "Mensaje de Guardado", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
         }
     }
 }

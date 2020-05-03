@@ -16,5 +16,15 @@ namespace KeedSupport_UI
         {
             InitializeComponent();
         }
+
+        private void FrmReparacion_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

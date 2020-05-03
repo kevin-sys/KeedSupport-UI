@@ -16,5 +16,10 @@ namespace KeedSupport_UI
         {
             InitializeComponent();
         }
+
+        private void FrmEntrega_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

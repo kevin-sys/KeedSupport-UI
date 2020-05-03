@@ -79,16 +79,11 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
-            this.BtnCrearCliente = new System.Windows.Forms.PictureBox();
-            this.BtnBuscarCliente = new System.Windows.Forms.PictureBox();
-            this.BtnCrearOrden = new System.Windows.Forms.PictureBox();
             this.label27 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label28 = new System.Windows.Forms.Label();
-            this.BtnImprimirOrden = new System.Windows.Forms.PictureBox();
-            this.BtnCancelarOrden = new System.Windows.Forms.PictureBox();
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
@@ -96,16 +91,21 @@
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.BtnVolver = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnCrearCliente)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnBuscarCliente)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnCrearOrden)).BeginInit();
+            this.BtnCancelarOrden = new System.Windows.Forms.PictureBox();
+            this.BtnImprimirOrden = new System.Windows.Forms.PictureBox();
+            this.BtnBuscarCliente = new System.Windows.Forms.PictureBox();
+            this.BtnCrearCliente = new System.Windows.Forms.PictureBox();
+            this.BtnCrearOrden = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnImprimirOrden)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnCancelarOrden)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnVolver)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnCancelarOrden)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnImprimirOrden)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnBuscarCliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnCrearCliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnCrearOrden)).BeginInit();
             this.SuspendLayout();
             // 
             // TxtCodigoOrden
@@ -532,10 +532,10 @@
             // 
             // label24
             // 
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(297, 28);
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(272, 24);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(342, 25);
+            this.label24.Size = new System.Drawing.Size(415, 25);
             this.label24.TabIndex = 57;
             this.label24.Text = "Orden de servicio KeedSupport";
             // 
@@ -558,42 +558,6 @@
             this.label26.Size = new System.Drawing.Size(92, 13);
             this.label26.TabIndex = 59;
             this.label26.Text = "Tipo de equipo";
-            // 
-            // BtnCrearCliente
-            // 
-            this.BtnCrearCliente.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.BtnCrearCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnCrearCliente.Image = ((System.Drawing.Image)(resources.GetObject("BtnCrearCliente.Image")));
-            this.BtnCrearCliente.Location = new System.Drawing.Point(185, 230);
-            this.BtnCrearCliente.Name = "BtnCrearCliente";
-            this.BtnCrearCliente.Size = new System.Drawing.Size(38, 41);
-            this.BtnCrearCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.BtnCrearCliente.TabIndex = 60;
-            this.BtnCrearCliente.TabStop = false;
-            // 
-            // BtnBuscarCliente
-            // 
-            this.BtnBuscarCliente.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.BtnBuscarCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnBuscarCliente.Image = ((System.Drawing.Image)(resources.GetObject("BtnBuscarCliente.Image")));
-            this.BtnBuscarCliente.Location = new System.Drawing.Point(248, 230);
-            this.BtnBuscarCliente.Name = "BtnBuscarCliente";
-            this.BtnBuscarCliente.Size = new System.Drawing.Size(38, 41);
-            this.BtnBuscarCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.BtnBuscarCliente.TabIndex = 61;
-            this.BtnBuscarCliente.TabStop = false;
-            // 
-            // BtnCrearOrden
-            // 
-            this.BtnCrearOrden.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.BtnCrearOrden.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnCrearOrden.Image = ((System.Drawing.Image)(resources.GetObject("BtnCrearOrden.Image")));
-            this.BtnCrearOrden.Location = new System.Drawing.Point(657, 477);
-            this.BtnCrearOrden.Name = "BtnCrearOrden";
-            this.BtnCrearOrden.Size = new System.Drawing.Size(55, 41);
-            this.BtnCrearOrden.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.BtnCrearOrden.TabIndex = 62;
-            this.BtnCrearOrden.TabStop = false;
             // 
             // label27
             // 
@@ -671,30 +635,6 @@
             this.label28.Size = new System.Drawing.Size(106, 16);
             this.label28.TabIndex = 50;
             this.label28.Text = "Recibir abono";
-            // 
-            // BtnImprimirOrden
-            // 
-            this.BtnImprimirOrden.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.BtnImprimirOrden.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnImprimirOrden.Image = ((System.Drawing.Image)(resources.GetObject("BtnImprimirOrden.Image")));
-            this.BtnImprimirOrden.Location = new System.Drawing.Point(506, 478);
-            this.BtnImprimirOrden.Name = "BtnImprimirOrden";
-            this.BtnImprimirOrden.Size = new System.Drawing.Size(55, 41);
-            this.BtnImprimirOrden.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.BtnImprimirOrden.TabIndex = 67;
-            this.BtnImprimirOrden.TabStop = false;
-            // 
-            // BtnCancelarOrden
-            // 
-            this.BtnCancelarOrden.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.BtnCancelarOrden.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnCancelarOrden.Image = ((System.Drawing.Image)(resources.GetObject("BtnCancelarOrden.Image")));
-            this.BtnCancelarOrden.Location = new System.Drawing.Point(192, 477);
-            this.BtnCancelarOrden.Name = "BtnCancelarOrden";
-            this.BtnCancelarOrden.Size = new System.Drawing.Size(55, 41);
-            this.BtnCancelarOrden.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.BtnCancelarOrden.TabIndex = 68;
-            this.BtnCancelarOrden.TabStop = false;
             // 
             // label29
             // 
@@ -789,6 +729,66 @@
             this.BtnVolver.TabIndex = 71;
             this.BtnVolver.TabStop = false;
             // 
+            // BtnCancelarOrden
+            // 
+            this.BtnCancelarOrden.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.BtnCancelarOrden.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnCancelarOrden.Image = ((System.Drawing.Image)(resources.GetObject("BtnCancelarOrden.Image")));
+            this.BtnCancelarOrden.Location = new System.Drawing.Point(192, 477);
+            this.BtnCancelarOrden.Name = "BtnCancelarOrden";
+            this.BtnCancelarOrden.Size = new System.Drawing.Size(55, 41);
+            this.BtnCancelarOrden.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.BtnCancelarOrden.TabIndex = 68;
+            this.BtnCancelarOrden.TabStop = false;
+            // 
+            // BtnImprimirOrden
+            // 
+            this.BtnImprimirOrden.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.BtnImprimirOrden.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnImprimirOrden.Image = ((System.Drawing.Image)(resources.GetObject("BtnImprimirOrden.Image")));
+            this.BtnImprimirOrden.Location = new System.Drawing.Point(506, 478);
+            this.BtnImprimirOrden.Name = "BtnImprimirOrden";
+            this.BtnImprimirOrden.Size = new System.Drawing.Size(55, 41);
+            this.BtnImprimirOrden.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.BtnImprimirOrden.TabIndex = 67;
+            this.BtnImprimirOrden.TabStop = false;
+            // 
+            // BtnBuscarCliente
+            // 
+            this.BtnBuscarCliente.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.BtnBuscarCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnBuscarCliente.Image = ((System.Drawing.Image)(resources.GetObject("BtnBuscarCliente.Image")));
+            this.BtnBuscarCliente.Location = new System.Drawing.Point(248, 230);
+            this.BtnBuscarCliente.Name = "BtnBuscarCliente";
+            this.BtnBuscarCliente.Size = new System.Drawing.Size(38, 41);
+            this.BtnBuscarCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.BtnBuscarCliente.TabIndex = 61;
+            this.BtnBuscarCliente.TabStop = false;
+            // 
+            // BtnCrearCliente
+            // 
+            this.BtnCrearCliente.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.BtnCrearCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnCrearCliente.Image = ((System.Drawing.Image)(resources.GetObject("BtnCrearCliente.Image")));
+            this.BtnCrearCliente.Location = new System.Drawing.Point(185, 230);
+            this.BtnCrearCliente.Name = "BtnCrearCliente";
+            this.BtnCrearCliente.Size = new System.Drawing.Size(38, 41);
+            this.BtnCrearCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.BtnCrearCliente.TabIndex = 60;
+            this.BtnCrearCliente.TabStop = false;
+            // 
+            // BtnCrearOrden
+            // 
+            this.BtnCrearOrden.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.BtnCrearOrden.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnCrearOrden.Image = ((System.Drawing.Image)(resources.GetObject("BtnCrearOrden.Image")));
+            this.BtnCrearOrden.Location = new System.Drawing.Point(657, 477);
+            this.BtnCrearOrden.Name = "BtnCrearOrden";
+            this.BtnCrearOrden.Size = new System.Drawing.Size(55, 41);
+            this.BtnCrearOrden.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.BtnCrearOrden.TabIndex = 62;
+            this.BtnCrearOrden.TabStop = false;
+            // 
             // FrmOrdenServicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -812,20 +812,20 @@
             this.Name = "FrmOrdenServicio";
             this.Text = "Orden de servicio";
             this.Load += new System.EventHandler(this.FrmOrdenServicio_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.BtnCrearCliente)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnBuscarCliente)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnCrearOrden)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnImprimirOrden)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnCancelarOrden)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnVolver)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnCancelarOrden)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnImprimirOrden)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnBuscarCliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnCrearCliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnCrearOrden)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
