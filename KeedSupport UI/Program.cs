@@ -13,7 +13,7 @@ namespace KeedSupport_UI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form());
+            Application.Run(new FrmCliente());
         }
     }
 }
