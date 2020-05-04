@@ -36,7 +36,7 @@
             // DtgConsultarCliente
             // 
             this.DtgConsultarCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DtgConsultarCliente.Location = new System.Drawing.Point(24, 139);
+            this.DtgConsultarCliente.Location = new System.Drawing.Point(12, 116);
             this.DtgConsultarCliente.Name = "DtgConsultarCliente";
             this.DtgConsultarCliente.Size = new System.Drawing.Size(764, 150);
             this.DtgConsultarCliente.TabIndex = 0;

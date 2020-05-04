@@ -82,7 +82,10 @@ namespace KeedSupport_UI
 
         private void BtnPresupuesto_Click(object sender, EventArgs e)
         {
-
+            FrmReparacion frmReparacion = new FrmReparacion();
+            frmReparacion.MdiParent = this;
+            frmReparacion.Show();
+            panel6.Visible = false;
         }
 
         private void BtnPresupuesto_MouseHover(object sender, EventArgs e)
@@ -107,6 +110,22 @@ namespace KeedSupport_UI
         {
             BrnBaseFallas.Size = new Size(70, 60);
             label4.Visible = false;
+        }
+
+        private void BtnVenta_Click(object sender, EventArgs e)
+        {
+            FrmOrdenServicio frmOrdenServicio = new FrmOrdenServicio();
+            frmOrdenServicio.MdiParent = this;
+            frmOrdenServicio.Show();
+            panel6.Visible = false;
+        }
+
+        private void BrnBaseFallas_Click(object sender, EventArgs e)
+        {
+            FrmBaseDeFallas frmBaseDeFallas = new FrmBaseDeFallas();
+            frmBaseDeFallas.MdiParent = this;
+            frmBaseDeFallas.Show();
+            panel6.Visible = false;
         }
     }
 }

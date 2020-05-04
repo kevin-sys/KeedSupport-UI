@@ -96,6 +96,7 @@
             this.BrnBaseFallas.Size = new System.Drawing.Size(70, 60);
             this.BrnBaseFallas.TabIndex = 6;
             this.BrnBaseFallas.UseVisualStyleBackColor = false;
+            this.BrnBaseFallas.Click += new System.EventHandler(this.BrnBaseFallas_Click);
             this.BrnBaseFallas.MouseLeave += new System.EventHandler(this.BrnBaseFallas_MouseLeave);
             this.BrnBaseFallas.MouseHover += new System.EventHandler(this.BrnBaseFallas_MouseHover);
             // 
@@ -110,6 +111,7 @@
             this.BtnVenta.Size = new System.Drawing.Size(70, 60);
             this.BtnVenta.TabIndex = 7;
             this.BtnVenta.UseVisualStyleBackColor = false;
+            this.BtnVenta.Click += new System.EventHandler(this.BtnVenta_Click);
             this.BtnVenta.MouseLeave += new System.EventHandler(this.BtnVenta_MouseLeave);
             this.BtnVenta.MouseHover += new System.EventHandler(this.BtnVenta_MouseHover);
             // 
@@ -123,7 +125,7 @@
             this.panel_menu.Controls.Add(this.BtnOrden);
             this.panel_menu.Location = new System.Drawing.Point(0, 71);
             this.panel_menu.Name = "panel_menu";
-            this.panel_menu.Size = new System.Drawing.Size(98, 502);
+            this.panel_menu.Size = new System.Drawing.Size(98, 644);
             this.panel_menu.TabIndex = 0;
             this.panel_menu.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -160,9 +162,9 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(83, 344);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 16);
+            this.label3.Size = new System.Drawing.Size(89, 16);
             this.label3.TabIndex = 12;
-            this.label3.Text = "Cotización";
+            this.label3.Text = "Reparacion";
             // 
             // label4
             // 
@@ -181,7 +183,7 @@
             this.panel6.BackColor = System.Drawing.Color.Transparent;
             this.panel6.BackgroundImage = global::KeedSupport_UI.Properties.Resources.Sin_título;
             this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel6.Location = new System.Drawing.Point(262, 179);
+            this.panel6.Location = new System.Drawing.Point(510, 151);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(310, 232);
             this.panel6.TabIndex = 1;
@@ -192,7 +194,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::KeedSupport_UI.Properties.Resources.sw;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(718, 566);
+            this.ClientSize = new System.Drawing.Size(1261, 617);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -203,7 +205,7 @@
             this.IsMdiContainer = true;
             this.Name = "FrmMenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form3";
+            this.Text = "Menu principal";
             this.panel_menu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
