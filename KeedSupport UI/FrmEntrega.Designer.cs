@@ -65,11 +65,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.BtnCupon = new System.Windows.Forms.PictureBox();
-            this.BtnBucarReparacion = new System.Windows.Forms.PictureBox();
             this.label19 = new System.Windows.Forms.Label();
+            this.BtnCupon = new System.Windows.Forms.PictureBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.BtnBucarReparacion = new System.Windows.Forms.PictureBox();
             this.label33 = new System.Windows.Forms.Label();
             this.BtnVolver = new System.Windows.Forms.PictureBox();
             this.label31 = new System.Windows.Forms.Label();
@@ -163,7 +163,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(321, 97);
+            this.label13.Location = new System.Drawing.Point(325, 97);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(94, 13);
             this.label13.TabIndex = 57;
@@ -229,7 +229,7 @@
             // 
             // TxtTipoEquipo
             // 
-            this.TxtTipoEquipo.Location = new System.Drawing.Point(133, 264);
+            this.TxtTipoEquipo.Location = new System.Drawing.Point(128, 264);
             this.TxtTipoEquipo.Name = "TxtTipoEquipo";
             this.TxtTipoEquipo.Size = new System.Drawing.Size(117, 20);
             this.TxtTipoEquipo.TabIndex = 73;
@@ -248,7 +248,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(32, 184);
+            this.label8.Location = new System.Drawing.Point(32, 182);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(92, 13);
             this.label8.TabIndex = 71;
@@ -256,7 +256,7 @@
             // 
             // TxtNombreCliente
             // 
-            this.TxtNombreCliente.Location = new System.Drawing.Point(133, 178);
+            this.TxtNombreCliente.Location = new System.Drawing.Point(128, 178);
             this.TxtNombreCliente.Name = "TxtNombreCliente";
             this.TxtNombreCliente.Size = new System.Drawing.Size(117, 20);
             this.TxtNombreCliente.TabIndex = 70;
@@ -265,7 +265,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(40, 230);
+            this.label7.Location = new System.Drawing.Point(40, 225);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(84, 13);
             this.label7.TabIndex = 69;
@@ -273,7 +273,7 @@
             // 
             // TxtIdentificacion
             // 
-            this.TxtIdentificacion.Location = new System.Drawing.Point(133, 221);
+            this.TxtIdentificacion.Location = new System.Drawing.Point(128, 221);
             this.TxtIdentificacion.Name = "TxtIdentificacion";
             this.TxtIdentificacion.Size = new System.Drawing.Size(117, 20);
             this.TxtIdentificacion.TabIndex = 68;
@@ -282,7 +282,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(46, 274);
+            this.label6.Location = new System.Drawing.Point(46, 268);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(75, 13);
             this.label6.TabIndex = 67;
@@ -300,7 +300,7 @@
             // 
             // TxtCodigoReparacion
             // 
-            this.TxtCodigoReparacion.Location = new System.Drawing.Point(133, 92);
+            this.TxtCodigoReparacion.Location = new System.Drawing.Point(128, 92);
             this.TxtCodigoReparacion.Name = "TxtCodigoReparacion";
             this.TxtCodigoReparacion.Size = new System.Drawing.Size(117, 20);
             this.TxtCodigoReparacion.TabIndex = 65;
@@ -308,7 +308,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(133, 135);
+            this.dateTimePicker1.Location = new System.Drawing.Point(128, 135);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(117, 20);
             this.dateTimePicker1.TabIndex = 64;
@@ -324,7 +324,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(359, 225);
+            this.label5.Location = new System.Drawing.Point(375, 226);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(42, 13);
             this.label5.TabIndex = 81;
@@ -341,7 +341,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(353, 269);
+            this.label4.Location = new System.Drawing.Point(369, 269);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(48, 13);
             this.label4.TabIndex = 79;
@@ -358,7 +358,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(320, 143);
+            this.label3.Location = new System.Drawing.Point(336, 140);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(81, 13);
             this.label3.TabIndex = 77;
@@ -375,7 +375,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(365, 189);
+            this.label2.Location = new System.Drawing.Point(381, 183);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 13);
             this.label2.TabIndex = 75;
@@ -408,22 +408,15 @@
             this.panel1.Size = new System.Drawing.Size(507, 77);
             this.panel1.TabIndex = 84;
             // 
-            // textBox1
+            // label19
             // 
-            this.textBox1.Location = new System.Drawing.Point(238, 54);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 64;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(246, 38);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(88, 13);
-            this.label18.TabIndex = 65;
-            this.label18.Text = "Redimir cupón";
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(13, 7);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(148, 16);
+            this.label19.TabIndex = 86;
+            this.label19.Text = "Conceptos de cobro";
             // 
             // BtnCupon
             // 
@@ -437,33 +430,40 @@
             this.BtnCupon.TabIndex = 85;
             this.BtnCupon.TabStop = false;
             // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(246, 38);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(88, 13);
+            this.label18.TabIndex = 65;
+            this.label18.Text = "Redimir cupón";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(238, 54);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 64;
+            // 
             // BtnBucarReparacion
             // 
             this.BtnBucarReparacion.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.BtnBucarReparacion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnBucarReparacion.Image = ((System.Drawing.Image)(resources.GetObject("BtnBucarReparacion.Image")));
-            this.BtnBucarReparacion.Location = new System.Drawing.Point(256, 83);
+            this.BtnBucarReparacion.Location = new System.Drawing.Point(251, 83);
             this.BtnBucarReparacion.Name = "BtnBucarReparacion";
             this.BtnBucarReparacion.Size = new System.Drawing.Size(40, 34);
             this.BtnBucarReparacion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.BtnBucarReparacion.TabIndex = 74;
             this.BtnBucarReparacion.TabStop = false;
             // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(13, 7);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(148, 16);
-            this.label19.TabIndex = 86;
-            this.label19.Text = "Conceptos de cobro";
-            // 
             // label33
             // 
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(297, 455);
+            this.label33.Location = new System.Drawing.Point(163, 454);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(111, 16);
             this.label33.TabIndex = 92;
@@ -474,7 +474,7 @@
             this.BtnVolver.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.BtnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnVolver.Image = ((System.Drawing.Image)(resources.GetObject("BtnVolver.Image")));
-            this.BtnVolver.Location = new System.Drawing.Point(320, 411);
+            this.BtnVolver.Location = new System.Drawing.Point(186, 410);
             this.BtnVolver.Name = "BtnVolver";
             this.BtnVolver.Size = new System.Drawing.Size(55, 41);
             this.BtnVolver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -485,7 +485,7 @@
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(164, 454);
+            this.label31.Location = new System.Drawing.Point(337, 454);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(70, 16);
             this.label31.TabIndex = 90;
@@ -517,7 +517,7 @@
             this.BtnCancelar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.BtnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("BtnCancelar.Image")));
-            this.BtnCancelar.Location = new System.Drawing.Point(173, 410);
+            this.BtnCancelar.Location = new System.Drawing.Point(346, 410);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(55, 41);
             this.BtnCancelar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -552,7 +552,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(845, 490);
             this.Controls.Add(this.label33);
             this.Controls.Add(this.BtnVolver);

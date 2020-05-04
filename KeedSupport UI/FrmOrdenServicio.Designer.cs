@@ -640,7 +640,7 @@
             // 
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(640, 521);
+            this.label29.Location = new System.Drawing.Point(615, 522);
             this.label29.Name = "label29";
             this.label29.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label29.Size = new System.Drawing.Size(92, 16);
@@ -662,7 +662,7 @@
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(163, 521);
+            this.label31.Location = new System.Drawing.Point(331, 522);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(116, 16);
             this.label31.TabIndex = 70;
@@ -711,7 +711,7 @@
             // 
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(316, 522);
+            this.label33.Location = new System.Drawing.Point(184, 522);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(111, 16);
             this.label33.TabIndex = 72;
@@ -722,7 +722,7 @@
             this.BtnVolver.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.BtnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnVolver.Image = ((System.Drawing.Image)(resources.GetObject("BtnVolver.Image")));
-            this.BtnVolver.Location = new System.Drawing.Point(350, 478);
+            this.BtnVolver.Location = new System.Drawing.Point(218, 478);
             this.BtnVolver.Name = "BtnVolver";
             this.BtnVolver.Size = new System.Drawing.Size(55, 41);
             this.BtnVolver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -734,7 +734,7 @@
             this.BtnCancelarOrden.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.BtnCancelarOrden.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnCancelarOrden.Image = ((System.Drawing.Image)(resources.GetObject("BtnCancelarOrden.Image")));
-            this.BtnCancelarOrden.Location = new System.Drawing.Point(192, 477);
+            this.BtnCancelarOrden.Location = new System.Drawing.Point(360, 478);
             this.BtnCancelarOrden.Name = "BtnCancelarOrden";
             this.BtnCancelarOrden.Size = new System.Drawing.Size(55, 41);
             this.BtnCancelarOrden.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -782,7 +782,7 @@
             this.BtnCrearOrden.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.BtnCrearOrden.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnCrearOrden.Image = ((System.Drawing.Image)(resources.GetObject("BtnCrearOrden.Image")));
-            this.BtnCrearOrden.Location = new System.Drawing.Point(657, 477);
+            this.BtnCrearOrden.Location = new System.Drawing.Point(632, 478);
             this.BtnCrearOrden.Name = "BtnCrearOrden";
             this.BtnCrearOrden.Size = new System.Drawing.Size(55, 41);
             this.BtnCrearOrden.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -793,7 +793,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(942, 562);
             this.Controls.Add(this.label33);
             this.Controls.Add(this.BtnVolver);

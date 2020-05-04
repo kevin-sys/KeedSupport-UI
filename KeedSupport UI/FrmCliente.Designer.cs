@@ -53,6 +53,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.DtaFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label30 = new System.Windows.Forms.Label();
+            this.BtnGuardarCliente = new System.Windows.Forms.PictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
@@ -61,8 +63,6 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label30 = new System.Windows.Forms.Label();
-            this.BtnGuardarCliente = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnGuardarCliente)).BeginInit();
             this.SuspendLayout();
@@ -337,6 +337,29 @@
             this.panel1.Size = new System.Drawing.Size(222, 57);
             this.panel1.TabIndex = 36;
             // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(345, 365);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(64, 16);
+            this.label30.TabIndex = 71;
+            this.label30.Text = "Guardar";
+            // 
+            // BtnGuardarCliente
+            // 
+            this.BtnGuardarCliente.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.BtnGuardarCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnGuardarCliente.Image = ((System.Drawing.Image)(resources.GetObject("BtnGuardarCliente.Image")));
+            this.BtnGuardarCliente.Location = new System.Drawing.Point(350, 321);
+            this.BtnGuardarCliente.Name = "BtnGuardarCliente";
+            this.BtnGuardarCliente.Size = new System.Drawing.Size(55, 41);
+            this.BtnGuardarCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.BtnGuardarCliente.TabIndex = 70;
+            this.BtnGuardarCliente.TabStop = false;
+            this.BtnGuardarCliente.Click += new System.EventHandler(this.BtnGuardarCliente_Click);
+            // 
             // panel7
             // 
             this.panel7.BackgroundImage = global::KeedSupport_UI.Properties.Resources.calendario;
@@ -410,34 +433,11 @@
             this.panel3.Size = new System.Drawing.Size(30, 26);
             this.panel3.TabIndex = 25;
             // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(345, 365);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(64, 16);
-            this.label30.TabIndex = 71;
-            this.label30.Text = "Guardar";
-            // 
-            // BtnGuardarCliente
-            // 
-            this.BtnGuardarCliente.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.BtnGuardarCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnGuardarCliente.Image = ((System.Drawing.Image)(resources.GetObject("BtnGuardarCliente.Image")));
-            this.BtnGuardarCliente.Location = new System.Drawing.Point(350, 321);
-            this.BtnGuardarCliente.Name = "BtnGuardarCliente";
-            this.BtnGuardarCliente.Size = new System.Drawing.Size(55, 41);
-            this.BtnGuardarCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.BtnGuardarCliente.TabIndex = 70;
-            this.BtnGuardarCliente.TabStop = false;
-            this.BtnGuardarCliente.Click += new System.EventHandler(this.BtnGuardarCliente_Click);
-            // 
             // FrmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(463, 399);
             this.Controls.Add(this.label30);
             this.Controls.Add(this.BtnGuardarCliente);

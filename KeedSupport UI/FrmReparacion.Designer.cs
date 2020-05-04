@@ -56,20 +56,20 @@
             this.label14 = new System.Windows.Forms.Label();
             this.TxtTipoEquipo = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
-            this.BtnBucarOrden = new System.Windows.Forms.PictureBox();
             this.label33 = new System.Windows.Forms.Label();
-            this.BtnVolver = new System.Windows.Forms.PictureBox();
             this.label31 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
+            this.BtnVolver = new System.Windows.Forms.PictureBox();
             this.BtnCancelar = new System.Windows.Forms.PictureBox();
             this.BtnImprimirReparacion = new System.Windows.Forms.PictureBox();
             this.BtnGuardarReparacion = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnBucarOrden)).BeginInit();
+            this.BtnBucarOrden = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.BtnVolver)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCancelar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnImprimirReparacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnGuardarReparacion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnBucarOrden)).BeginInit();
             this.SuspendLayout();
             // 
             // dateTimePicker1
@@ -311,18 +311,6 @@
             this.label24.TabIndex = 58;
             this.label24.Text = "Reparación KeedSupport";
             // 
-            // BtnBucarOrden
-            // 
-            this.BtnBucarOrden.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.BtnBucarOrden.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnBucarOrden.Image = ((System.Drawing.Image)(resources.GetObject("BtnBucarOrden.Image")));
-            this.BtnBucarOrden.Location = new System.Drawing.Point(260, 109);
-            this.BtnBucarOrden.Name = "BtnBucarOrden";
-            this.BtnBucarOrden.Size = new System.Drawing.Size(55, 50);
-            this.BtnBucarOrden.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.BtnBucarOrden.TabIndex = 62;
-            this.BtnBucarOrden.TabStop = false;
-            // 
             // label33
             // 
             this.label33.AutoSize = true;
@@ -332,18 +320,6 @@
             this.label33.Size = new System.Drawing.Size(111, 16);
             this.label33.TabIndex = 80;
             this.label33.Text = "Volver al menu";
-            // 
-            // BtnVolver
-            // 
-            this.BtnVolver.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.BtnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnVolver.Image = ((System.Drawing.Image)(resources.GetObject("BtnVolver.Image")));
-            this.BtnVolver.Location = new System.Drawing.Point(340, 390);
-            this.BtnVolver.Name = "BtnVolver";
-            this.BtnVolver.Size = new System.Drawing.Size(55, 41);
-            this.BtnVolver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.BtnVolver.TabIndex = 79;
-            this.BtnVolver.TabStop = false;
             // 
             // label31
             // 
@@ -359,11 +335,11 @@
             // 
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(448, 433);
+            this.label30.Location = new System.Drawing.Point(491, 433);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(148, 16);
+            this.label30.Size = new System.Drawing.Size(63, 16);
             this.label30.TabIndex = 77;
-            this.label30.Text = "Imprimir Reparación";
+            this.label30.Text = "Imprimir";
             // 
             // label29
             // 
@@ -375,6 +351,18 @@
             this.label29.Size = new System.Drawing.Size(64, 16);
             this.label29.TabIndex = 73;
             this.label29.Text = "Guardar";
+            // 
+            // BtnVolver
+            // 
+            this.BtnVolver.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.BtnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnVolver.Image = ((System.Drawing.Image)(resources.GetObject("BtnVolver.Image")));
+            this.BtnVolver.Location = new System.Drawing.Point(340, 390);
+            this.BtnVolver.Name = "BtnVolver";
+            this.BtnVolver.Size = new System.Drawing.Size(55, 41);
+            this.BtnVolver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.BtnVolver.TabIndex = 79;
+            this.BtnVolver.TabStop = false;
             // 
             // BtnCancelar
             // 
@@ -412,11 +400,23 @@
             this.BtnGuardarReparacion.TabIndex = 74;
             this.BtnGuardarReparacion.TabStop = false;
             // 
+            // BtnBucarOrden
+            // 
+            this.BtnBucarOrden.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.BtnBucarOrden.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnBucarOrden.Image = ((System.Drawing.Image)(resources.GetObject("BtnBucarOrden.Image")));
+            this.BtnBucarOrden.Location = new System.Drawing.Point(260, 109);
+            this.BtnBucarOrden.Name = "BtnBucarOrden";
+            this.BtnBucarOrden.Size = new System.Drawing.Size(55, 50);
+            this.BtnBucarOrden.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.BtnBucarOrden.TabIndex = 62;
+            this.BtnBucarOrden.TabStop = false;
+            // 
             // FrmReparacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(905, 469);
             this.Controls.Add(this.label33);
             this.Controls.Add(this.BtnVolver);
@@ -458,11 +458,11 @@
             this.Name = "FrmReparacion";
             this.Text = "Reparación";
             this.Load += new System.EventHandler(this.FrmReparacion_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.BtnBucarOrden)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnVolver)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCancelar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnImprimirReparacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnGuardarReparacion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnBucarOrden)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -35,13 +35,7 @@ namespace KeedSupport_UI
             return BDfallas;
         }
 
-        private void BtnGuardar_Click(object sender, EventArgs e)
-        {
-            BaseDeFallas BdFallas =  MapearBDfallas();
-            BaseDeFallasService BdFallasService = new BaseDeFallasService();
-            string mensaje = BdFallasService.Guardar(BdFallas);
-            MessageBox.Show(mensaje, "Mensaje de Guardado", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-        }
+    
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -52,6 +46,15 @@ namespace KeedSupport_UI
         private void FrmBaseDeFallas_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void BtnGuardarBaseFalla_Click(object sender, EventArgs e)
+        {
+
+            BaseDeFallas BdFallas = MapearBDfallas();
+            BaseDeFallasService BdFallasService = new BaseDeFallasService();
+            string mensaje = BdFallasService.Guardar(BdFallas);
+            MessageBox.Show(mensaje, "Mensaje de Guardado", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
         }
     }
 }
