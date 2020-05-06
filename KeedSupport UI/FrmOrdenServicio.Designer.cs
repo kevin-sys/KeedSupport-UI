@@ -325,7 +325,7 @@
             // TxtFalla
             // 
             this.TxtFalla.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtFalla.Location = new System.Drawing.Point(398, 41);
+            this.TxtFalla.Location = new System.Drawing.Point(398, 40);
             this.TxtFalla.Name = "TxtFalla";
             this.TxtFalla.Size = new System.Drawing.Size(190, 59);
             this.TxtFalla.TabIndex = 25;
