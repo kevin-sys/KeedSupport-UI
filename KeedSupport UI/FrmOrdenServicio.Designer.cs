@@ -634,6 +634,7 @@
             this.BtnCrearCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.BtnCrearCliente.TabIndex = 60;
             this.BtnCrearCliente.TabStop = false;
+            this.BtnCrearCliente.Click += new System.EventHandler(this.BtnCrearCliente_Click);
             // 
             // panel3
             // 
@@ -764,6 +765,7 @@
             this.BtnCancelarOrden.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.BtnCancelarOrden.TabIndex = 68;
             this.BtnCancelarOrden.TabStop = false;
+            this.BtnCancelarOrden.Click += new System.EventHandler(this.BtnCancelarOrden_Click);
             // 
             // BtnImprimirOrden
             // 
@@ -808,6 +810,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.BtnCrearOrden);
             this.Controls.Add(this.label24);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmOrdenServicio";
             this.Text = "Orden de servicio";
             this.Load += new System.EventHandler(this.FrmOrdenServicio_Load);

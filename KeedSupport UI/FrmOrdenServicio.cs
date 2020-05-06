@@ -47,5 +47,16 @@ namespace KeedSupport_UI
         {
 
         }
+
+        private void BtnCrearCliente_Click(object sender, EventArgs e)
+        {
+            FrmCliente cliente = new FrmCliente();
+            cliente.Show();
+        }
+
+        private void BtnCancelarOrden_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

@@ -472,6 +472,7 @@
             this.Controls.Add(this.TxtPrimerApellido);
             this.Controls.Add(this.TxtSegundoNombre);
             this.Controls.Add(this.TxtPrimerNombre);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registrar cliente";
