@@ -10,94 +10,60 @@ namespace Entity
     {
         public string NumeroOrden { get; set; }
         public DateTime FechaOrden { get; set; }
-
-
-        public string NombreCliente { get; set; }
-        public string Identificacion { get; set; }
-        public string Telefono { get; set; }
-        public string Direccion { get; set; }
-        public string Correo { get; set; }
-
-
-        public string TipoEquipo { get; set; }
-        public string Marca { get; set; }
-        public string Modelo { get; set; }
-        public string NumeroSerie { get; set; }
-        public string Color { get; set; }
-        public string Accesorios { get; set; }
-        public string Falla { get; set; }
-        public string EstadoEquipo { get; set; }
+        public Cliente Cliente { get; set; }
+        public List<Producto> Productos{ get; set; }
+         
         public string ServicioOProducto { get; set; }
-        public int Cantidad { get; set; }
-        public float Precio { get; set; }
-        public float IVA { get; set; }
+     
         public float Abono { get; set; }
-        public float Vueltos { get; set; }
-        public float Deuda { get; set; }
-
-
-
-        public float CalcularSubTotal
+        
+        public float SubTotal
         {
             get
             {
-                float subTotal = 0;
-                subTotal = Cantidad * Precio;
-                return subTotal;
+                return Productos.Sum(p => p.SubTotal);
             }
         }
 
-        public float CalcularIVA
+        public float ValorTotalIVA
         {
             get
             {
-                float iva = 0;
-                iva = (CalcularSubTotal * IVA)/100;
-
-                return iva;
+                return Productos.Sum(p => p.ValorIVa);
             }
         }
 
-        public float CalcularTotalServicios
+        public float TotalOrden
         {
             get
             {
-                float total = 0;
-                total = CalcularSubTotal + CalcularIVA;
-                return total;
+                
+                return  SubTotal + ValorTotalIVA;
+                
             }
         }
 
-        public float CalcularVueltos
+        public float Vueltos
         {
             get
             {
-                if (Abono>=CalcularTotalServicios)
-                {
-                    Vueltos = Abono - CalcularTotalServicios;
-                    
-                }
-                else if (Abono<CalcularTotalServicios)
-                {
-                    Vueltos = 0;
-                  
-                }
-                return Vueltos;
+                return (Abono <= TotalOrden)? 0: Abono- TotalOrden;
+                //condicion?V:F;
             }
         }
 
-        public float CalcularDeuda
+        public float Deuda
         {
             get
             {
-                if (Abono>=CalcularTotalServicios)
-                {
-                    Deuda = 0;
-                }
-                else if (Abono<CalcularTotalServicios)
-                {
-                    Deuda = CalcularTotalServicios - Abono;
-                }
+                //if (Abono>=CalcularTotalServicios)
+                //{
+                //    Deuda = 0;
+                //}
+                //else if (Abono<CalcularTotalServicios)
+                //{
+                //    Deuda = CalcularTotalServicios - Abono;
+                //}
                 return Deuda;
             }
         }

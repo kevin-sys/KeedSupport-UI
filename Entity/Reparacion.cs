@@ -10,16 +10,8 @@ namespace Entity
     {
         public string CodigoReparacion { get; set; }
         public DateTime FechaReparacion { get; set; }
-        public string NombreCliente { get; set; }
-        public string Identificacion { get; set; }
-        public string TipoEquipo { get; set; }
-        public string Marca { get; set; }
-        public string Modelo { get; set; }
-        public string NumeroSerie { get; set; }
-        public string Color { get; set; }
-        public string Accesorios { get; set; }
-        public string Falla { get; set; }
-        public string EstadoReparacion { get; set; }
+        public Cliente Cliente { get; set; }
+        public Producto Producto { get; set; }
         public string Solucion { get; set; }
 
     }
