@@ -315,7 +315,7 @@
             // 
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(306, 434);
+            this.label33.Location = new System.Drawing.Point(147, 433);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(111, 16);
             this.label33.TabIndex = 80;
@@ -325,7 +325,7 @@
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(173, 433);
+            this.label31.Location = new System.Drawing.Point(334, 434);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(70, 16);
             this.label31.TabIndex = 78;
@@ -357,7 +357,7 @@
             this.BtnVolver.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.BtnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnVolver.Image = ((System.Drawing.Image)(resources.GetObject("BtnVolver.Image")));
-            this.BtnVolver.Location = new System.Drawing.Point(340, 390);
+            this.BtnVolver.Location = new System.Drawing.Point(181, 389);
             this.BtnVolver.Name = "BtnVolver";
             this.BtnVolver.Size = new System.Drawing.Size(55, 41);
             this.BtnVolver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -369,7 +369,7 @@
             this.BtnCancelar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.BtnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("BtnCancelar.Image")));
-            this.BtnCancelar.Location = new System.Drawing.Point(182, 389);
+            this.BtnCancelar.Location = new System.Drawing.Point(343, 390);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(55, 41);
             this.BtnCancelar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

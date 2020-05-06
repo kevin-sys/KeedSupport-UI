@@ -28,201 +28,380 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.BtnMenu = new System.Windows.Forms.Button();
-            this.BtnOrden = new System.Windows.Forms.Button();
-            this.BtnPresupuesto = new System.Windows.Forms.Button();
-            this.BrnBaseFallas = new System.Windows.Forms.Button();
-            this.BtnVenta = new System.Windows.Forms.Button();
-            this.panel_menu = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel_menu.SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenuPrincipal));
+            this.PanelMenuLateral = new System.Windows.Forms.Panel();
+            this.PanelGestion = new System.Windows.Forms.Panel();
+            this.BtnEntregarEquipo = new System.Windows.Forms.Button();
+            this.BtnGestion = new System.Windows.Forms.Button();
+            this.PanelConsultar = new System.Windows.Forms.Panel();
+            this.BtnConsultarOrden = new System.Windows.Forms.Button();
+            this.BtnConsultar = new System.Windows.Forms.Button();
+            this.PanelRegistrar = new System.Windows.Forms.Panel();
+            this.BtnRegistrarOrden = new System.Windows.Forms.Button();
+            this.BtnRegistro = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.PanelCentral = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.BtnRegistrarCliente = new System.Windows.Forms.Button();
+            this.BtnReparacion = new System.Windows.Forms.Button();
+            this.BtnConsultaCliente = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.BtnConsultaEntregas = new System.Windows.Forms.Button();
+            this.BtnCrearCupon = new System.Windows.Forms.Button();
+            this.BtnBaseFalla = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.PanelMenuLateral.SuspendLayout();
+            this.PanelGestion.SuspendLayout();
+            this.PanelConsultar.SuspendLayout();
+            this.PanelRegistrar.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.PanelCentral.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // BtnMenu
+            // PanelMenuLateral
             // 
-            this.BtnMenu.BackgroundImage = global::KeedSupport_UI.Properties.Resources.Sin_título1;
-            this.BtnMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnMenu.Location = new System.Drawing.Point(0, -2);
-            this.BtnMenu.Name = "BtnMenu";
-            this.BtnMenu.Size = new System.Drawing.Size(98, 74);
-            this.BtnMenu.TabIndex = 3;
-            this.BtnMenu.UseVisualStyleBackColor = true;
-            this.BtnMenu.Click += new System.EventHandler(this.button1_Click);
+            this.PanelMenuLateral.AutoScroll = true;
+            this.PanelMenuLateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.PanelMenuLateral.Controls.Add(this.PanelGestion);
+            this.PanelMenuLateral.Controls.Add(this.BtnGestion);
+            this.PanelMenuLateral.Controls.Add(this.PanelConsultar);
+            this.PanelMenuLateral.Controls.Add(this.BtnConsultar);
+            this.PanelMenuLateral.Controls.Add(this.PanelRegistrar);
+            this.PanelMenuLateral.Controls.Add(this.BtnRegistro);
+            this.PanelMenuLateral.Controls.Add(this.panel1);
+            this.PanelMenuLateral.Dock = System.Windows.Forms.DockStyle.Left;
+            this.PanelMenuLateral.Location = new System.Drawing.Point(0, 0);
+            this.PanelMenuLateral.Name = "PanelMenuLateral";
+            this.PanelMenuLateral.Size = new System.Drawing.Size(217, 634);
+            this.PanelMenuLateral.TabIndex = 0;
             // 
-            // BtnOrden
+            // PanelGestion
             // 
-            this.BtnOrden.BackColor = System.Drawing.Color.Black;
-            this.BtnOrden.BackgroundImage = global::KeedSupport_UI.Properties.Resources.orden;
-            this.BtnOrden.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnOrden.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnOrden.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnOrden.Location = new System.Drawing.Point(12, 16);
-            this.BtnOrden.Name = "BtnOrden";
-            this.BtnOrden.Size = new System.Drawing.Size(70, 62);
-            this.BtnOrden.TabIndex = 4;
-            this.BtnOrden.UseVisualStyleBackColor = false;
-            this.BtnOrden.Click += new System.EventHandler(this.BtnOrden_Click);
-            this.BtnOrden.MouseLeave += new System.EventHandler(this.BtnOrden_MouseLeave);
-            this.BtnOrden.MouseHover += new System.EventHandler(this.BtnOrden_MouseHover);
+            this.PanelGestion.BackColor = System.Drawing.Color.DimGray;
+            this.PanelGestion.Controls.Add(this.BtnBaseFalla);
+            this.PanelGestion.Controls.Add(this.BtnCrearCupon);
+            this.PanelGestion.Controls.Add(this.BtnEntregarEquipo);
+            this.PanelGestion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelGestion.Location = new System.Drawing.Point(0, 505);
+            this.PanelGestion.Name = "PanelGestion";
+            this.PanelGestion.Size = new System.Drawing.Size(217, 113);
+            this.PanelGestion.TabIndex = 6;
             // 
-            // BtnPresupuesto
+            // BtnEntregarEquipo
             // 
-            this.BtnPresupuesto.BackColor = System.Drawing.Color.Black;
-            this.BtnPresupuesto.BackgroundImage = global::KeedSupport_UI.Properties.Resources.presupuesto;
-            this.BtnPresupuesto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnPresupuesto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnPresupuesto.Location = new System.Drawing.Point(12, 250);
-            this.BtnPresupuesto.Name = "BtnPresupuesto";
-            this.BtnPresupuesto.Size = new System.Drawing.Size(70, 62);
-            this.BtnPresupuesto.TabIndex = 5;
-            this.BtnPresupuesto.UseVisualStyleBackColor = false;
-            this.BtnPresupuesto.Click += new System.EventHandler(this.BtnPresupuesto_Click);
-            this.BtnPresupuesto.MouseLeave += new System.EventHandler(this.BtnPresupuesto_MouseLeave);
-            this.BtnPresupuesto.MouseHover += new System.EventHandler(this.BtnPresupuesto_MouseHover);
+            this.BtnEntregarEquipo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnEntregarEquipo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnEntregarEquipo.FlatAppearance.BorderSize = 0;
+            this.BtnEntregarEquipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnEntregarEquipo.Location = new System.Drawing.Point(0, 0);
+            this.BtnEntregarEquipo.Name = "BtnEntregarEquipo";
+            this.BtnEntregarEquipo.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.BtnEntregarEquipo.Size = new System.Drawing.Size(217, 37);
+            this.BtnEntregarEquipo.TabIndex = 0;
+            this.BtnEntregarEquipo.Text = "Entregar equipo";
+            this.BtnEntregarEquipo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnEntregarEquipo.UseVisualStyleBackColor = true;
+            this.BtnEntregarEquipo.Click += new System.EventHandler(this.BtnEntregarEquipo_Click);
             // 
-            // BrnBaseFallas
+            // BtnGestion
             // 
-            this.BrnBaseFallas.BackColor = System.Drawing.Color.Black;
-            this.BrnBaseFallas.BackgroundImage = global::KeedSupport_UI.Properties.Resources.ajustes;
-            this.BrnBaseFallas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BrnBaseFallas.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BrnBaseFallas.Location = new System.Drawing.Point(12, 372);
-            this.BrnBaseFallas.Name = "BrnBaseFallas";
-            this.BrnBaseFallas.Size = new System.Drawing.Size(70, 60);
-            this.BrnBaseFallas.TabIndex = 6;
-            this.BrnBaseFallas.UseVisualStyleBackColor = false;
-            this.BrnBaseFallas.Click += new System.EventHandler(this.BrnBaseFallas_Click);
-            this.BrnBaseFallas.MouseLeave += new System.EventHandler(this.BrnBaseFallas_MouseLeave);
-            this.BrnBaseFallas.MouseHover += new System.EventHandler(this.BrnBaseFallas_MouseHover);
+            this.BtnGestion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnGestion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnGestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnGestion.Location = new System.Drawing.Point(0, 460);
+            this.BtnGestion.Name = "BtnGestion";
+            this.BtnGestion.Size = new System.Drawing.Size(217, 45);
+            this.BtnGestion.TabIndex = 5;
+            this.BtnGestion.Text = "GESTIÓN";
+            this.BtnGestion.UseVisualStyleBackColor = true;
+            this.BtnGestion.Click += new System.EventHandler(this.BtnGestion_Click_1);
             // 
-            // BtnVenta
+            // PanelConsultar
             // 
-            this.BtnVenta.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BtnVenta.BackgroundImage = global::KeedSupport_UI.Properties.Resources.inmobiliaria;
-            this.BtnVenta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnVenta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnVenta.Location = new System.Drawing.Point(12, 141);
-            this.BtnVenta.Name = "BtnVenta";
-            this.BtnVenta.Size = new System.Drawing.Size(70, 60);
-            this.BtnVenta.TabIndex = 7;
-            this.BtnVenta.UseVisualStyleBackColor = false;
-            this.BtnVenta.Click += new System.EventHandler(this.BtnVenta_Click);
-            this.BtnVenta.MouseLeave += new System.EventHandler(this.BtnVenta_MouseLeave);
-            this.BtnVenta.MouseHover += new System.EventHandler(this.BtnVenta_MouseHover);
+            this.PanelConsultar.BackColor = System.Drawing.Color.DimGray;
+            this.PanelConsultar.Controls.Add(this.BtnConsultaEntregas);
+            this.PanelConsultar.Controls.Add(this.button2);
+            this.PanelConsultar.Controls.Add(this.BtnConsultaCliente);
+            this.PanelConsultar.Controls.Add(this.BtnConsultarOrden);
+            this.PanelConsultar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelConsultar.Location = new System.Drawing.Point(0, 303);
+            this.PanelConsultar.Name = "PanelConsultar";
+            this.PanelConsultar.Size = new System.Drawing.Size(217, 157);
+            this.PanelConsultar.TabIndex = 4;
             // 
-            // panel_menu
+            // BtnConsultarOrden
             // 
-            this.panel_menu.BackgroundImage = global::KeedSupport_UI.Properties.Resources.negro;
-            this.panel_menu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel_menu.Controls.Add(this.BtnVenta);
-            this.panel_menu.Controls.Add(this.BrnBaseFallas);
-            this.panel_menu.Controls.Add(this.BtnPresupuesto);
-            this.panel_menu.Controls.Add(this.BtnOrden);
-            this.panel_menu.Location = new System.Drawing.Point(0, 71);
-            this.panel_menu.Name = "panel_menu";
-            this.panel_menu.Size = new System.Drawing.Size(98, 644);
-            this.panel_menu.TabIndex = 0;
-            this.panel_menu.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.BtnConsultarOrden.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnConsultarOrden.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnConsultarOrden.FlatAppearance.BorderSize = 0;
+            this.BtnConsultarOrden.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnConsultarOrden.Location = new System.Drawing.Point(0, 0);
+            this.BtnConsultarOrden.Name = "BtnConsultarOrden";
+            this.BtnConsultarOrden.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.BtnConsultarOrden.Size = new System.Drawing.Size(217, 37);
+            this.BtnConsultarOrden.TabIndex = 0;
+            this.BtnConsultarOrden.Text = "Listado de ordenes";
+            this.BtnConsultarOrden.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnConsultarOrden.UseVisualStyleBackColor = true;
+            this.BtnConsultarOrden.Click += new System.EventHandler(this.BtnConsultarOrden_Click);
             // 
-            // label1
+            // BtnConsultar
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Black;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(79, 110);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 16);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Registrar cliente";
+            this.BtnConsultar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnConsultar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnConsultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnConsultar.Location = new System.Drawing.Point(0, 258);
+            this.BtnConsultar.Name = "BtnConsultar";
+            this.BtnConsultar.Size = new System.Drawing.Size(217, 45);
+            this.BtnConsultar.TabIndex = 3;
+            this.BtnConsultar.Text = "CONSULTAS";
+            this.BtnConsultar.UseVisualStyleBackColor = true;
+            this.BtnConsultar.Click += new System.EventHandler(this.BtnConsultar_Click_1);
             // 
-            // label2
+            // PanelRegistrar
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Black;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(79, 234);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 16);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Crear Orden";
-            this.label2.MouseLeave += new System.EventHandler(this.label2_MouseLeave);
+            this.PanelRegistrar.BackColor = System.Drawing.Color.DimGray;
+            this.PanelRegistrar.Controls.Add(this.BtnReparacion);
+            this.PanelRegistrar.Controls.Add(this.BtnRegistrarCliente);
+            this.PanelRegistrar.Controls.Add(this.BtnRegistrarOrden);
+            this.PanelRegistrar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelRegistrar.Location = new System.Drawing.Point(0, 139);
+            this.PanelRegistrar.Name = "PanelRegistrar";
+            this.PanelRegistrar.Size = new System.Drawing.Size(217, 119);
+            this.PanelRegistrar.TabIndex = 2;
             // 
-            // label3
+            // BtnRegistrarOrden
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Black;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(83, 344);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 16);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "Reparacion";
+            this.BtnRegistrarOrden.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnRegistrarOrden.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnRegistrarOrden.FlatAppearance.BorderSize = 0;
+            this.BtnRegistrarOrden.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRegistrarOrden.Location = new System.Drawing.Point(0, 0);
+            this.BtnRegistrarOrden.Name = "BtnRegistrarOrden";
+            this.BtnRegistrarOrden.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.BtnRegistrarOrden.Size = new System.Drawing.Size(217, 37);
+            this.BtnRegistrarOrden.TabIndex = 0;
+            this.BtnRegistrarOrden.Text = "Registrar una Orden";
+            this.BtnRegistrarOrden.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnRegistrarOrden.UseVisualStyleBackColor = true;
+            this.BtnRegistrarOrden.Click += new System.EventHandler(this.BtnRegistrarOrden_Click);
             // 
-            // label4
+            // BtnRegistro
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Black;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(80, 465);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(113, 16);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Base de Fallas";
+            this.BtnRegistro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnRegistro.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnRegistro.FlatAppearance.BorderSize = 0;
+            this.BtnRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRegistro.Location = new System.Drawing.Point(0, 94);
+            this.BtnRegistro.Name = "BtnRegistro";
+            this.BtnRegistro.Size = new System.Drawing.Size(217, 45);
+            this.BtnRegistro.TabIndex = 1;
+            this.BtnRegistro.Text = "REGISTROS";
+            this.BtnRegistro.UseVisualStyleBackColor = true;
+            this.BtnRegistro.Click += new System.EventHandler(this.BtnRegistro_Click);
             // 
-            // panel6
+            // panel1
             // 
-            this.panel6.BackColor = System.Drawing.Color.Transparent;
-            this.panel6.BackgroundImage = global::KeedSupport_UI.Properties.Resources.Sin_título;
-            this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel6.Location = new System.Drawing.Point(510, 151);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(310, 232);
-            this.panel6.TabIndex = 1;
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(217, 94);
+            this.panel1.TabIndex = 0;
+            // 
+            // PanelCentral
+            // 
+            this.PanelCentral.BackColor = System.Drawing.Color.White;
+            this.PanelCentral.Controls.Add(this.pictureBox1);
+            this.PanelCentral.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelCentral.Location = new System.Drawing.Point(217, 0);
+            this.PanelCentral.Name = "PanelCentral";
+            this.PanelCentral.Size = new System.Drawing.Size(958, 634);
+            this.PanelCentral.TabIndex = 1;
+            this.PanelCentral.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelCentral_Paint);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox1.Image = global::KeedSupport_UI.Properties.Resources.KeD_Support1;
+            this.pictureBox1.Location = new System.Drawing.Point(300, 166);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(367, 279);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // BtnRegistrarCliente
+            // 
+            this.BtnRegistrarCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnRegistrarCliente.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnRegistrarCliente.FlatAppearance.BorderSize = 0;
+            this.BtnRegistrarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRegistrarCliente.Location = new System.Drawing.Point(0, 37);
+            this.BtnRegistrarCliente.Name = "BtnRegistrarCliente";
+            this.BtnRegistrarCliente.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.BtnRegistrarCliente.Size = new System.Drawing.Size(217, 37);
+            this.BtnRegistrarCliente.TabIndex = 1;
+            this.BtnRegistrarCliente.Text = "Registrar cliente";
+            this.BtnRegistrarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnRegistrarCliente.UseVisualStyleBackColor = true;
+            this.BtnRegistrarCliente.Click += new System.EventHandler(this.BtnRegistrarCliente_Click);
+            // 
+            // BtnReparacion
+            // 
+            this.BtnReparacion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnReparacion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnReparacion.FlatAppearance.BorderSize = 0;
+            this.BtnReparacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnReparacion.Location = new System.Drawing.Point(0, 74);
+            this.BtnReparacion.Name = "BtnReparacion";
+            this.BtnReparacion.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.BtnReparacion.Size = new System.Drawing.Size(217, 37);
+            this.BtnReparacion.TabIndex = 2;
+            this.BtnReparacion.Text = "Registrar reparacion";
+            this.BtnReparacion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnReparacion.UseVisualStyleBackColor = true;
+            this.BtnReparacion.Click += new System.EventHandler(this.BtnReparacion_Click);
+            // 
+            // BtnConsultaCliente
+            // 
+            this.BtnConsultaCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnConsultaCliente.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnConsultaCliente.FlatAppearance.BorderSize = 0;
+            this.BtnConsultaCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnConsultaCliente.Location = new System.Drawing.Point(0, 37);
+            this.BtnConsultaCliente.Name = "BtnConsultaCliente";
+            this.BtnConsultaCliente.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.BtnConsultaCliente.Size = new System.Drawing.Size(217, 37);
+            this.BtnConsultaCliente.TabIndex = 1;
+            this.BtnConsultaCliente.Text = "Listado de clientes";
+            this.BtnConsultaCliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnConsultaCliente.UseVisualStyleBackColor = true;
+            this.BtnConsultaCliente.Click += new System.EventHandler(this.BtnConsultaCliente_Click);
+            // 
+            // button2
+            // 
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(0, 74);
+            this.button2.Name = "button2";
+            this.button2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.button2.Size = new System.Drawing.Size(217, 37);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "Listado de reparaciones";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // BtnConsultaEntregas
+            // 
+            this.BtnConsultaEntregas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnConsultaEntregas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnConsultaEntregas.FlatAppearance.BorderSize = 0;
+            this.BtnConsultaEntregas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnConsultaEntregas.Location = new System.Drawing.Point(0, 111);
+            this.BtnConsultaEntregas.Name = "BtnConsultaEntregas";
+            this.BtnConsultaEntregas.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.BtnConsultaEntregas.Size = new System.Drawing.Size(217, 37);
+            this.BtnConsultaEntregas.TabIndex = 2;
+            this.BtnConsultaEntregas.Text = "Listado de entregas";
+            this.BtnConsultaEntregas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnConsultaEntregas.UseVisualStyleBackColor = true;
+            // 
+            // BtnCrearCupon
+            // 
+            this.BtnCrearCupon.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnCrearCupon.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnCrearCupon.FlatAppearance.BorderSize = 0;
+            this.BtnCrearCupon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCrearCupon.Location = new System.Drawing.Point(0, 37);
+            this.BtnCrearCupon.Name = "BtnCrearCupon";
+            this.BtnCrearCupon.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.BtnCrearCupon.Size = new System.Drawing.Size(217, 37);
+            this.BtnCrearCupon.TabIndex = 1;
+            this.BtnCrearCupon.Text = "Cupón de descuento";
+            this.BtnCrearCupon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnCrearCupon.UseVisualStyleBackColor = true;
+            this.BtnCrearCupon.Click += new System.EventHandler(this.BtnCrearCupon_Click);
+            // 
+            // BtnBaseFalla
+            // 
+            this.BtnBaseFalla.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnBaseFalla.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnBaseFalla.FlatAppearance.BorderSize = 0;
+            this.BtnBaseFalla.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.BtnBaseFalla.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.BtnBaseFalla.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnBaseFalla.Location = new System.Drawing.Point(0, 74);
+            this.BtnBaseFalla.Name = "BtnBaseFalla";
+            this.BtnBaseFalla.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.BtnBaseFalla.Size = new System.Drawing.Size(217, 37);
+            this.BtnBaseFalla.TabIndex = 2;
+            this.BtnBaseFalla.Text = "Base de fallas";
+            this.BtnBaseFalla.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnBaseFalla.UseVisualStyleBackColor = true;
+            this.BtnBaseFalla.Click += new System.EventHandler(this.BtnBaseFalla_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(217, 94);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
             // 
             // FrmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::KeedSupport_UI.Properties.Resources.sw;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1261, 617);
-            this.Controls.Add(this.panel6);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.BtnMenu);
-            this.Controls.Add(this.panel_menu);
-            this.IsMdiContainer = true;
+            this.ClientSize = new System.Drawing.Size(1175, 634);
+            this.Controls.Add(this.PanelCentral);
+            this.Controls.Add(this.PanelMenuLateral);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MinimumSize = new System.Drawing.Size(1060, 539);
             this.Name = "FrmMenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Menu principal";
-            this.panel_menu.ResumeLayout(false);
+            this.Text = "Menu Principal";
+            this.PanelMenuLateral.ResumeLayout(false);
+            this.PanelGestion.ResumeLayout(false);
+            this.PanelConsultar.ResumeLayout(false);
+            this.PanelRegistrar.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.PanelCentral.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button BtnMenu;
-        private System.Windows.Forms.Button BtnOrden;
-        private System.Windows.Forms.Button BtnPresupuesto;
-        private System.Windows.Forms.Button BrnBaseFallas;
-        private System.Windows.Forms.Button BtnVenta;
-        private System.Windows.Forms.Panel panel_menu;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel6;
+
+        private System.Windows.Forms.Panel PanelMenuLateral;
+        private System.Windows.Forms.Panel PanelRegistrar;
+        private System.Windows.Forms.Button BtnRegistrarOrden;
+        private System.Windows.Forms.Button BtnRegistro;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel PanelGestion;
+        private System.Windows.Forms.Button BtnEntregarEquipo;
+        private System.Windows.Forms.Button BtnGestion;
+        private System.Windows.Forms.Panel PanelConsultar;
+        private System.Windows.Forms.Button BtnConsultarOrden;
+        private System.Windows.Forms.Button BtnConsultar;
+        private System.Windows.Forms.Panel PanelCentral;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button BtnCrearCupon;
+        private System.Windows.Forms.Button BtnConsultaEntregas;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button BtnConsultaCliente;
+        private System.Windows.Forms.Button BtnReparacion;
+        private System.Windows.Forms.Button BtnRegistrarCliente;
+        private System.Windows.Forms.Button BtnBaseFalla;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

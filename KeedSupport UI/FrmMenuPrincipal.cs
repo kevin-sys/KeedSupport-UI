@@ -15,117 +15,155 @@ namespace KeedSupport_UI
         public FrmMenuPrincipal()
         {
             InitializeComponent();
-            label1.Visible = false;
-            label2.Visible = false;
-            label3.Visible = false;
-            label4.Visible = false;
+            hideSubMenu();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
+      
 
-        }
-        private void button1_Click(object sender, EventArgs e)
+        private void hideSubMenu()
         {
-            if (panel_menu.Visible == true)
+            PanelRegistrar.Visible = false;
+            PanelConsultar.Visible = false;
+            PanelGestion.Visible = false;
+        }
+        private void ValidarPaneles()
+        {
+            if (PanelRegistrar.Visible==true)
+           
+                PanelRegistrar.Visible = false; 
+            
+            if (PanelConsultar.Visible == true)
+            
+                PanelConsultar.Visible = false; 
+            
+            if (PanelGestion.Visible == true)
+            
+                PanelGestion.Visible = false;
+            
+        }
+
+        private void showSubMenu(Panel Submenu)
+        {
+            if (Submenu.Visible==false)
             {
-                panel_menu.Visible = false;
+                hideSubMenu();
+                Submenu.Visible = true;
             }
             else
             {
-                panel_menu.Visible = true;
+                Submenu.Visible = false;
             }
         }
 
-        private void panel1_Paint_1(object sender, PaintEventArgs e)
+        private void BtnRegistro_Click(object sender, EventArgs e)
+        {
+            showSubMenu(PanelRegistrar);
+
+        }
+
+
+
+        
+
+        private void BtnConsultar_Click(object sender, EventArgs e)
+        {
+            showSubMenu(PanelConsultar);
+        }
+
+        private void BtnGestion_Click(object sender, EventArgs e)
+        {
+            showSubMenu(PanelGestion);
+        }
+
+        private Form activeForm = null;
+        private void openChildForm(Form childForm)
+        {
+            if (activeForm != null) activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            PanelConsultar.Controls.Add(childForm);
+            PanelConsultar.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
+
+        private void BtnConsultar_Click_1(object sender, EventArgs e)
+        {
+            showSubMenu(PanelConsultar);
+        }
+
+        private void BtnGestion_Click_1(object sender, EventArgs e)
+        {
+            showSubMenu(PanelGestion);
+        }
+
+        private void BtnRegistrarOrden_Click(object sender, EventArgs e)
+        {
+            //  openChildForm(new FrmOrdenServicio());
+            FrmOrdenServicio frmOrden = new FrmOrdenServicio();
+            frmOrden.Show();
+            hideSubMenu();
+        }
+
+        private void PanelCentral_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void BtnOrden_Click(object sender, EventArgs e)
+        private void BtnRegistrarCliente_Click(object sender, EventArgs e)
         {
-            
-            FrmCliente formCliente = new FrmCliente();
-            formCliente.MdiParent = this;
-            formCliente.Show();
-            panel6.Visible = false;
-        }
-
-        private void BtnOrden_MouseHover(object sender, EventArgs e)
-        {
-            BtnOrden.Size = new Size(75, 67);
-            label1.Visible = true;
-        }
-
-        private void BtnOrden_MouseLeave(object sender, EventArgs e)
-        {
-            BtnOrden.Size = new Size(70, 62);
-            label1.Visible = false;
-        }
-
-        private void BtnVenta_MouseHover(object sender, EventArgs e)
-        {
-            BtnVenta.Size = new Size(75, 65);
-            label2.Visible = true;
-        }
-
-        private void label2_MouseLeave(object sender, EventArgs e)
-        {
+            FrmCliente cliente = new FrmCliente();
+            cliente.Show();
+            hideSubMenu();
 
         }
 
-        private void BtnVenta_MouseLeave(object sender, EventArgs e)
-        {
-            BtnVenta.Size = new Size(70, 60);
-            label2.Visible = false;
-        }
-
-        private void BtnPresupuesto_Click(object sender, EventArgs e)
+        private void BtnReparacion_Click(object sender, EventArgs e)
         {
             FrmReparacion frmReparacion = new FrmReparacion();
-            frmReparacion.MdiParent = this;
             frmReparacion.Show();
-            panel6.Visible = false;
+            hideSubMenu();
+
         }
 
-        private void BtnPresupuesto_MouseHover(object sender, EventArgs e)
+        private void BtnConsultarOrden_Click(object sender, EventArgs e)
         {
-            BtnPresupuesto.Size = new Size(75, 67);
-            label3.Visible = true;
+
         }
 
-        private void BtnPresupuesto_MouseLeave(object sender, EventArgs e)
+        private void BtnConsultaCliente_Click(object sender, EventArgs e)
         {
-            BtnPresupuesto.Size = new Size(70, 62);
-            label3.Visible = false;
+            FrmConsultarCliente frmConsultarCliente = new FrmConsultarCliente();
+            frmConsultarCliente.Show();
+            hideSubMenu();
+
         }
 
-        private void BrnBaseFallas_MouseHover(object sender, EventArgs e)
+        private void BtnEntregarEquipo_Click(object sender, EventArgs e)
         {
-            BrnBaseFallas.Size = new Size(75, 65);
-            label4.Visible = true;
+            FrmEntrega entrega = new FrmEntrega();
+            entrega.Show();
+            hideSubMenu();
+
         }
 
-        private void BrnBaseFallas_MouseLeave(object sender, EventArgs e)
+        private void BtnCrearCupon_Click(object sender, EventArgs e)
         {
-            BrnBaseFallas.Size = new Size(70, 60);
-            label4.Visible = false;
+            FrmCupon frmCupon = new FrmCupon();
+            frmCupon.Show();
+            hideSubMenu();
+
         }
 
-        private void BtnVenta_Click(object sender, EventArgs e)
+        private void BtnBaseFalla_Click(object sender, EventArgs e)
         {
-            FrmOrdenServicio frmOrdenServicio = new FrmOrdenServicio();
-            frmOrdenServicio.MdiParent = this;
-            frmOrdenServicio.Show();
-            panel6.Visible = false;
-        }
+            FrmBaseDeFallas deFallas = new FrmBaseDeFallas();
+            deFallas.Show();
+            hideSubMenu();
 
-        private void BrnBaseFallas_Click(object sender, EventArgs e)
-        {
-            FrmBaseDeFallas frmBaseDeFallas = new FrmBaseDeFallas();
-            frmBaseDeFallas.MdiParent = this;
-            frmBaseDeFallas.Show();
-            panel6.Visible = false;
         }
     }
 }

@@ -58,12 +58,6 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmMenuPrincipal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmMenuPrincipal.Designer.cs">
-      <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmBaseDeFallas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +82,12 @@
     <Compile Include="FrmEntrega.Designer.cs">
       <DependentUpon>FrmEntrega.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMenuPrincipal.Designer.cs">
+      <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmOrdenServicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,9 +111,6 @@
     <EmbeddedResource Include="FrmCupon.resx">
       <DependentUpon>FrmCupon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmMenuPrincipal.resx">
-      <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmBaseDeFallas.resx">
       <DependentUpon>FrmBaseDeFallas.cs</DependentUpon>
     </EmbeddedResource>
@@ -122,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmEntrega.resx">
       <DependentUpon>FrmEntrega.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMenuPrincipal.resx">
+      <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmOrdenServicio.resx">
       <DependentUpon>FrmOrdenServicio.cs</DependentUpon>

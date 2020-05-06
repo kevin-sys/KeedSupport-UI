@@ -117,7 +117,7 @@
             // 
             // TxtSintomas
             // 
-            this.TxtSintomas.Location = new System.Drawing.Point(616, 165);
+            this.TxtSintomas.Location = new System.Drawing.Point(616, 169);
             this.TxtSintomas.Name = "TxtSintomas";
             this.TxtSintomas.Size = new System.Drawing.Size(217, 62);
             this.TxtSintomas.TabIndex = 50;
@@ -135,7 +135,7 @@
             // 
             // TxtSolucion
             // 
-            this.TxtSolucion.Location = new System.Drawing.Point(616, 242);
+            this.TxtSolucion.Location = new System.Drawing.Point(616, 244);
             this.TxtSolucion.Name = "TxtSolucion";
             this.TxtSolucion.Size = new System.Drawing.Size(217, 62);
             this.TxtSolucion.TabIndex = 52;
@@ -495,7 +495,7 @@
             // 
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(465, 454);
+            this.label30.Location = new System.Drawing.Point(479, 453);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(63, 32);
             this.label30.TabIndex = 89;
@@ -529,7 +529,7 @@
             this.BtnImprimirReparacion.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.BtnImprimirReparacion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnImprimirReparacion.Image = ((System.Drawing.Image)(resources.GetObject("BtnImprimirReparacion.Image")));
-            this.BtnImprimirReparacion.Location = new System.Drawing.Point(467, 411);
+            this.BtnImprimirReparacion.Location = new System.Drawing.Point(481, 410);
             this.BtnImprimirReparacion.Name = "BtnImprimirReparacion";
             this.BtnImprimirReparacion.Size = new System.Drawing.Size(55, 41);
             this.BtnImprimirReparacion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
