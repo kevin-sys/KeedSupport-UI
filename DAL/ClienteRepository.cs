@@ -11,16 +11,16 @@ namespace DAL
 {
     public class ClienteRepository
     {
-        private SqlConnection connection;
-        private List<Cliente> clientes;
-        public ClienteRepository(SqlConnection connectionDb)
+
+        private readonly SqlConnection _connection;
+        private readonly List<Cliente> _clientes = new List<Cliente>();
+        public ClienteRepository(ConnectionManager connection)
         {
-            connection = connectionDb;
-            clientes = new List<Cliente>();
+            _connection = connection._conexion;
         }
         public void Guardar(Cliente cliente)
         {
-            using (var command=connection.CreateCommand())
+            using (var command=_connection.CreateCommand())
             {
                 command.CommandText = "INSERT INTO Cliente (Identificacion, PrimerNombre, SegundoNombre, PrimerApellido, SegundoApellido, Telefono, FechaNacimiento, Direccion, Ciudad, FechaRegistro, Correo) values (@Identificacion, @PrimerNombre, @SegundoNombre, @PrimerApellido, @SegundoApellido, @Telefono, @FechaNacimiento, @Direccion, @Ciudad, @FechaRegistro, @Correo)";
                 command.Parameters.AddWithValue("@Identificacion", cliente.Identificacion);
@@ -39,18 +39,19 @@ namespace DAL
             }
         }
 
-        public void Eliminar(string identificacion)
+        public void Eliminar(Cliente cliente)
         {
-            using (var command = connection.CreateCommand())
+            using (var command = _connection.CreateCommand())
             {
                 command.CommandText = "delete from Cliente where Idenficacion=@Identificacion";
-                command.Parameters.AddWithValue("@identificacion", identificacion);
+                command.Parameters.AddWithValue("@identificacion", cliente.Identificacion);
                 command.ExecuteNonQuery();
             }
         }
 
         private Cliente Mapear(SqlDataReader reader)
         {
+            if (!reader.HasRows) return null;
             Cliente cliente = new Cliente();
             cliente.Identificacion = (string)reader["Identificacion"];
             cliente.PrimerNombre = (string)reader["PrimerNombre"];
@@ -68,34 +69,34 @@ namespace DAL
 
         public Cliente Buscar(string identificacion)
         {
-            using (var command = connection.CreateCommand())
+            SqlDataReader reader;
+
+            using (var command = _connection.CreateCommand())
             {
                 command.CommandText = "SELECT * FROM Cliente WHERE Identificacion = @Identificacion ";
                 command.Parameters.AddWithValue("@Identificacion", identificacion);
-                var reader = command.ExecuteReader();
-                if (reader.HasRows == true)
-                {
-                    while (reader.Read())
-                    {
-                        return Mapear(reader);
-                    }
-                }
+                 reader = command.ExecuteReader();
+                reader.Read();
+                return Mapear(reader);
 
             }
-            return null;
         }
 
         public List<Cliente> Consultar()
         {
-            using (var command = connection.CreateCommand())
+            SqlDataReader reader;
+            List<Cliente> clientes = new List<Cliente>();
+            using (var command = _connection.CreateCommand())
             {
-                command.CommandText = "SELECT * FROM Cliente";
-                var Reader = command.ExecuteReader();
-                while (Reader.Read())
+                command.CommandText = "Select * from Cliente";
+                reader = command.ExecuteReader();
+                if (reader.HasRows)
                 {
-                    Cliente cliente = new Cliente();
-                    cliente = Mapear(Reader);
-                    clientes.Add(cliente);
+                    while (reader.Read())
+                    {
+                        Cliente cliente = Mapear(reader);
+                        clientes.Add(cliente);
+                    }
                 }
             }
             return clientes;
@@ -103,7 +104,7 @@ namespace DAL
 
         public void Modificar(Cliente cliente)
         {
-            using (var command = connection.CreateCommand())
+            using (var command = _connection.CreateCommand())
             {
                 command.CommandText = "UPDATE Cliente SET PrimerNombre = @PrimerNombre, SegundoNombre = @SegundoNombre, PrimerApellido = @PrimerApellido, SegundoApellido = @SegundoApellido, Telefono = @Telefono, FechaNacimiento = @FechaNacimiento, Direccion = @Direccion, Ciudad = @Ciudad, FechaRegistro = @FechaRegistro, Correo = @Correo WHERE Identificacion = @Identificacion"; 
                 command.Parameters.AddWithValue("@Identificacion", cliente.Identificacion);

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entity;
+using System.Configuration;
 using BLL;
 
 namespace KeedSupport_UI
@@ -15,9 +16,12 @@ namespace KeedSupport_UI
     public partial class FrmCliente : Form
     {
         Cliente cliente;
+        ClienteService clienteService;
         public FrmCliente()
         {
             InitializeComponent();
+            var connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+            clienteService = new ClienteService(connectionString);
         }
 
         private Cliente MapearCliente()
@@ -192,9 +196,9 @@ namespace KeedSupport_UI
         private void BtnGuardarCliente_Click(object sender, EventArgs e)
         {
             Cliente cliente = MapearCliente();
-            ClienteService service = new ClienteService();
-            string mensaje = service.Guardar(cliente);
+            String mensaje = clienteService.Guardar(cliente);
             MessageBox.Show(mensaje, "Mensaje de Guardado", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+
         }
     }
 }

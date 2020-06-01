@@ -48,7 +48,7 @@ namespace Entity
             get
             {
                 return (Abono <= TotalOrden)? 0: Abono- TotalOrden;
-                //condicion?V:F;
+                //condicion?T:F;
             }
         }
 
@@ -56,15 +56,7 @@ namespace Entity
         {
             get
             {
-                //if (Abono>=CalcularTotalServicios)
-                //{
-                //    Deuda = 0;
-                //}
-                //else if (Abono<CalcularTotalServicios)
-                //{
-                //    Deuda = CalcularTotalServicios - Abono;
-                //}
-                return Deuda;
+                return (Abono >= TotalOrden) ? 0: TotalOrden - Abono;
             }
         }
     }

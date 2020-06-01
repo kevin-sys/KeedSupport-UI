@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="BaseDeFallasRepository.cs" />
     <Compile Include="ClienteRepository.cs" />
+    <Compile Include="ConnectionManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
