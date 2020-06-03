@@ -1,108 +1,139 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Entity;
 using DAL;
-using System.Data.SqlClient;
 
 namespace BLL
 {
     public class BaseDeFallasService
     {
-        SqlConnection connection;
-        string CadenaCnexion = @"Data Source=DESKTOP-NVQ1I8P;Initial Catalog=KeedSupport;Integrated Security=True";
-        BaseDeFallasRepository fallasRepository;
+        private readonly ConnectionManager conexion;
+        private readonly BaseDeFallasRepository repositorio;
         List<BaseDeFallas> fallas;
-        public BaseDeFallasService()
+        public BaseDeFallasService(string connectionString)
         {
-            connection = new SqlConnection(CadenaCnexion);
-            fallasRepository = new BaseDeFallasRepository(connection);
+            conexion = new ConnectionManager(connectionString);
+            repositorio = new BaseDeFallasRepository(conexion);
         }
-        public string Guardar(BaseDeFallas BdFallas)
+        public string Guardar(BaseDeFallas fallas)
         {
+
+
             try
             {
-                connection.Open();
-                fallasRepository.Guardar(BdFallas);
-                return "Se guardo correctamente la base de falla";
+                conexion.Open();
+                repositorio.Guardar(fallas);
+                conexion.Close();
+                return $"Se guardaron los datos satisfactoriamente";
             }
             catch (Exception e)
             {
-
-                return "error de datos: " + e.Message;
+                return $"Error de la Aplicacion: {e.Message}";
             }
-            finally
-            {
-                connection.Close();
-            }
+            finally { conexion.Close(); }
         }
 
         public string Eliminar(string codigo)
         {
             try
             {
-                connection.Open();
-                fallasRepository.Eliminar(codigo);
-                return "SE ELIMINO CORRECTAMENTE";
+                conexion.Open();
+                var bbfallas = repositorio.Buscar(codigo);
+                if (bbfallas != null)
+                {
+                    repositorio.Eliminar(codigo);
+                    conexion.Close();
+                    return ($"El registro {bbfallas.CodigoFalla} se ha eliminado satisfactoriamente.");
+                }
+                else
+                {
+                    return ($"Lo sentimos, {codigo} no se encuentra registrado.");
+                }
             }
             catch (Exception e)
             {
-                return " ERROR EN LOS DATOS: " + e.Message;
+
+                return $"Error de la Aplicación: {e.Message}";
             }
-            finally
-            {
-                connection.Close();
-            }
+            finally { conexion.Close(); }
+
         }
 
-        public List<BaseDeFallas>Consultar()
+   
+
+
+        public List<BaseDeFallas> Consultar()
         {
-            connection.Open();
+            conexion.Open();
             fallas = new List<BaseDeFallas>();
-            fallas = fallasRepository.Consultar();
-            connection.Close();
+            fallas = repositorio.Consultar();
+            conexion.Close();
             return fallas;
         }
-
-        public BaseDeFallas Buscar(string codigo)
+        public RespuestaBusquedaBD Buscar(string codigo)
         {
+            RespuestaBusquedaBD respuesta = new RespuestaBusquedaBD();
             try
             {
-                connection.Open();
-                return fallasRepository.Buscar(codigo);
+
+                conexion.Open();
+                respuesta.Falla = repositorio.Buscar(codigo);
+                conexion.Close();
+                respuesta.Mensaje = (respuesta.Falla != null) ? "Se encontró la base de falla buscada" : "La base de falla buscada no existe";
+                respuesta.Error = false;
+                return respuesta;
             }
             catch (Exception e)
             {
 
-                string mensaje = "ERROR EN LA BASE DE DATOS" + e.Message;
-                return null;
+                respuesta.Mensaje = $"Error de la Aplicacion: {e.Message}";
+                respuesta.Error = true;
+                return respuesta;
             }
-            finally
-            {
-                connection.Close();
-            }
+            finally { conexion.Close(); }
         }
 
-        public BaseDeFallas Modificar(BaseDeFallas BdFallas)
+        public string Modificar(BaseDeFallas bd)
         {
             try
             {
-                connection.Open();
-                fallasRepository.Modificar(BdFallas);
-                return BdFallas;
+                conexion.Open();
+                var bdvieja = repositorio.Buscar(bd.CodigoFalla);
+                if (bdvieja != null)
+                {
+                    repositorio.Modificar(bd);
+                    conexion.Close();
+                    return ($"El registro {bdvieja.CodigoFalla} se ha modificado satisfactoriamente.");
+                }
+                else
+                {
+                    return ($"Lo sentimos, {bdvieja.CodigoFalla} no se encuentra registrado.");
+                }
             }
             catch (Exception e)
             {
 
-                string mensaje = " ERROR DE DATOS: " + e.Message;
-                return null;
+                return $"Error de la Aplicación: {e.Message}";
             }
-            finally
-            {
-                connection.Close();
-            }
+            finally { conexion.Close(); }
+
         }
+
+
+
+    }
+
+    public class RespuestaBusquedaBD
+    {
+        public string Mensaje { get; set; }
+        public BaseDeFallas Falla { get; set; }
+        public bool Error { get; set; }
+    }
+
+    public class RespuestaConsultaBD
+    {
+        public string Mensaje { get; set; }
+        public IList<BaseDeFallas> BdFallas { get; set; }
+        public bool Error { get; set; }
     }
 }

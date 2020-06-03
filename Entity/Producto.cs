@@ -8,16 +8,14 @@ namespace Entity
 {
    public class Producto
     {
-        public string Tipo { get; set; }
-        public string Marca { get; set; }
-        public string Modelo { get; set; }
-        public string NumeroSerie { get; set; }
-        public string Color { get; set; }
-        public string EstadoEquipo { get; set; }
-        public  List<Producto> Productos { get; set; }
-        public string Falla { get; set; }
-        public int Cantidad { get; set; }
+        public string CodigoProducto { get; set; }
+        public string NombreProducto { get; set; }
+        public string Descripcion { get; set; }
         public float Precio { get; set; }
+        public List<Producto> Productos { get; set; }
+        public int Cantidad { get; set; }
+        public float PorcentajeIVA { get; set; }
+
         public float SubTotal
         { 
             get
@@ -25,7 +23,6 @@ namespace Entity
                 return Cantidad * Precio;
             } 
         }
-        public float PorcentajeIVA { get; set; }
 
         public float ValorIVa 
         { 

@@ -11,7 +11,7 @@ namespace Entity
         public string CodigoReparacion { get; set; }
         public DateTime FechaReparacion { get; set; }
         public Cliente Cliente { get; set; }
-        public Producto Producto { get; set; }
+        public Equipo Equipo { get; set; }
         public string Solucion { get; set; }
 
     }

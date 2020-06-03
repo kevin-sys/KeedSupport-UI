@@ -54,12 +54,6 @@
     <Compile Include="FrmCliente.Designer.cs">
       <DependentUpon>FrmCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmBaseDeFallas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +90,12 @@
     <Compile Include="FrmOrdenServicio.Designer.cs">
       <DependentUpon>FrmOrdenServicio.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProducto.Designer.cs">
+      <DependentUpon>FrmProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmReparacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,9 +106,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmCliente.resx">
       <DependentUpon>FrmCliente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCupon.resx">
       <DependentUpon>FrmCupon.cs</DependentUpon>
@@ -127,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmOrdenServicio.resx">
       <DependentUpon>FrmOrdenServicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProducto.resx">
+      <DependentUpon>FrmProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmReparacion.resx">
       <DependentUpon>FrmReparacion.cs</DependentUpon>

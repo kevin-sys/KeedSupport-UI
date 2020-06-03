@@ -10,17 +10,17 @@ namespace DAL
 {
     public class BaseDeFallasRepository
     {
-        private SqlConnection connection;
-        private List<BaseDeFallas> baseDeFallas;
-        public BaseDeFallasRepository(SqlConnection connectionDb)
+        private readonly SqlConnection _connection;
+        private readonly List<BaseDeFallas> baseDeFallas = new List<BaseDeFallas>();
+
+        public BaseDeFallasRepository(ConnectionManager connection)
         {
-            connection = connectionDb;
-            baseDeFallas = new List<BaseDeFallas>();
+            _connection = connection._conexion;
         }
 
         public void Guardar(BaseDeFallas fallas)
         {
-            using (var command=connection.CreateCommand())
+            using (var command=_connection.CreateCommand())
             {
                 command.CommandText = "INSERT INTO BaseFalla (CodigoFalla, FechaRegistro, TipoEquipo, Marca, Modelo, Falla, Sintomas, Solucion) values (@CodigoFalla, @FechaRegistro, @TipoEquipo, @Marca, @Modelo, @Falla, @Sintomas, @Solucion)";
                 command.Parameters.AddWithValue("@CodigoFalla", fallas.CodigoFalla);
@@ -37,7 +37,7 @@ namespace DAL
 
         public void Eliminar(string codigo)
         {
-            using(var command=connection.CreateCommand())
+            using(var command=_connection.CreateCommand())
             {
                 command.CommandText = "DELETE FROM BaseFalla WHERE CodigoFalla=@CodigoFalla";
                 command.Parameters.AddWithValue("@CodigoFalla", codigo);
@@ -61,7 +61,7 @@ namespace DAL
 
         public BaseDeFallas Buscar(string codigo)
         {
-            using (var command = connection.CreateCommand())
+            using (var command = _connection.CreateCommand())
             {
                 command.CommandText = "SELECT * FROM BaseFalla WHERE CodigoFalla = @CodigoFalla";
                 command.Parameters.AddWithValue("@CodigoFalla", codigo);
@@ -79,7 +79,7 @@ namespace DAL
 
         public List<BaseDeFallas> Consultar()
         {
-            using (var command = connection.CreateCommand())
+            using (var command = _connection.CreateCommand())
             {
                 command.CommandText = "SELECT * FROM BaseFalla";
                 var Reader = command.ExecuteReader();
@@ -95,7 +95,7 @@ namespace DAL
 
         public void Modificar(BaseDeFallas fallas)
         {
-            using (var command = connection.CreateCommand())
+            using (var command = _connection.CreateCommand())
             {
                 command.CommandText = "UPDATE BaseFalla SET FechaRegistro = @FechaRegistro, TipoEquipo = @TipoEquipo, Marca = @Marca, Modelo = @Modelo, Falla = @Falla, Sintomas = @Sintomas, Solucion = @Solucion WHERE CodigoFalla = @CodigoFalla";
                 command.Parameters.AddWithValue("@CodigoFalla", fallas.CodigoFalla);

@@ -58,5 +58,20 @@ namespace KeedSupport_UI
         {
             this.Dispose();
         }
+
+        private void TxtServicioProducto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnCrearOrden_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

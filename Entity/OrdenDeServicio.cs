@@ -10,7 +10,7 @@ namespace Entity
     {
         public string NumeroOrden { get; set; }
         public DateTime FechaOrden { get; set; }
-        public Cliente Cliente { get; set; }
+        public Equipo Equipo { get; set; }
         public List<Producto> Productos{ get; set; }
          
         public string ServicioOProducto { get; set; }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entity;
+using System.Configuration;
 using BLL;
 
 namespace KeedSupport_UI
@@ -15,10 +16,18 @@ namespace KeedSupport_UI
     public partial class FrmBaseDeFallas : Form
     {
         BaseDeFallas BDfallas;
+        BaseDeFallasService BDservice;
+        List<BaseDeFallas> fallas = new List<BaseDeFallas>();
+
         public FrmBaseDeFallas()
         {
             InitializeComponent();
-            
+            var connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+            BDservice = new BaseDeFallasService(connectionString);
+            DgvBdFallas.DataSource = null;
+            fallas.Clear();
+            fallas = BDservice.Consultar();
+            DgvBdFallas.DataSource = fallas;
         }
 
         private BaseDeFallas MapearBDfallas()
@@ -51,10 +60,23 @@ namespace KeedSupport_UI
         private void BtnGuardarBaseFalla_Click(object sender, EventArgs e)
         {
 
-            BaseDeFallas BdFallas = MapearBDfallas();
-            BaseDeFallasService BdFallasService = new BaseDeFallasService();
-            string mensaje = BdFallasService.Guardar(BdFallas);
+            BaseDeFallas BdFalla = MapearBDfallas();
+            string mensaje = BDservice.Guardar(BdFalla);
             MessageBox.Show(mensaje, "Mensaje de Guardado", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            DgvBdFallas.DataSource = null;
+            fallas.Clear();
+            fallas = BDservice.Consultar();
+            DgvBdFallas.DataSource = fallas;
+        }
+
+        private void label24_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+          
+           
         }
     }
 }
