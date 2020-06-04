@@ -81,6 +81,9 @@
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.TxtCodigoProducto = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.BtnBuscarCliente = new System.Windows.Forms.PictureBox();
             this.BtnCrearCliente = new System.Windows.Forms.PictureBox();
@@ -97,10 +100,15 @@
             this.BtnImprimirOrden = new System.Windows.Forms.PictureBox();
             this.BtnCrearOrden = new System.Windows.Forms.PictureBox();
             this.DgvDetalleServicio = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.TxtCodigoProducto = new System.Windows.Forms.TextBox();
-            this.label34 = new System.Windows.Forms.Label();
+            this.TxtSubTotalOrden = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.TxtIvaOrden = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.TxtTotalOrden = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnBuscarCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCrearCliente)).BeginInit();
@@ -110,7 +118,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BtnImprimirOrden)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCrearOrden)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvDetalleServicio)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // TxtCodigoOrden
@@ -231,7 +239,6 @@
             // 
             this.TxtNombreCliente.Location = new System.Drawing.Point(95, 47);
             this.TxtNombreCliente.Name = "TxtNombreCliente";
-            this.TxtNombreCliente.ReadOnly = true;
             this.TxtNombreCliente.Size = new System.Drawing.Size(118, 20);
             this.TxtNombreCliente.TabIndex = 2;
             // 
@@ -239,7 +246,6 @@
             // 
             this.TxtIentificacion.Location = new System.Drawing.Point(95, 83);
             this.TxtIentificacion.Name = "TxtIentificacion";
-            this.TxtIentificacion.ReadOnly = true;
             this.TxtIentificacion.Size = new System.Drawing.Size(118, 20);
             this.TxtIentificacion.TabIndex = 3;
             // 
@@ -247,7 +253,6 @@
             // 
             this.TxtTelefono.Location = new System.Drawing.Point(95, 119);
             this.TxtTelefono.Name = "TxtTelefono";
-            this.TxtTelefono.ReadOnly = true;
             this.TxtTelefono.Size = new System.Drawing.Size(118, 20);
             this.TxtTelefono.TabIndex = 4;
             // 
@@ -255,7 +260,6 @@
             // 
             this.TxtCorreo.Location = new System.Drawing.Point(95, 191);
             this.TxtCorreo.Name = "TxtCorreo";
-            this.TxtCorreo.ReadOnly = true;
             this.TxtCorreo.Size = new System.Drawing.Size(191, 20);
             this.TxtCorreo.TabIndex = 6;
             // 
@@ -263,7 +267,6 @@
             // 
             this.TxtDireccion.Location = new System.Drawing.Point(95, 155);
             this.TxtDireccion.Name = "TxtDireccion";
-            this.TxtDireccion.ReadOnly = true;
             this.TxtDireccion.Size = new System.Drawing.Size(191, 20);
             this.TxtDireccion.TabIndex = 5;
             // 
@@ -444,7 +447,6 @@
             // 
             this.TxtSubTotal.Location = new System.Drawing.Point(365, 58);
             this.TxtSubTotal.Name = "TxtSubTotal";
-            this.TxtSubTotal.ReadOnly = true;
             this.TxtSubTotal.Size = new System.Drawing.Size(77, 20);
             this.TxtSubTotal.TabIndex = 36;
             // 
@@ -462,7 +464,6 @@
             // 
             this.TxtTotal.Location = new System.Drawing.Point(505, 58);
             this.TxtTotal.Name = "TxtTotal";
-            this.TxtTotal.ReadOnly = true;
             this.TxtTotal.Size = new System.Drawing.Size(77, 20);
             this.TxtTotal.TabIndex = 42;
             // 
@@ -515,7 +516,6 @@
             // 
             this.TxtVueltos.Location = new System.Drawing.Point(108, 58);
             this.TxtVueltos.Name = "TxtVueltos";
-            this.TxtVueltos.ReadOnly = true;
             this.TxtVueltos.Size = new System.Drawing.Size(74, 20);
             this.TxtVueltos.TabIndex = 53;
             // 
@@ -533,7 +533,6 @@
             // 
             this.TxtDeuda.Location = new System.Drawing.Point(205, 58);
             this.TxtDeuda.Name = "TxtDeuda";
-            this.TxtDeuda.ReadOnly = true;
             this.TxtDeuda.Size = new System.Drawing.Size(74, 20);
             this.TxtDeuda.TabIndex = 55;
             // 
@@ -599,6 +598,36 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(594, 87);
             this.panel1.TabIndex = 64;
+            // 
+            // TxtCodigoProducto
+            // 
+            this.TxtCodigoProducto.Location = new System.Drawing.Point(142, 58);
+            this.TxtCodigoProducto.Name = "TxtCodigoProducto";
+            this.TxtCodigoProducto.Size = new System.Drawing.Size(60, 20);
+            this.TxtCodigoProducto.TabIndex = 73;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.Location = new System.Drawing.Point(148, 42);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(46, 13);
+            this.label34.TabIndex = 74;
+            this.label34.Text = "Codigo";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(556, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(34, 25);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 72;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // panel2
             // 
@@ -802,39 +831,75 @@
             // DgvDetalleServicio
             // 
             this.DgvDetalleServicio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvDetalleServicio.Location = new System.Drawing.Point(26, 492);
+            this.DgvDetalleServicio.Location = new System.Drawing.Point(26, 488);
             this.DgvDetalleServicio.Name = "DgvDetalleServicio";
-            this.DgvDetalleServicio.Size = new System.Drawing.Size(512, 118);
+            this.DgvDetalleServicio.Size = new System.Drawing.Size(512, 80);
             this.DgvDetalleServicio.TabIndex = 71;
             // 
-            // pictureBox1
+            // TxtSubTotalOrden
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(556, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(34, 25);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 72;
-            this.pictureBox1.TabStop = false;
+            this.TxtSubTotalOrden.Location = new System.Drawing.Point(0, 23);
+            this.TxtSubTotalOrden.Name = "TxtSubTotalOrden";
+            this.TxtSubTotalOrden.Size = new System.Drawing.Size(74, 20);
+            this.TxtSubTotalOrden.TabIndex = 75;
             // 
-            // TxtCodigoProducto
+            // label35
             // 
-            this.TxtCodigoProducto.Location = new System.Drawing.Point(142, 58);
-            this.TxtCodigoProducto.Name = "TxtCodigoProducto";
-            this.TxtCodigoProducto.Size = new System.Drawing.Size(60, 20);
-            this.TxtCodigoProducto.TabIndex = 73;
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.Location = new System.Drawing.Point(6, 7);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(65, 13);
+            this.label35.TabIndex = 76;
+            this.label35.Text = "SUB Total";
             // 
-            // label34
+            // TxtIvaOrden
             // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(148, 42);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(46, 13);
-            this.label34.TabIndex = 74;
-            this.label34.Text = "Codigo";
+            this.TxtIvaOrden.Location = new System.Drawing.Point(83, 23);
+            this.TxtIvaOrden.Name = "TxtIvaOrden";
+            this.TxtIvaOrden.Size = new System.Drawing.Size(48, 20);
+            this.TxtIvaOrden.TabIndex = 79;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.Location = new System.Drawing.Point(88, 7);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(27, 13);
+            this.label36.TabIndex = 80;
+            this.label36.Text = "IVA";
+            // 
+            // TxtTotalOrden
+            // 
+            this.TxtTotalOrden.Location = new System.Drawing.Point(140, 23);
+            this.TxtTotalOrden.Name = "TxtTotalOrden";
+            this.TxtTotalOrden.Size = new System.Drawing.Size(74, 20);
+            this.TxtTotalOrden.TabIndex = 77;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.Location = new System.Drawing.Point(143, 7);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(36, 13);
+            this.label37.TabIndex = 78;
+            this.label37.Text = "Total";
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.Silver;
+            this.panel5.Controls.Add(this.TxtTotalOrden);
+            this.panel5.Controls.Add(this.TxtSubTotalOrden);
+            this.panel5.Controls.Add(this.label37);
+            this.panel5.Controls.Add(this.label36);
+            this.panel5.Controls.Add(this.label35);
+            this.panel5.Controls.Add(this.TxtIvaOrden);
+            this.panel5.Location = new System.Drawing.Point(321, 570);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(217, 46);
+            this.panel5.TabIndex = 67;
             // 
             // FrmOrdenServicio
             // 
@@ -842,6 +907,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(958, 621);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.DgvDetalleServicio);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.label31);
@@ -860,6 +926,7 @@
             this.Load += new System.EventHandler(this.FrmOrdenServicio_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnBuscarCliente)).EndInit();
@@ -872,7 +939,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.BtnImprimirOrden)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCrearOrden)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvDetalleServicio)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -951,5 +1019,12 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox TxtCodigoProducto;
         private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.TextBox TxtSubTotalOrden;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.TextBox TxtIvaOrden;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.TextBox TxtTotalOrden;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Panel panel5;
     }
 }

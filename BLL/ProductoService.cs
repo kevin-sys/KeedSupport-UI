@@ -12,6 +12,7 @@ namespace BLL
     {
         private readonly ConnectionManager conexion;
         private readonly ProductoRepository repositorio;
+        List<Producto> productos;
 
         public ProductoService(string connectionString)
         {
@@ -26,7 +27,7 @@ namespace BLL
                 conexion.Open();
                 repositorio.Guardar(producto);
                 conexion.Close();
-                return $"Se guardaron los datos satisfactoriamente";
+                return $"Se guardo la orden de servicio con exito";
             }
             catch (Exception e)
             {
@@ -34,5 +35,37 @@ namespace BLL
             }
             finally { conexion.Close(); }
         }
+
+        public List<Producto> Consultar()
+        {
+            conexion.Open();
+            productos = new List<Producto>();
+            productos = repositorio.Consultar();
+            conexion.Close();
+            return productos;
+        }
+
+        public Producto Buscar(string codigo)
+        {
+            try
+            {
+                conexion.Open();
+                Producto productos = new Producto();
+
+                productos = repositorio.Buscar(codigo);
+                return productos;
+            }
+            catch (Exception)
+            {
+
+
+            }
+            finally
+            {
+                conexion.Close();
+            }
+            return null;
+        }
+
     }
 }

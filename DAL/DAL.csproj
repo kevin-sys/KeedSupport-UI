@@ -44,6 +44,8 @@
     <Compile Include="BaseDeFallasRepository.cs" />
     <Compile Include="ClienteRepository.cs" />
     <Compile Include="ConnectionManager.cs" />
+    <Compile Include="DetalleOrdenServicioRepository.cs" />
+    <Compile Include="OrdenServicioRepository.cs" />
     <Compile Include="ProductoRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

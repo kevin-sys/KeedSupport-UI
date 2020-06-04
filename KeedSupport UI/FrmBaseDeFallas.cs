@@ -78,5 +78,10 @@ namespace KeedSupport_UI
           
            
         }
+
+        private void DgvBdFallas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

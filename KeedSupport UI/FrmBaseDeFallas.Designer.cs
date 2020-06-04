@@ -291,6 +291,7 @@
             this.DgvBdFallas.Name = "DgvBdFallas";
             this.DgvBdFallas.Size = new System.Drawing.Size(562, 150);
             this.DgvBdFallas.TabIndex = 101;
+            this.DgvBdFallas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvBdFallas_CellContentClick);
             // 
             // FrmBaseDeFallas
             // 

@@ -13,9 +13,15 @@ namespace Entity
         public string Descripcion { get; set; }
         public float Precio { get; set; }
         public List<Producto> Productos { get; set; }
-        public int Cantidad { get; set; }
+        public float Cantidad { get; set; }
+        public float Total { get; set; }
+        public DateTime FechaRegistro { get; set; }
         public float PorcentajeIVA { get; set; }
 
+        public float CalcularTotal()
+        {
+            return Total = Cantidad * Precio;
+        }
         public float SubTotal
         { 
             get

@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="BaseDeFallasService.cs" />
     <Compile Include="ClienteService.cs" />
+    <Compile Include="DetalleOrdenServicioService.cs" />
+    <Compile Include="OrdenServicioService.cs" />
     <Compile Include="ProductoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -40,6 +40,12 @@
             this.label29 = new System.Windows.Forms.Label();
             this.BtnGuardarReparacion = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.TxtCantidad = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.TxtTotal = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.DtpFecha = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.BtnGuardarReparacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -139,16 +145,73 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(39, 245);
+            this.dataGridView1.Location = new System.Drawing.Point(39, 311);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(445, 115);
             this.dataGridView1.TabIndex = 87;
+            // 
+            // TxtCantidad
+            // 
+            this.TxtCantidad.Location = new System.Drawing.Point(39, 177);
+            this.TxtCantidad.Name = "TxtCantidad";
+            this.TxtCantidad.Size = new System.Drawing.Size(121, 20);
+            this.TxtCantidad.TabIndex = 88;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(42, 161);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(57, 13);
+            this.label2.TabIndex = 89;
+            this.label2.Text = "Cantidad";
+            // 
+            // TxtTotal
+            // 
+            this.TxtTotal.Location = new System.Drawing.Point(181, 177);
+            this.TxtTotal.Name = "TxtTotal";
+            this.TxtTotal.Size = new System.Drawing.Size(121, 20);
+            this.TxtTotal.TabIndex = 90;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(184, 161);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(36, 13);
+            this.label3.TabIndex = 91;
+            this.label3.Text = "Total";
+            // 
+            // DtpFecha
+            // 
+            this.DtpFecha.Location = new System.Drawing.Point(39, 251);
+            this.DtpFecha.Name = "DtpFecha";
+            this.DtpFecha.Size = new System.Drawing.Size(150, 20);
+            this.DtpFecha.TabIndex = 92;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(42, 235);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(88, 13);
+            this.label4.TabIndex = 93;
+            this.label4.Text = "Fecha registro";
             // 
             // FrmProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(528, 388);
+            this.ClientSize = new System.Drawing.Size(592, 448);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.DtpFecha);
+            this.Controls.Add(this.TxtTotal);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.TxtCantidad);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label29);
             this.Controls.Add(this.BtnGuardarReparacion);
@@ -182,5 +245,11 @@
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.PictureBox BtnGuardarReparacion;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox TxtCantidad;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox TxtTotal;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker DtpFecha;
+        private System.Windows.Forms.Label label4;
     }
 }
