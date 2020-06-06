@@ -202,6 +202,7 @@
             this.BtnGuardarBaseFalla.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.BtnGuardarBaseFalla.TabIndex = 102;
             this.BtnGuardarBaseFalla.TabStop = false;
+            this.BtnGuardarBaseFalla.Click += new System.EventHandler(this.BtnGuardarBaseFalla_Click);
             // 
             // label24
             // 

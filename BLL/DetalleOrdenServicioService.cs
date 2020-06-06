@@ -20,7 +20,7 @@ namespace BLL
             repository = new DetalleOrdenServicioRepository(conexion);
         }
 
-        public string Guardar(List<DetalleOrdenServicio> detalles)
+        public string Guardar(DetalleOrdenServicio detalles)
         {
             try
             {
@@ -36,13 +36,33 @@ namespace BLL
             finally { conexion.Close(); }
         }
 
-        public void AddDetalle(DetalleOrdenServicio detalle)
+        public string Eliminar(string codigoDetalle)
         {
-            repository.AddDetalle(detalle);
+            try
+            {
+                conexion.Open();
+                var detalle = repository.Buscar(codigoDetalle);
+                if (detalle != null)
+                {
+                    repository.Eliminar(detalle);
+                    conexion.Close();
+                    return ($"El registro {detalle.Producto.NombreProducto} se ha eliminado satisfactoriamente.");
+                }
+                else
+                {
+                    return ($"Lo sentimos, {codigoDetalle} no se encuentra registrada.");
+                }
+            }
+            catch (Exception e)
+            {
+
+                return $"Error de la Aplicación: {e.Message}";
+            }
+            finally { conexion.Close(); }
+
         }
-        public List<DetalleOrdenServicio> ConsultarDetalle()
-        {
-            return repository.ConsultarDetalle();
-        }
+
+
+
     }
 }

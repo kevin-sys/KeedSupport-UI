@@ -15,6 +15,7 @@ namespace Entity
         public List<Producto> Productos { get; set; }
         public float Cantidad { get; set; }
         public float Total { get; set; }
+        public float SubTotal { get; set; }
         public DateTime FechaRegistro { get; set; }
         public float PorcentajeIVA { get; set; }
 
@@ -22,23 +23,13 @@ namespace Entity
         {
             return Total = Cantidad * Precio;
         }
-        public float SubTotal
+        public float CalcularSubTotal()
         { 
-            get
-            {
+            
                 return Cantidad * Precio;
-            } 
+            
         }
 
-        public float ValorIVa 
-        { 
-            get 
-            {
-                return SubTotal * (PorcentajeIVA/ 100);
-
-               
-            } 
-        }
 
 
 

@@ -43,7 +43,7 @@ namespace DAL
             producto.Descripcion = (string)reader["Descripcion"];
             producto.NombreProducto = (string)reader["NombreProducto"];
             producto.Precio = (float)reader["Precio"];
-            producto.Cantidad = (float)reader["Cantidad"];
+            producto.Cantidad = (int)reader["Cantidad"];
             producto.Total = (float)reader["Total"];
             producto.FechaRegistro = (DateTime)reader["FechaRegistro"];
 

@@ -81,6 +81,10 @@
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.TxtCodigoDetalle = new System.Windows.Forms.TextBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.BtnActualizar = new System.Windows.Forms.PictureBox();
+            this.BtnEliminar = new System.Windows.Forms.PictureBox();
             this.TxtCodigoProducto = new System.Windows.Forms.TextBox();
             this.label34 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -108,6 +112,8 @@
             this.label37 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnActualizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnEliminar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnBuscarCliente)).BeginInit();
@@ -578,6 +584,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.Controls.Add(this.TxtCodigoDetalle);
+            this.panel1.Controls.Add(this.label38);
+            this.panel1.Controls.Add(this.BtnActualizar);
+            this.panel1.Controls.Add(this.BtnEliminar);
             this.panel1.Controls.Add(this.TxtCodigoProducto);
             this.panel1.Controls.Add(this.label34);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -598,6 +608,50 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(594, 87);
             this.panel1.TabIndex = 64;
+            // 
+            // TxtCodigoDetalle
+            // 
+            this.TxtCodigoDetalle.Location = new System.Drawing.Point(356, 5);
+            this.TxtCodigoDetalle.Name = "TxtCodigoDetalle";
+            this.TxtCodigoDetalle.Size = new System.Drawing.Size(60, 20);
+            this.TxtCodigoDetalle.TabIndex = 77;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.Location = new System.Drawing.Point(264, 8);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(90, 13);
+            this.label38.TabIndex = 78;
+            this.label38.Text = "Codigo Detalle";
+            // 
+            // BtnActualizar
+            // 
+            this.BtnActualizar.BackColor = System.Drawing.Color.White;
+            this.BtnActualizar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.BtnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("BtnActualizar.Image")));
+            this.BtnActualizar.Location = new System.Drawing.Point(557, 3);
+            this.BtnActualizar.Name = "BtnActualizar";
+            this.BtnActualizar.Size = new System.Drawing.Size(34, 25);
+            this.BtnActualizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.BtnActualizar.TabIndex = 76;
+            this.BtnActualizar.TabStop = false;
+            // 
+            // BtnEliminar
+            // 
+            this.BtnEliminar.BackColor = System.Drawing.Color.White;
+            this.BtnEliminar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.BtnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("BtnEliminar.Image")));
+            this.BtnEliminar.Location = new System.Drawing.Point(517, 3);
+            this.BtnEliminar.Name = "BtnEliminar";
+            this.BtnEliminar.Size = new System.Drawing.Size(34, 25);
+            this.BtnEliminar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.BtnEliminar.TabIndex = 75;
+            this.BtnEliminar.TabStop = false;
+            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // TxtCodigoProducto
             // 
@@ -621,10 +675,10 @@
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(556, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(477, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(34, 25);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 72;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -835,6 +889,8 @@
             this.DgvDetalleServicio.Name = "DgvDetalleServicio";
             this.DgvDetalleServicio.Size = new System.Drawing.Size(512, 80);
             this.DgvDetalleServicio.TabIndex = 71;
+            this.DgvDetalleServicio.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvDetalleServicio_CellClick);
+            this.DgvDetalleServicio.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvDetalleServicio_CellContentClick);
             // 
             // TxtSubTotalOrden
             // 
@@ -920,12 +976,14 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.BtnCrearOrden);
             this.Controls.Add(this.label24);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmOrdenServicio";
             this.Text = "Orden de servicio";
             this.Load += new System.EventHandler(this.FrmOrdenServicio_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnActualizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnEliminar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -1026,5 +1084,9 @@
         private System.Windows.Forms.TextBox TxtTotalOrden;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.PictureBox BtnEliminar;
+        private System.Windows.Forms.PictureBox BtnActualizar;
+        private System.Windows.Forms.TextBox TxtCodigoDetalle;
+        private System.Windows.Forms.Label label38;
     }
 }

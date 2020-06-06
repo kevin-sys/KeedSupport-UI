@@ -11,7 +11,7 @@ namespace BLL
     public class ProductoService
     {
         private readonly ConnectionManager conexion;
-        private readonly ProductoRepository repositorio;
+        ProductoRepository repositorio;
         List<Producto> productos;
 
         public ProductoService(string connectionString)
@@ -47,24 +47,25 @@ namespace BLL
 
         public Producto Buscar(string codigo)
         {
+            Producto producto = new Producto();
+
             try
             {
                 conexion.Open();
-                Producto productos = new Producto();
 
-                productos = repositorio.Buscar(codigo);
-                return productos;
+              return repositorio.Buscar(codigo);
+                //return producto;
             }
-            catch (Exception)
+            catch (Exception e)
             {
 
-
+                string mensaje = " ERROR EN LA BASE DE DATOS " + e.Message;
+                return null;
             }
             finally
             {
                 conexion.Close();
             }
-            return null;
         }
 
     }

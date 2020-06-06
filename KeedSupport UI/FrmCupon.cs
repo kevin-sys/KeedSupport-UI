@@ -16,5 +16,10 @@ namespace KeedSupport_UI
         {
             InitializeComponent();
         }
+
+        private void BtnGuardarBaseFalla_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

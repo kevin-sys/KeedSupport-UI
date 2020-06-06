@@ -10,6 +10,7 @@ namespace Entity
     {
 
         public string DescripcionProducto { get; set; }
+        public string CodigoDetalle { get; set; }
         public Producto Producto = new Producto();
         public OrdenDeServicio OrdenDeServicio = new OrdenDeServicio();
         public string CodigoProducto { get; set; }
