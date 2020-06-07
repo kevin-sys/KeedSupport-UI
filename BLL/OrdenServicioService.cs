@@ -12,11 +12,31 @@ namespace BLL
     {
         private readonly ConnectionManager conexion;
         private readonly OrdenServicioRepository repositorio;
-
+        List<OrdenDeServicio> ordenes;
         public OrdenServicioService(string connectionString)
         {
             conexion = new ConnectionManager(connectionString);
             repositorio = new OrdenServicioRepository(conexion);
+        }
+
+        public int TotalizarCelular()
+        {
+            return repositorio.TotalizarCelular();
+        }
+
+        public int TotalizarPC()
+        {
+            return repositorio.TotalizarPC();
+        }
+
+        public int TotalizarImpresora()
+        {
+            return repositorio.TotalizarImpresora();
+        }
+
+        public int TotalizarConsola()
+        {
+            return repositorio.TotalizarConsola();
         }
 
         public string Guardar(OrdenDeServicio servicio)
@@ -33,6 +53,15 @@ namespace BLL
                 return $"Error de la Aplicacion: {e.Message}";
             }
             finally { conexion.Close(); }
+        }
+
+        public List<OrdenDeServicio> Consultar()
+        {
+            conexion.Open();
+            ordenes = new List<OrdenDeServicio>();
+            ordenes = repositorio.Consultar();
+            conexion.Close();
+            return ordenes;
         }
     }
 }

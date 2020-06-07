@@ -17,12 +17,8 @@ namespace Entity
         public float TotalOrden { get; set; }
         public float SubTotal { get; set; }
         public float Abono { get; set; }
-
-
-
         public List<Producto> Productos{ get; set; }
          
-        public string ServicioOProducto { get; set; }
      
         
         //public float SubTotal

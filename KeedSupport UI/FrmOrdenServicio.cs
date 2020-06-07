@@ -21,7 +21,7 @@ namespace KeedSupport_UI
         DetalleOrdenServicio detalleOrden;
         List<DetalleOrdenServicio> detallesordenes = new List<DetalleOrdenServicio>();
         DetalleOrdenServicioService detalleService;
-
+      
         private ProductoService productoService;
         OrdenServicioService service;
 
@@ -42,7 +42,7 @@ namespace KeedSupport_UI
             DgvDetalleServicio.Columns[5].Name = "SubTotal";
             DgvDetalleServicio.Columns[6].Name = "Porcentaje IVA";
             DgvDetalleServicio.Columns[7].Name = "Total";
-
+            
         }
 
         private void FrmOrdenServicio_Load(object sender, EventArgs e)
@@ -53,7 +53,7 @@ namespace KeedSupport_UI
         private OrdenDeServicio MapearOrden()
         {
             OrdenDeServicio orden = new OrdenDeServicio();
-            
+        
             orden.NumeroOrden = TxtNumeroOrden.Text.Trim();
             orden.FechaOrden = DtpFechaOrden.Value.Date;
 
@@ -65,7 +65,7 @@ namespace KeedSupport_UI
             orden.equipo.Color = TxtColor.Text.Trim();
             orden.equipo.FallaReportada = TxtFalla.Text.Trim();
             orden.equipo.EstadoEquipo = TxtEstadoEquipo.Text.Trim();
-            orden.equipo.Accesorios = TxtEstadoEquipo.Text.Trim();
+            orden.equipo.Accesorios = TxtAccesorios.Text.Trim();
 
 
             orden.cliente.PrimerNombre = TxtNombreCliente.Text.Trim();
@@ -76,7 +76,7 @@ namespace KeedSupport_UI
 
 
             orden.SubTotal = float.Parse(TxtSubTotalOrden.Text);
-            orden.IVA = float.Parse(TxtIvaOrden.Text);
+            orden.IVA = float.Parse(TxtIVAOrden.Text);
             orden.TotalOrden = float.Parse(TxtTotalOrden.Text);
             orden.Abono = float.Parse(TxtAbono.Text);
             orden.Vueltos = float.Parse(TxtVueltos.Text);
@@ -127,7 +127,7 @@ namespace KeedSupport_UI
         {
 
         }
-
+        //PARA GENERAR EL INFORME SE DEBERA IR ESCOGIENDO NO SE DEBE MAPEAR TODO, SOLO DE A POCO
         private void BtnCrearCliente_Click(object sender, EventArgs e)
         {
             FrmCliente cliente = new FrmCliente();
@@ -136,8 +136,17 @@ namespace KeedSupport_UI
 
         private void BtnCancelarOrden_Click(object sender, EventArgs e)
         {
-            this.Dispose();
-           
+
+               string numeroOrden = TxtNumeroOrden.Text;
+            
+                var respuesta = MessageBox.Show("Se perderan todos los cambios, ¿esta seguro?", "Mensaje de alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (respuesta == DialogResult.Yes)
+                {
+                    string mensaje = detalleService.EliminarTodoDetalle(numeroOrden);
+                    MessageBox.Show(mensaje, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LimpiarCajas();
+                    this.Dispose();
+                }
         }
 
         private void TxtServicioProducto_TextChanged(object sender, EventArgs e)
@@ -147,9 +156,14 @@ namespace KeedSupport_UI
 
         private void BtnCrearOrden_Click(object sender, EventArgs e)
         {
-            OrdenDeServicio ordenservicio = MapearOrden();
-            String mensaje = service.Guardar(ordenservicio);
-            MessageBox.Show(mensaje, "Mensaje de Guardado", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            var respuesta = MessageBox.Show("¿Está seguro de crear la orden", "Mensaje de confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (respuesta == DialogResult.Yes)
+            {
+                OrdenDeServicio ordenservicio = MapearOrden();
+                String mensaje = service.Guardar(ordenservicio);
+                MessageBox.Show(mensaje, "Mensaje de Guardado", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            }
+          
 
         }
 
@@ -161,25 +175,10 @@ namespace KeedSupport_UI
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
-            DataGridViewRow fila = new DataGridViewRow();
-            fila.CreateCells(DgvDetalleServicio);
-            fila.Cells[0].Value = TxtCodigoDetalle.Text;
-            fila.Cells[1].Value = TxtCodigoProducto.Text;
-            fila.Cells[2].Value = TxtServicioProducto.Text;
-            fila.Cells[3].Value = TxtCantidad.Text;
-            fila.Cells[4].Value = TxtPrecio.Text;
-            fila.Cells[5].Value = TxtSubTotal.Text;
-            fila.Cells[6].Value = TxtIva.Text;
-            fila.Cells[7].Value = TxtTotal.Text;
-            DgvDetalleServicio.Rows.Add(fila);
-            //ELIMINAR Y ACTUALIZAR CON CODIGODETALLE, AGREGAR A LA BD UN NUEVO ATRIBUTO 
+            AñadirATabla();
             DetalleOrdenServicio detalle = MapearDetalles();
             string mensaje = detalleService.Guardar(detalle);
-            if (detalleService.Guardar(detalle)!=null)
-            {
-
-            }
-            MessageBox.Show(mensaje, "Mensaje de Guardado", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            MessageBox.Show(mensaje, "Mensaje de confirmación", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             LimpiarCajas();
         }
 
@@ -202,13 +201,13 @@ namespace KeedSupport_UI
             string codigoDetalle = TxtCodigoDetalle.Text;
             if (codigoDetalle != "")
             {
-                var respuesta = MessageBox.Show("¿Está seguro de eliminar el registro?", "Mensaje de Eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                var respuesta = MessageBox.Show("¿Está seguro de eliminar el producto", "Mensaje de Eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (respuesta == DialogResult.Yes)
                 {
                     string mensaje = detalleService.Eliminar(codigoDetalle);
                     MessageBox.Show(mensaje, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                  //  DgvDetalleServicio.Rows.Remove(DgvDetalleServicio.CurrentRow);
-
+                    DgvDetalleServicio.Rows.Remove(DgvDetalleServicio.CurrentRow);
+                    LimpiarCajas();
                 }
 
             }
@@ -219,11 +218,6 @@ namespace KeedSupport_UI
         }
 
         private void DgvDetalleServicio_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-        
-        private void DgvDetalleServicio_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
@@ -241,7 +235,44 @@ namespace KeedSupport_UI
 
                 throw;
             }
-           
+        }
+        
+        private void DgvDetalleServicio_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void BtnActualizar_Click(object sender, EventArgs e)
+        {
+            Actualizar();
+        }
+        private void Actualizar()
+        {
+            var respuesta = MessageBox.Show("¿Está seguro de actualizar el producto?", "Mensaje de actualización", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (respuesta == DialogResult.Yes)
+            {
+                DetalleOrdenServicio detalle = MapearDetalles();
+                string mensaje = detalleService.Modificar(detalle);
+                MessageBox.Show(mensaje, "Actualizar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DgvDetalleServicio.Rows.Remove(DgvDetalleServicio.CurrentRow);
+                AñadirATabla();
+                LimpiarCajas();
+            }
+        }
+
+        private void AñadirATabla()
+        {
+            DataGridViewRow fila = new DataGridViewRow();
+            fila.CreateCells(DgvDetalleServicio);
+            fila.Cells[0].Value = TxtCodigoDetalle.Text;
+            fila.Cells[1].Value = TxtCodigoProducto.Text;
+            fila.Cells[2].Value = TxtServicioProducto.Text;
+            fila.Cells[3].Value = TxtCantidad.Text;
+            fila.Cells[4].Value = TxtPrecio.Text;
+            fila.Cells[5].Value = TxtSubTotal.Text;
+            fila.Cells[6].Value = TxtIva.Text;
+            fila.Cells[7].Value = TxtTotal.Text;
+            DgvDetalleServicio.Rows.Add(fila);
         }
     }
 }

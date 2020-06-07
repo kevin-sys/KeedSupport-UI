@@ -43,11 +43,6 @@ namespace DAL
             detalle.OrdenDeServicio.NumeroOrden = (string)reader["NumeroOrden"];
             detalle.Producto.CodigoProducto = (string)reader["Codigo"];
             detalle.Producto.NombreProducto = (string)reader["ServicioProducto"];
-            // detalle.Producto.Cantidad = (float)reader["Cantidad"];
-            //  detalle.Producto.Precio = (float)reader["Precio"];
-            // detalle.Producto.SubTotal = (float)reader["SubTotal"];
-            //   detalle.Producto.PorcentajeIVA = (float)reader["IVA"];
-            //  detalle.Producto.Total = (float)reader["Total"];
             detalle.Producto.Cantidad = float.Parse(reader["Cantidad"].ToString());
             detalle.Producto.Precio = float.Parse(reader["Precio"].ToString());
             detalle.Producto.SubTotal = float.Parse(reader["SubTotal"].ToString());
@@ -67,6 +62,31 @@ namespace DAL
                 command.ExecuteNonQuery();
             }
         }
+        public void EliminarTodoDetalle(DetalleOrdenServicio detalle)
+        {
+            using (var command = _connection.CreateCommand())
+            {
+                command.CommandText = "delete from DetalleOrden where NumeroOrden=@NumeroOrden";
+                command.Parameters.AddWithValue("@NumeroOrden", detalle.OrdenDeServicio.NumeroOrden);
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public DetalleOrdenServicio BuscarTodoDetalle(string numeroOrden)
+        {
+            SqlDataReader reader;
+            using (var command = _connection.CreateCommand())
+            {
+                command.CommandText = "SELECT * FROM DetalleOrden WHERE NumeroOrden = @NumeroOrden ";
+                command.Parameters.AddWithValue("@NumeroOrden", numeroOrden);
+                reader = command.ExecuteReader();
+                reader.Read();
+                return Mapear(reader);
+
+            }
+
+        }
+
         public DetalleOrdenServicio Buscar(string codigodetalle)
         {
             SqlDataReader reader;

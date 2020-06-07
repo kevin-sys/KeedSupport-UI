@@ -106,11 +106,11 @@
             this.DgvDetalleServicio = new System.Windows.Forms.DataGridView();
             this.TxtSubTotalOrden = new System.Windows.Forms.TextBox();
             this.label35 = new System.Windows.Forms.Label();
-            this.TxtIvaOrden = new System.Windows.Forms.TextBox();
-            this.label36 = new System.Windows.Forms.Label();
             this.TxtTotalOrden = new System.Windows.Forms.TextBox();
             this.label37 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.TxtIVAOrden = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnActualizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnEliminar)).BeginInit();
@@ -604,7 +604,7 @@
             this.panel1.Controls.Add(this.label21);
             this.panel1.Controls.Add(this.TxtTotal);
             this.panel1.Controls.Add(this.label20);
-            this.panel1.Location = new System.Drawing.Point(20, 399);
+            this.panel1.Location = new System.Drawing.Point(16, 389);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(594, 87);
             this.panel1.TabIndex = 64;
@@ -638,6 +638,7 @@
             this.BtnActualizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.BtnActualizar.TabIndex = 76;
             this.BtnActualizar.TabStop = false;
+            this.BtnActualizar.Click += new System.EventHandler(this.BtnActualizar_Click);
             // 
             // BtnEliminar
             // 
@@ -739,7 +740,7 @@
             this.panel3.Controls.Add(this.label19);
             this.panel3.Controls.Add(this.label22);
             this.panel3.Controls.Add(this.label23);
-            this.panel3.Location = new System.Drawing.Point(633, 399);
+            this.panel3.Location = new System.Drawing.Point(633, 391);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(299, 87);
             this.panel3.TabIndex = 66;
@@ -758,7 +759,7 @@
             // 
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(858, 575);
+            this.label29.Location = new System.Drawing.Point(860, 582);
             this.label29.Name = "label29";
             this.label29.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label29.Size = new System.Drawing.Size(92, 16);
@@ -769,7 +770,7 @@
             // 
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(721, 574);
+            this.label30.Location = new System.Drawing.Point(742, 581);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(109, 16);
             this.label30.TabIndex = 69;
@@ -780,7 +781,7 @@
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(574, 575);
+            this.label31.Location = new System.Drawing.Point(617, 582);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(116, 16);
             this.label31.TabIndex = 70;
@@ -849,7 +850,7 @@
             this.BtnCancelarOrden.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.BtnCancelarOrden.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnCancelarOrden.Image = ((System.Drawing.Image)(resources.GetObject("BtnCancelarOrden.Image")));
-            this.BtnCancelarOrden.Location = new System.Drawing.Point(603, 531);
+            this.BtnCancelarOrden.Location = new System.Drawing.Point(646, 538);
             this.BtnCancelarOrden.Name = "BtnCancelarOrden";
             this.BtnCancelarOrden.Size = new System.Drawing.Size(55, 41);
             this.BtnCancelarOrden.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -862,7 +863,7 @@
             this.BtnImprimirOrden.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.BtnImprimirOrden.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnImprimirOrden.Image = ((System.Drawing.Image)(resources.GetObject("BtnImprimirOrden.Image")));
-            this.BtnImprimirOrden.Location = new System.Drawing.Point(749, 531);
+            this.BtnImprimirOrden.Location = new System.Drawing.Point(770, 538);
             this.BtnImprimirOrden.Name = "BtnImprimirOrden";
             this.BtnImprimirOrden.Size = new System.Drawing.Size(55, 41);
             this.BtnImprimirOrden.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -874,7 +875,7 @@
             this.BtnCrearOrden.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.BtnCrearOrden.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnCrearOrden.Image = ((System.Drawing.Image)(resources.GetObject("BtnCrearOrden.Image")));
-            this.BtnCrearOrden.Location = new System.Drawing.Point(875, 531);
+            this.BtnCrearOrden.Location = new System.Drawing.Point(877, 538);
             this.BtnCrearOrden.Name = "BtnCrearOrden";
             this.BtnCrearOrden.Size = new System.Drawing.Size(55, 41);
             this.BtnCrearOrden.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -884,53 +885,39 @@
             // 
             // DgvDetalleServicio
             // 
+            this.DgvDetalleServicio.AllowUserToAddRows = false;
+            this.DgvDetalleServicio.AllowUserToDeleteRows = false;
             this.DgvDetalleServicio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvDetalleServicio.Location = new System.Drawing.Point(26, 488);
+            this.DgvDetalleServicio.Location = new System.Drawing.Point(16, 482);
             this.DgvDetalleServicio.Name = "DgvDetalleServicio";
-            this.DgvDetalleServicio.Size = new System.Drawing.Size(512, 80);
+            this.DgvDetalleServicio.ReadOnly = true;
+            this.DgvDetalleServicio.Size = new System.Drawing.Size(582, 110);
             this.DgvDetalleServicio.TabIndex = 71;
             this.DgvDetalleServicio.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvDetalleServicio_CellClick);
             this.DgvDetalleServicio.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvDetalleServicio_CellContentClick);
             // 
             // TxtSubTotalOrden
             // 
-            this.TxtSubTotalOrden.Location = new System.Drawing.Point(0, 23);
+            this.TxtSubTotalOrden.Location = new System.Drawing.Point(9, 23);
             this.TxtSubTotalOrden.Name = "TxtSubTotalOrden";
-            this.TxtSubTotalOrden.Size = new System.Drawing.Size(74, 20);
+            this.TxtSubTotalOrden.Size = new System.Drawing.Size(62, 20);
             this.TxtSubTotalOrden.TabIndex = 75;
             // 
             // label35
             // 
             this.label35.AutoSize = true;
             this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(6, 7);
+            this.label35.Location = new System.Drawing.Point(15, 7);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(65, 13);
             this.label35.TabIndex = 76;
             this.label35.Text = "SUB Total";
             // 
-            // TxtIvaOrden
-            // 
-            this.TxtIvaOrden.Location = new System.Drawing.Point(83, 23);
-            this.TxtIvaOrden.Name = "TxtIvaOrden";
-            this.TxtIvaOrden.Size = new System.Drawing.Size(48, 20);
-            this.TxtIvaOrden.TabIndex = 79;
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(88, 7);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(27, 13);
-            this.label36.TabIndex = 80;
-            this.label36.Text = "IVA";
-            // 
             // TxtTotalOrden
             // 
-            this.TxtTotalOrden.Location = new System.Drawing.Point(140, 23);
+            this.TxtTotalOrden.Location = new System.Drawing.Point(146, 23);
             this.TxtTotalOrden.Name = "TxtTotalOrden";
-            this.TxtTotalOrden.Size = new System.Drawing.Size(74, 20);
+            this.TxtTotalOrden.Size = new System.Drawing.Size(68, 20);
             this.TxtTotalOrden.TabIndex = 77;
             // 
             // label37
@@ -946,23 +933,40 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Silver;
+            this.panel5.Controls.Add(this.TxtIVAOrden);
+            this.panel5.Controls.Add(this.label36);
             this.panel5.Controls.Add(this.TxtTotalOrden);
             this.panel5.Controls.Add(this.TxtSubTotalOrden);
             this.panel5.Controls.Add(this.label37);
-            this.panel5.Controls.Add(this.label36);
             this.panel5.Controls.Add(this.label35);
-            this.panel5.Controls.Add(this.TxtIvaOrden);
-            this.panel5.Location = new System.Drawing.Point(321, 570);
+            this.panel5.Location = new System.Drawing.Point(381, 598);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(217, 46);
             this.panel5.TabIndex = 67;
+            // 
+            // TxtIVAOrden
+            // 
+            this.TxtIVAOrden.Location = new System.Drawing.Point(83, 23);
+            this.TxtIVAOrden.Name = "TxtIVAOrden";
+            this.TxtIVAOrden.Size = new System.Drawing.Size(44, 20);
+            this.TxtIVAOrden.TabIndex = 79;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.Location = new System.Drawing.Point(86, 7);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(27, 13);
+            this.label36.TabIndex = 80;
+            this.label36.Text = "IVA";
             // 
             // FrmOrdenServicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(958, 621);
+            this.ClientSize = new System.Drawing.Size(958, 647);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.DgvDetalleServicio);
             this.Controls.Add(this.panel4);
@@ -976,8 +980,10 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.BtnCrearOrden);
             this.Controls.Add(this.label24);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "FrmOrdenServicio";
+            this.Opacity = 0.98D;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Orden de servicio";
             this.Load += new System.EventHandler(this.FrmOrdenServicio_Load);
             this.panel1.ResumeLayout(false);
@@ -1079,8 +1085,6 @@
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.TextBox TxtSubTotalOrden;
         private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.TextBox TxtIvaOrden;
-        private System.Windows.Forms.Label label36;
         private System.Windows.Forms.TextBox TxtTotalOrden;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Panel panel5;
@@ -1088,5 +1092,7 @@
         private System.Windows.Forms.PictureBox BtnActualizar;
         private System.Windows.Forms.TextBox TxtCodigoDetalle;
         private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.TextBox TxtIVAOrden;
+        private System.Windows.Forms.Label label36;
     }
 }

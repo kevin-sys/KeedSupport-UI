@@ -102,7 +102,7 @@ namespace KeedSupport_UI
 
         private void BtnRegistrarOrden_Click(object sender, EventArgs e)
         {
-            //  openChildForm(new FrmOrdenServicio());
+          
             FrmOrdenServicio frmOrden = new FrmOrdenServicio();
             frmOrden.Show();
             hideSubMenu();
@@ -164,6 +164,13 @@ namespace KeedSupport_UI
             deFallas.Show();
             hideSubMenu();
 
+        }
+
+        private void BtnEstadisticas_Click(object sender, EventArgs e)
+        {
+            FrmEstadistica estadistica = new FrmEstadistica();
+            estadistica.Show();
+            hideSubMenu();
         }
     }
 }

@@ -27,7 +27,7 @@ namespace BLL
                 conexion.Open();
                 repository.Guardar(detalles);
                 conexion.Close();
-                return $"Se guardaron los datos satisfactoriamente";
+                return $"El producto se añadio al carrito de compra";
             }
             catch (Exception e)
             {
@@ -46,11 +46,11 @@ namespace BLL
                 {
                     repository.Eliminar(detalle);
                     conexion.Close();
-                    return ($"El registro {detalle.Producto.NombreProducto} se ha eliminado satisfactoriamente.");
+                    return ($"El producto {detalle.Producto.NombreProducto} ha sido sacado de la orden.");
                 }
                 else
                 {
-                    return ($"Lo sentimos, {codigoDetalle} no se encuentra registrada.");
+                    return ($"Lo sentimos, {codigoDetalle} no se encuentra registrado.");
                 }
             }
             catch (Exception e)
@@ -62,7 +62,57 @@ namespace BLL
 
         }
 
+        public string EliminarTodoDetalle(string numeroOrden)
+        {
+            try
+            {
+                conexion.Open();
+                var detalle = repository.BuscarTodoDetalle(numeroOrden);
+                if (detalle != null)
+                {
+                    repository.EliminarTodoDetalle(detalle);
+                    conexion.Close();
+                    return ($"Todos los productos añadidos al carrito fueron eliminados.");
+                }
+                else
+                {
+                    return ($"Hasta luego :)");
+                }
+            }
+            catch (Exception e)
+            {
 
+                return $"Error de la Aplicación: {e.Message}";
+            }
+            finally { conexion.Close(); }
+
+        }
+
+        public string Modificar(DetalleOrdenServicio detalleorden)
+        {
+            try
+            {
+                conexion.Open();
+                var detalleviejo = repository.Buscar(detalleorden.CodigoDetalle);
+                if (detalleviejo != null)
+                {
+                    repository.Modificar(detalleorden);
+                    conexion.Close();
+                    return ($"El producto {detalleorden.Producto.NombreProducto} se ha actualizado satisfactoriamente.");
+                }
+                else
+                {
+                    return ($"Lo sentimos, {detalleorden.CodigoDetalle} no se encuentro el producto.");
+                }
+            }
+            catch (Exception e)
+            {
+
+                return $"Error de la Aplicación: {e.Message}";
+            }
+            finally { conexion.Close(); }
+
+        }
 
     }
 }

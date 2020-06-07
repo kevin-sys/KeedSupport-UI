@@ -11,9 +11,12 @@ namespace DAL
     public class OrdenServicioRepository
     {
         private readonly SqlConnection _connection;
+        private readonly List<OrdenDeServicio> ordenes = new List<OrdenDeServicio>();
+       
         public OrdenServicioRepository(ConnectionManager connection)
         {
             _connection = connection._conexion;
+           
         }
         public void Guardar(OrdenDeServicio orden)
         {
@@ -45,6 +48,72 @@ namespace DAL
 
             }
 
+        }
+
+        private OrdenDeServicio Mapear(SqlDataReader reader)
+        {
+            OrdenDeServicio servicio = new OrdenDeServicio();
+            servicio.NumeroOrden = (string)reader["NumeroOrden"];
+            servicio.FechaOrden = (DateTime)reader["FechaOrden"];
+            servicio.equipo.Tipo = (string)reader["TipoEquipo"];
+            servicio.equipo.Marca = (string)reader["Marca"];
+            servicio.equipo.Modelo = (string)reader["Modelo"];
+            servicio.equipo.NumeroSerie = (string)reader["NumeroSerie"];
+            servicio.equipo.Color = (string)reader["Color"];
+            servicio.equipo.FallaReportada = (string)reader["FallaReportada"];
+            servicio.equipo.EstadoEquipo = (string)reader["EstadoEquipo"];
+            servicio.equipo.Accesorios = (string)reader["Accesorios"];
+            servicio.cliente.PrimerNombre = (string)reader["NombreCliente"];
+            servicio.cliente.Identificacion = (string)reader["Identificacion"];
+            servicio.cliente.Telefono = (string)reader["Telefono"];
+            servicio.cliente.Direccion = (string)reader["Direccion"];
+            servicio.cliente.Correo = (string)reader["Correo"];
+            servicio.SubTotal = float.Parse(reader["Total"].ToString());
+            servicio.IVA = float.Parse(reader["IVA"].ToString());
+            servicio.TotalOrden = float.Parse(reader["Total"].ToString());
+            servicio.Abono = float.Parse(reader["Abono"].ToString());
+            servicio.Vueltos = float.Parse(reader["Vueltos"].ToString());
+            servicio.Deuda = float.Parse(reader["Deuda"].ToString());
+
+            return servicio;
+
+
+        }
+
+        public int TotalizarCelular()
+        {
+            return ordenes.Where(p => p.equipo.Tipo.Equals("Celular")).Count();
+        }
+       
+
+        public int TotalizarPC()
+        {
+            return ordenes.Where(p => p.equipo.Tipo.Equals("PC")).Count();
+        }
+        public int TotalizarImpresora()
+        {
+            return ordenes.Where(p => p.equipo.Tipo.Equals("Impresora")).Count();
+        }
+
+        public int TotalizarConsola()
+        {
+            return ordenes.Where(p => p.equipo.Tipo.Equals("Consola de videojuego")).Count();
+        }
+
+        public List<OrdenDeServicio> Consultar()
+        {
+            using (var command = _connection.CreateCommand())
+            {
+                command.CommandText = "SELECT * FROM OrdenServicio";
+                var Reader = command.ExecuteReader();
+                while (Reader.Read())
+                {
+                    OrdenDeServicio ordenservicio = new OrdenDeServicio();
+                    ordenservicio = Mapear(Reader);
+                    ordenes.Add(ordenservicio);
+                }
+            }
+            return ordenes;
         }
     }
 }
