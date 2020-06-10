@@ -22,7 +22,7 @@ namespace DAL
         {
             using (var command = _connection.CreateCommand())
             {
-                command.CommandText = "INSERT INTO OrdenServicio (NumeroOrden, FechaOrden, TipoEquipo, Marca, Modelo, NumeroSerie, Color, FallaReportada, EstadoEquipo, Accesorios, NombreCliente, Identificacion, Telefono, Direccion, Correo, SubTotal, IVA, Total, Abono, Vueltos, Deuda) values (@NumeroOrden, @FechaOrden, @TipoEquipo, @Marca, @Modelo, @NumeroSerie, @Color, @FallaReportada, @EstadoEquipo, @Accesorios, @NombreCliente, @Identificacion, @Telefono, @Direccion, @Correo, @SubTotal, @IVA, @Total, @Abono, @Vueltos, @Deuda)";
+                command.CommandText = "INSERT INTO OrdenServicio (NumeroOrden, FechaOrden, TipoEquipo, Marca, Modelo, NumeroSerie, Color, FallaReportada, EstadoEquipo, Accesorios, NombreCliente, Identificacion, Telefono, Direccion, Correo, SubTotal, Total, Abono, Vueltos, Deuda) values (@NumeroOrden, @FechaOrden, @TipoEquipo, @Marca, @Modelo, @NumeroSerie, @Color, @FallaReportada, @EstadoEquipo, @Accesorios, @NombreCliente, @Identificacion, @Telefono, @Direccion, @Correo, @SubTotal, @Total, @Abono, @Vueltos, @Deuda)";
                 command.Parameters.AddWithValue("@NumeroOrden", orden.NumeroOrden);
                 command.Parameters.AddWithValue("@FechaOrden", orden.FechaOrden);
                 command.Parameters.AddWithValue("@TipoEquipo", orden.equipo.Tipo);
@@ -39,7 +39,6 @@ namespace DAL
                 command.Parameters.AddWithValue("@Direccion", orden.cliente.Direccion);
                 command.Parameters.AddWithValue("@Correo", orden.cliente.Correo);
                 command.Parameters.AddWithValue("@SubTotal", orden.SubTotal);
-                command.Parameters.AddWithValue("@IVA", orden.IVA);
                 command.Parameters.AddWithValue("@Total", orden.TotalOrden);
                 command.Parameters.AddWithValue("@Abono", orden.Abono);
                 command.Parameters.AddWithValue("@Vueltos", orden.Vueltos);
@@ -69,7 +68,6 @@ namespace DAL
             servicio.cliente.Direccion = (string)reader["Direccion"];
             servicio.cliente.Correo = (string)reader["Correo"];
             servicio.SubTotal = float.Parse(reader["Total"].ToString());
-            servicio.IVA = float.Parse(reader["IVA"].ToString());
             servicio.TotalOrden = float.Parse(reader["Total"].ToString());
             servicio.Abono = float.Parse(reader["Abono"].ToString());
             servicio.Vueltos = float.Parse(reader["Vueltos"].ToString());

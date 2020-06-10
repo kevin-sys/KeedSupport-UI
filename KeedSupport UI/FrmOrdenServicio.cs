@@ -94,16 +94,14 @@ namespace KeedSupport_UI
             orden.cliente.Telefono = TxtTelefono.Text.Trim();
             orden.cliente.Direccion = TxtDireccion.Text.Trim();
             orden.cliente.Correo = TxtCorreo.Text.Trim();
-
-
             orden.SubTotal = float.Parse(TxtSubTotalOrden.Text);
-            orden.IVA = float.Parse(TxtIVAOrden.Text);
             orden.TotalOrden = float.Parse(TxtTotalOrden.Text);
             orden.Abono = float.Parse(TxtAbono.Text);
             orden.Vueltos = float.Parse(TxtVueltos.Text);
-            orden.Deuda = float.Parse(TxtDeuda.Text);
-
-
+            orden.Deuda = orden.CalcularDeuda();
+            orden.Vueltos = orden.CalcularVueltos();
+            TxtDeuda.Text = orden.Deuda.ToString();
+            TxtVueltos.Text = orden.Vueltos.ToString();
             return orden;
         }
 
@@ -206,6 +204,20 @@ namespace KeedSupport_UI
             string mensaje = detalleService.Guardar(detalle);
             MessageBox.Show(mensaje, "Mensaje de confirmación", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             LimpiarCajas();
+            double total = 0;
+            double subtotal = 0;
+
+
+            foreach (DataGridViewRow row in DgvDetalleServicio.Rows)
+            {
+                total += Convert.ToDouble(row.Cells["Total"].Value);
+                subtotal += Convert.ToDouble(row.Cells["SubTotal"].Value);
+
+            }
+            TxtTotalOrden.Text = Convert.ToString(total);
+            TxtSubTotalOrden.Text = Convert.ToString(subtotal);
+
+            TxtDeuda.Text = Convert.ToString(total);
         }
 
         private void LimpiarCajas()
@@ -233,6 +245,17 @@ namespace KeedSupport_UI
                     string mensaje = detalleService.Eliminar(codigoDetalle);
                     MessageBox.Show(mensaje, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     DgvDetalleServicio.Rows.Remove(DgvDetalleServicio.CurrentRow);
+                    double total = 0;
+                    double subtotal = 0;
+
+                    foreach (DataGridViewRow row in DgvDetalleServicio.Rows)
+                    {
+                        total += Convert.ToDouble(row.Cells["Total"].Value);
+                        subtotal += Convert.ToDouble(row.Cells["SubTotal"].Value);
+
+                    }
+                    TxtTotalOrden.Text = Convert.ToString(total);
+                    TxtSubTotalOrden.Text = Convert.ToString(subtotal);
                     LimpiarCajas();
                 }
 
@@ -282,6 +305,17 @@ namespace KeedSupport_UI
                 MessageBox.Show(mensaje, "Actualizar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 DgvDetalleServicio.Rows.Remove(DgvDetalleServicio.CurrentRow);
                 AñadirATabla();
+                double total = 0;
+                double subtotal = 0;
+
+                foreach (DataGridViewRow row in DgvDetalleServicio.Rows)
+                {
+                    total += Convert.ToDouble(row.Cells["Total"].Value);
+                    subtotal += Convert.ToDouble(row.Cells["SubTotal"].Value);
+
+                }
+                TxtTotalOrden.Text = Convert.ToString(total);
+                TxtSubTotalOrden.Text = Convert.ToString(subtotal);
                 LimpiarCajas();
             }
         }

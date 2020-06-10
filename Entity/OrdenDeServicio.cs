@@ -13,64 +13,44 @@ namespace Entity
         public Equipo equipo = new Equipo();
         public Cliente cliente = new Cliente();
         public List<DetalleOrdenServicio> detalleOrdenServicios { get; set; }
-        public float IVA { get; set; }
         public float TotalOrden { get; set; }
         public float SubTotal { get; set; }
         public float Abono { get; set; }
-        public List<Producto> Productos{ get; set; }
-         
-       
-     
-        
-        //public float SubTotal
-        //{
-        //    get
-        //    {
-        //        return Productos.Sum(p => p.SubTotal);
-        //    }
-        //}
+        public float Vueltos { get; set; }
+        public float Deuda { get; set; }
 
-        //public float ValorTotalIVA
-        //{
-        //    get
-        //    {
-        //        return Productos.Sum(p => p.ValorIVa);
-        //    }
-        //}
+        public List<Producto> Productos { get; set; }
 
-        //public float TotalOrden
-        //{
-        //    get
-        //    {
-                
-        //        return  SubTotal + ValorTotalIVA;
-                
-        //    }
-        //}
 
-        public float Vueltos
+
+        public float CalcularVueltos()
         {
-            get
-            {
-                return (Abono <= TotalOrden)? 0: Abono- TotalOrden;
-                //condicion?T:F;
-            }
-            set
-            {
 
+            // return (Abono <= TotalOrden) ? 0 : Abono - TotalOrden;
+            if (Abono <= TotalOrden)
+            {
+                return Vueltos = 0;
             }
+            else
+            {
+                return Vueltos = Abono - TotalOrden;
+            }
+
         }
 
-        public float Deuda
+        public float CalcularDeuda()
         {
-            get
-            {
-                return (Abono >= TotalOrden) ? 0: TotalOrden - Abono;
-            }
-            set
-            {
 
+            //   return (Abono >= TotalOrden) ? 0 : TotalOrden - Abono;
+            if (Abono >= TotalOrden)
+            {
+                return Deuda = 0;
             }
+            else
+            {
+                return Deuda = TotalOrden - Abono;
+            }
+
         }
     }
 }

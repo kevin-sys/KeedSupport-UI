@@ -109,8 +109,6 @@
             this.TxtTotalOrden = new System.Windows.Forms.TextBox();
             this.label37 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.TxtIVAOrden = new System.Windows.Forms.TextBox();
-            this.label36 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnActualizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnEliminar)).BeginInit();
@@ -245,6 +243,7 @@
             // 
             this.TxtNombreCliente.Location = new System.Drawing.Point(95, 47);
             this.TxtNombreCliente.Name = "TxtNombreCliente";
+            this.TxtNombreCliente.ReadOnly = true;
             this.TxtNombreCliente.Size = new System.Drawing.Size(118, 20);
             this.TxtNombreCliente.TabIndex = 2;
             // 
@@ -252,6 +251,7 @@
             // 
             this.TxtIentificacion.Location = new System.Drawing.Point(95, 83);
             this.TxtIentificacion.Name = "TxtIentificacion";
+            this.TxtIentificacion.ReadOnly = true;
             this.TxtIentificacion.Size = new System.Drawing.Size(118, 20);
             this.TxtIentificacion.TabIndex = 3;
             // 
@@ -259,6 +259,7 @@
             // 
             this.TxtTelefono.Location = new System.Drawing.Point(95, 119);
             this.TxtTelefono.Name = "TxtTelefono";
+            this.TxtTelefono.ReadOnly = true;
             this.TxtTelefono.Size = new System.Drawing.Size(118, 20);
             this.TxtTelefono.TabIndex = 4;
             // 
@@ -266,6 +267,7 @@
             // 
             this.TxtCorreo.Location = new System.Drawing.Point(95, 191);
             this.TxtCorreo.Name = "TxtCorreo";
+            this.TxtCorreo.ReadOnly = true;
             this.TxtCorreo.Size = new System.Drawing.Size(191, 20);
             this.TxtCorreo.TabIndex = 6;
             // 
@@ -273,6 +275,7 @@
             // 
             this.TxtDireccion.Location = new System.Drawing.Point(95, 155);
             this.TxtDireccion.Name = "TxtDireccion";
+            this.TxtDireccion.ReadOnly = true;
             this.TxtDireccion.Size = new System.Drawing.Size(191, 20);
             this.TxtDireccion.TabIndex = 5;
             // 
@@ -401,6 +404,7 @@
             // 
             this.TxtServicioProducto.Location = new System.Drawing.Point(6, 58);
             this.TxtServicioProducto.Name = "TxtServicioProducto";
+            this.TxtServicioProducto.ReadOnly = true;
             this.TxtServicioProducto.Size = new System.Drawing.Size(121, 20);
             this.TxtServicioProducto.TabIndex = 30;
             this.TxtServicioProducto.TextChanged += new System.EventHandler(this.TxtServicioProducto_TextChanged);
@@ -437,6 +441,7 @@
             // 
             this.TxtPrecio.Location = new System.Drawing.Point(282, 58);
             this.TxtPrecio.Name = "TxtPrecio";
+            this.TxtPrecio.ReadOnly = true;
             this.TxtPrecio.Size = new System.Drawing.Size(77, 20);
             this.TxtPrecio.TabIndex = 34;
             // 
@@ -489,6 +494,7 @@
             // 
             this.TxtIva.Location = new System.Drawing.Point(448, 58);
             this.TxtIva.Name = "TxtIva";
+            this.TxtIva.ReadOnly = true;
             this.TxtIva.Size = new System.Drawing.Size(51, 20);
             this.TxtIva.TabIndex = 48;
             // 
@@ -526,6 +532,7 @@
             this.TxtVueltos.Name = "TxtVueltos";
             this.TxtVueltos.Size = new System.Drawing.Size(74, 20);
             this.TxtVueltos.TabIndex = 53;
+            this.TxtVueltos.Text = "0";
             // 
             // label23
             // 
@@ -541,6 +548,7 @@
             // 
             this.TxtDeuda.Location = new System.Drawing.Point(205, 58);
             this.TxtDeuda.Name = "TxtDeuda";
+            this.TxtDeuda.ReadOnly = true;
             this.TxtDeuda.Size = new System.Drawing.Size(74, 20);
             this.TxtDeuda.TabIndex = 55;
             // 
@@ -660,6 +668,7 @@
             // 
             this.TxtCodigoProducto.Location = new System.Drawing.Point(142, 58);
             this.TxtCodigoProducto.Name = "TxtCodigoProducto";
+            this.TxtCodigoProducto.ReadOnly = true;
             this.TxtCodigoProducto.Size = new System.Drawing.Size(60, 20);
             this.TxtCodigoProducto.TabIndex = 73;
             // 
@@ -903,6 +912,7 @@
             // 
             this.TxtSubTotalOrden.Location = new System.Drawing.Point(9, 23);
             this.TxtSubTotalOrden.Name = "TxtSubTotalOrden";
+            this.TxtSubTotalOrden.ReadOnly = true;
             this.TxtSubTotalOrden.Size = new System.Drawing.Size(62, 20);
             this.TxtSubTotalOrden.TabIndex = 75;
             // 
@@ -920,6 +930,7 @@
             // 
             this.TxtTotalOrden.Location = new System.Drawing.Point(146, 23);
             this.TxtTotalOrden.Name = "TxtTotalOrden";
+            this.TxtTotalOrden.ReadOnly = true;
             this.TxtTotalOrden.Size = new System.Drawing.Size(68, 20);
             this.TxtTotalOrden.TabIndex = 77;
             // 
@@ -936,8 +947,6 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Silver;
-            this.panel5.Controls.Add(this.TxtIVAOrden);
-            this.panel5.Controls.Add(this.label36);
             this.panel5.Controls.Add(this.TxtTotalOrden);
             this.panel5.Controls.Add(this.TxtSubTotalOrden);
             this.panel5.Controls.Add(this.label37);
@@ -946,23 +955,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(217, 46);
             this.panel5.TabIndex = 67;
-            // 
-            // TxtIVAOrden
-            // 
-            this.TxtIVAOrden.Location = new System.Drawing.Point(83, 23);
-            this.TxtIVAOrden.Name = "TxtIVAOrden";
-            this.TxtIVAOrden.Size = new System.Drawing.Size(44, 20);
-            this.TxtIVAOrden.TabIndex = 79;
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(86, 7);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(27, 13);
-            this.label36.TabIndex = 80;
-            this.label36.Text = "IVA";
             // 
             // FrmOrdenServicio
             // 
@@ -1095,7 +1087,5 @@
         private System.Windows.Forms.PictureBox BtnActualizar;
         private System.Windows.Forms.TextBox TxtCodigoDetalle;
         private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.TextBox TxtIVAOrden;
-        private System.Windows.Forms.Label label36;
     }
 }
