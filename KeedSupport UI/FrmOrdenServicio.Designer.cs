@@ -377,7 +377,9 @@
             // label14
             // 
             this.label14.AutoSize = true;
+            this.label14.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label14.Location = new System.Drawing.Point(12, 5);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(169, 16);
@@ -611,7 +613,7 @@
             // 
             // TxtCodigoDetalle
             // 
-            this.TxtCodigoDetalle.Location = new System.Drawing.Point(356, 5);
+            this.TxtCodigoDetalle.Location = new System.Drawing.Point(280, 5);
             this.TxtCodigoDetalle.Name = "TxtCodigoDetalle";
             this.TxtCodigoDetalle.Size = new System.Drawing.Size(60, 20);
             this.TxtCodigoDetalle.TabIndex = 77;
@@ -620,7 +622,7 @@
             // 
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(264, 8);
+            this.label38.Location = new System.Drawing.Point(188, 8);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(90, 13);
             this.label38.TabIndex = 78;
@@ -716,6 +718,7 @@
             this.BtnBuscarCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.BtnBuscarCliente.TabIndex = 61;
             this.BtnBuscarCliente.TabStop = false;
+            this.BtnBuscarCliente.Click += new System.EventHandler(this.BtnBuscarCliente_Click);
             // 
             // BtnCrearCliente
             // 

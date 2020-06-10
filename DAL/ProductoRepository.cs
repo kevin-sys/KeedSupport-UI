@@ -21,7 +21,7 @@ namespace DAL
         {
             using (var command = _connection.CreateCommand())
             {
-                command.CommandText = "INSERT INTO Producto (Codigo, Descripcion, NombreProducto, Precio, Cantidad, Total, FechaRegistro) values (@Codigo, @Descripcion, @NombreProducto, @Precio, @Cantidad, @Total, @FechaRegistro)";
+                command.CommandText = "INSERT INTO Producto (Codigo, Descripcion, NombreProducto, Precio, Cantidad, Total, FechaRegistro, IVA, SubTotal) values (@Codigo, @Descripcion, @NombreProducto, @Precio, @Cantidad, @Total, @FechaRegistro, @IVA, @SubTotal)";
                 command.Parameters.AddWithValue("@Codigo", producto.CodigoProducto);
                 command.Parameters.AddWithValue("@Descripcion", producto.Descripcion);
                 command.Parameters.AddWithValue("@NombreProducto", producto.NombreProducto);
@@ -29,6 +29,8 @@ namespace DAL
                 command.Parameters.AddWithValue("@Cantidad", producto.Cantidad);
                 command.Parameters.AddWithValue("@Total", producto.Total);
                 command.Parameters.AddWithValue("@FechaRegistro", producto.FechaRegistro);
+                command.Parameters.AddWithValue("@IVA", producto.PorcentajeIVA);
+                command.Parameters.AddWithValue("@SubTotal", producto.SubTotal);
 
                 command.ExecuteNonQuery();
 
@@ -42,11 +44,11 @@ namespace DAL
             producto.CodigoProducto = (string)reader["Codigo"];
             producto.Descripcion = (string)reader["Descripcion"];
             producto.NombreProducto = (string)reader["NombreProducto"];
-            producto.Precio = (float)reader["Precio"];
-            producto.Cantidad = (int)reader["Cantidad"];
-            producto.Total = (float)reader["Total"];
+            producto.Precio = float.Parse(reader["Precio"].ToString());
+            producto.Cantidad = int.Parse(reader["Cantidad"].ToString());
+            producto.Total = float.Parse(reader["Total"].ToString());
             producto.FechaRegistro = (DateTime)reader["FechaRegistro"];
-
+            producto.PorcentajeIVA = float.Parse(reader["IVA"].ToString());
             return producto;
         }
 

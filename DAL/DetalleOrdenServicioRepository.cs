@@ -27,11 +27,11 @@ namespace DAL
                 command.Parameters.AddWithValue("@NumeroOrden", detalles.OrdenDeServicio.NumeroOrden);
                 command.Parameters.AddWithValue("@Codigo", detalles.Producto.CodigoProducto);
                 command.Parameters.AddWithValue("@ServicioProducto", detalles.Producto.NombreProducto);
-                command.Parameters.AddWithValue("@Cantidad", detalles.Producto.Cantidad);
-                command.Parameters.AddWithValue("@Precio", detalles.Producto.Precio);
-                command.Parameters.AddWithValue("@SubTotal", detalles.Producto.SubTotal);
+                command.Parameters.AddWithValue("@Cantidad", detalles.Cantidad);
+                command.Parameters.AddWithValue("@Precio", detalles.ValorUnitario);
+                command.Parameters.AddWithValue("@SubTotal", detalles.SubTotal);
                 command.Parameters.AddWithValue("@IVA", detalles.Producto.PorcentajeIVA);
-                command.Parameters.AddWithValue("@Total", detalles.Producto.Total);
+                command.Parameters.AddWithValue("@Total", detalles.Total);
                 command.ExecuteNonQuery();
             }
         }
@@ -129,11 +129,11 @@ namespace DAL
                 command.Parameters.AddWithValue("@NumeroOrden", detalle.OrdenDeServicio.NumeroOrden);
                 command.Parameters.AddWithValue("@Codigo", detalle.Producto.CodigoProducto);
                 command.Parameters.AddWithValue("@ServicioProducto", detalle.Producto.NombreProducto);
-                command.Parameters.AddWithValue("@Cantidad", detalle.Producto.Cantidad);
-                command.Parameters.AddWithValue("@Precio", detalle.Producto.Precio);
-                command.Parameters.AddWithValue("@SubTotal", detalle.Producto.SubTotal);
+                command.Parameters.AddWithValue("@Cantidad", detalle.Cantidad);
+                command.Parameters.AddWithValue("@Precio", detalle.ValorUnitario);
+                command.Parameters.AddWithValue("@SubTotal", detalle.SubTotal);
                 command.Parameters.AddWithValue("@IVA", detalle.Producto.PorcentajeIVA);
-                command.Parameters.AddWithValue("@Total", detalle.Producto.Total);
+                command.Parameters.AddWithValue("@Total", detalle.Total);
                 command.ExecuteNonQuery();
             }
         }

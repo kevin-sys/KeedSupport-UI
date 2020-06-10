@@ -19,6 +19,7 @@ namespace Entity
         public float Abono { get; set; }
         public List<Producto> Productos{ get; set; }
          
+       
      
         
         //public float SubTotal

@@ -39,20 +39,20 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.BtnGuardarReparacion = new System.Windows.Forms.PictureBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DgvProducto = new System.Windows.Forms.DataGridView();
             this.TxtCantidad = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.TxtTotal = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.DtpFecha = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
+            this.TxtIva = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.BtnGuardarReparacion)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvProducto)).BeginInit();
             this.SuspendLayout();
             // 
             // TxtCodigoProducto
             // 
-            this.TxtCodigoProducto.Location = new System.Drawing.Point(324, 108);
+            this.TxtCodigoProducto.Location = new System.Drawing.Point(49, 118);
             this.TxtCodigoProducto.Name = "TxtCodigoProducto";
             this.TxtCodigoProducto.Size = new System.Drawing.Size(60, 20);
             this.TxtCodigoProducto.TabIndex = 81;
@@ -61,7 +61,7 @@
             // 
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(330, 92);
+            this.label34.Location = new System.Drawing.Point(55, 102);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(46, 13);
             this.label34.TabIndex = 82;
@@ -69,7 +69,7 @@
             // 
             // TxtServicioProducto
             // 
-            this.TxtServicioProducto.Location = new System.Drawing.Point(39, 108);
+            this.TxtServicioProducto.Location = new System.Drawing.Point(284, 118);
             this.TxtServicioProducto.Name = "TxtServicioProducto";
             this.TxtServicioProducto.Size = new System.Drawing.Size(121, 20);
             this.TxtServicioProducto.TabIndex = 75;
@@ -78,7 +78,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(42, 92);
+            this.label15.Location = new System.Drawing.Point(287, 102);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(118, 13);
             this.label15.TabIndex = 76;
@@ -86,7 +86,7 @@
             // 
             // TxtPrecio
             // 
-            this.TxtPrecio.Location = new System.Drawing.Point(407, 108);
+            this.TxtPrecio.Location = new System.Drawing.Point(427, 118);
             this.TxtPrecio.Name = "TxtPrecio";
             this.TxtPrecio.Size = new System.Drawing.Size(77, 20);
             this.TxtPrecio.TabIndex = 79;
@@ -95,7 +95,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(422, 92);
+            this.label17.Location = new System.Drawing.Point(442, 102);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(43, 13);
             this.label17.TabIndex = 80;
@@ -103,7 +103,7 @@
             // 
             // TxtDescripcion
             // 
-            this.TxtDescripcion.Location = new System.Drawing.Point(181, 108);
+            this.TxtDescripcion.Location = new System.Drawing.Point(143, 118);
             this.TxtDescripcion.Name = "TxtDescripcion";
             this.TxtDescripcion.Size = new System.Drawing.Size(121, 20);
             this.TxtDescripcion.TabIndex = 83;
@@ -112,7 +112,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(184, 92);
+            this.label1.Location = new System.Drawing.Point(146, 102);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 13);
             this.label1.TabIndex = 84;
@@ -122,7 +122,7 @@
             // 
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(420, 200);
+            this.label29.Location = new System.Drawing.Point(418, 226);
             this.label29.Name = "label29";
             this.label29.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label29.Size = new System.Drawing.Size(64, 16);
@@ -134,7 +134,7 @@
             this.BtnGuardarReparacion.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.BtnGuardarReparacion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnGuardarReparacion.Image = ((System.Drawing.Image)(resources.GetObject("BtnGuardarReparacion.Image")));
-            this.BtnGuardarReparacion.Location = new System.Drawing.Point(429, 156);
+            this.BtnGuardarReparacion.Location = new System.Drawing.Point(427, 182);
             this.BtnGuardarReparacion.Name = "BtnGuardarReparacion";
             this.BtnGuardarReparacion.Size = new System.Drawing.Size(55, 41);
             this.BtnGuardarReparacion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -142,51 +142,35 @@
             this.BtnGuardarReparacion.TabStop = false;
             this.BtnGuardarReparacion.Click += new System.EventHandler(this.BtnGuardarReparacion_Click);
             // 
-            // dataGridView1
+            // DgvProducto
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(39, 311);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(445, 115);
-            this.dataGridView1.TabIndex = 87;
+            this.DgvProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvProducto.Location = new System.Drawing.Point(43, 261);
+            this.DgvProducto.Name = "DgvProducto";
+            this.DgvProducto.Size = new System.Drawing.Size(461, 115);
+            this.DgvProducto.TabIndex = 87;
+            this.DgvProducto.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvProducto_CellClick);
             // 
             // TxtCantidad
             // 
-            this.TxtCantidad.Location = new System.Drawing.Point(39, 177);
+            this.TxtCantidad.Location = new System.Drawing.Point(49, 203);
             this.TxtCantidad.Name = "TxtCantidad";
-            this.TxtCantidad.Size = new System.Drawing.Size(121, 20);
+            this.TxtCantidad.Size = new System.Drawing.Size(60, 20);
             this.TxtCantidad.TabIndex = 88;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(42, 161);
+            this.label2.Location = new System.Drawing.Point(46, 187);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 13);
             this.label2.TabIndex = 89;
             this.label2.Text = "Cantidad";
             // 
-            // TxtTotal
-            // 
-            this.TxtTotal.Location = new System.Drawing.Point(181, 177);
-            this.TxtTotal.Name = "TxtTotal";
-            this.TxtTotal.Size = new System.Drawing.Size(121, 20);
-            this.TxtTotal.TabIndex = 90;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(184, 161);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 13);
-            this.label3.TabIndex = 91;
-            this.label3.Text = "Total";
-            // 
             // DtpFecha
             // 
-            this.DtpFecha.Location = new System.Drawing.Point(39, 251);
+            this.DtpFecha.Location = new System.Drawing.Point(143, 203);
             this.DtpFecha.Name = "DtpFecha";
             this.DtpFecha.Size = new System.Drawing.Size(150, 20);
             this.DtpFecha.TabIndex = 92;
@@ -195,24 +179,41 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(42, 235);
+            this.label4.Location = new System.Drawing.Point(146, 187);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(88, 13);
             this.label4.TabIndex = 93;
             this.label4.Text = "Fecha registro";
             // 
+            // TxtIva
+            // 
+            this.TxtIva.Location = new System.Drawing.Point(313, 203);
+            this.TxtIva.Name = "TxtIva";
+            this.TxtIva.Size = new System.Drawing.Size(65, 20);
+            this.TxtIva.TabIndex = 94;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(320, 187);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(27, 13);
+            this.label3.TabIndex = 95;
+            this.label3.Text = "IVA";
+            // 
             // FrmProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(592, 448);
+            this.ClientSize = new System.Drawing.Size(544, 415);
+            this.Controls.Add(this.TxtIva);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.DtpFecha);
-            this.Controls.Add(this.TxtTotal);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.TxtCantidad);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DgvProducto);
             this.Controls.Add(this.label29);
             this.Controls.Add(this.BtnGuardarReparacion);
             this.Controls.Add(this.TxtDescripcion);
@@ -226,7 +227,7 @@
             this.Name = "FrmProducto";
             this.Text = "FrmProducto";
             ((System.ComponentModel.ISupportInitialize)(this.BtnGuardarReparacion)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvProducto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -244,12 +245,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.PictureBox BtnGuardarReparacion;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DgvProducto;
         private System.Windows.Forms.TextBox TxtCantidad;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox TxtTotal;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker DtpFecha;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox TxtIva;
+        private System.Windows.Forms.Label label3;
     }
 }

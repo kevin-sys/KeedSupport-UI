@@ -12,6 +12,7 @@ namespace BLL
     {
         private readonly ConnectionManager conexion;
         private readonly ClienteRepository repositorio;
+        List<Cliente> clientes;
         public ClienteService(string connectionString)
         {
             conexion = new ConnectionManager(connectionString);
@@ -60,33 +61,13 @@ namespace BLL
 
         }
 
-        public RespuestaConsulta Consultar()
+        public List<Cliente> Consultar()
         {
-            RespuestaConsulta respuesta = new RespuestaConsulta();
-            try
-            {
-
-                conexion.Open();
-                respuesta.clientes = repositorio.Consultar();
-                conexion.Close();
-                if (respuesta.clientes.Count > 0)
-                {
-                    respuesta.Mensaje = "Se consultan los Datos";
-                }
-                else
-                {
-                    respuesta.Mensaje = "No hay datos para consultar";
-                }
-                respuesta.Error = false;
-                return respuesta;
-            }
-            catch (Exception e)
-            {
-                respuesta.Mensaje = $"Error de la Aplicacion: {e.Message}";
-                respuesta.Error = true;
-                return respuesta;
-            }
-            finally { conexion.Close(); }
+            conexion.Open();
+            clientes = new List<Cliente>();
+            clientes = repositorio.Consultar();
+            conexion.Close();
+            return clientes;
         }
 
         public RespuestaBusqueda Buscar(string identificacion)

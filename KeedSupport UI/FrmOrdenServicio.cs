@@ -14,7 +14,7 @@ using BLL;
 
 namespace KeedSupport_UI
 {
-    public partial class FrmOrdenServicio : Form
+    public partial class FrmOrdenServicio : Form, InterfaceIRecepcion
     {
 
 
@@ -45,6 +45,29 @@ namespace KeedSupport_UI
             
         }
 
+        public void Recibir(Cliente cliente)
+        {
+            if (cliente!=null)
+            {
+                TxtNombreCliente.Text = cliente.PrimerNombre.Trim();
+                TxtIentificacion.Text = cliente.Identificacion.Trim();
+                TxtTelefono.Text = cliente.Telefono.Trim();
+                TxtDireccion.Text = cliente.Direccion.Trim();
+                TxtCorreo.Text = cliente.Correo.Trim();
+
+            }
+        }
+        public void RecibirProducto(Producto producto)
+        {
+            if (producto != null)
+            { 
+                TxtServicioProducto.Text = producto.NombreProducto.Trim();
+                TxtCodigoProducto.Text = producto.CodigoProducto.Trim();
+                TxtPrecio.Text = producto.Precio.ToString();
+                TxtIva.Text = producto.PorcentajeIVA.ToString();
+
+            }
+        }
         private void FrmOrdenServicio_Load(object sender, EventArgs e)
         {
             
@@ -56,8 +79,6 @@ namespace KeedSupport_UI
         
             orden.NumeroOrden = TxtNumeroOrden.Text.Trim();
             orden.FechaOrden = DtpFechaOrden.Value.Date;
-
-
             orden.equipo.Tipo = CmbTipoEquipo.Text.Trim();
             orden.equipo.Modelo = TxtModelo.Text.Trim();
             orden.equipo.Marca = TxtMarca.Text.Trim();
@@ -93,11 +114,14 @@ namespace KeedSupport_UI
             detalleOrden.OrdenDeServicio.NumeroOrden = TxtNumeroOrden.Text.Trim();
             detalleOrden.Producto.CodigoProducto = TxtCodigoProducto.Text;
             detalleOrden.Producto.NombreProducto = TxtServicioProducto.Text;
-            detalleOrden.Producto.Cantidad = float.Parse(TxtCantidad.Text);
-            detalleOrden.Producto.Precio = float.Parse(TxtPrecio.Text);
-            detalleOrden.Producto.SubTotal = float.Parse(TxtSubTotal.Text);
+            detalleOrden.ValorUnitario = float.Parse(TxtPrecio.Text);
+            detalleOrden.Cantidad = float.Parse(TxtCantidad.Text);
+            detalleOrden.SubTotal = detalleOrden.CalcularSubtotal();
             detalleOrden.Producto.PorcentajeIVA = float.Parse(TxtIva.Text);
-            detalleOrden.Producto.Total = float.Parse(TxtTotal.Text);
+            detalleOrden.Total = detalleOrden.Calculartotal();
+            TxtTotal.Text = detalleOrden.Total.ToString();
+            TxtSubTotal.Text = detalleOrden.SubTotal.ToString();
+
             return detalleOrden;
 
         }
@@ -160,6 +184,7 @@ namespace KeedSupport_UI
             if (respuesta == DialogResult.Yes)
             {
                 OrdenDeServicio ordenservicio = MapearOrden();
+                
                 String mensaje = service.Guardar(ordenservicio);
                 MessageBox.Show(mensaje, "Mensaje de Guardado", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             }
@@ -169,14 +194,15 @@ namespace KeedSupport_UI
 
         private void label14_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            FrmProducto consulta = new FrmProducto(this);
+            consulta.Show();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
-            AñadirATabla();
             DetalleOrdenServicio detalle = MapearDetalles();
+            AñadirATabla();
             string mensaje = detalleService.Guardar(detalle);
             MessageBox.Show(mensaje, "Mensaje de confirmación", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             LimpiarCajas();
@@ -274,5 +300,16 @@ namespace KeedSupport_UI
             fila.Cells[7].Value = TxtTotal.Text;
             DgvDetalleServicio.Rows.Add(fila);
         }
+
+        private void BtnBuscarCliente_Click(object sender, EventArgs e)
+        {
+            FrmConsultarCliente consulta = new FrmConsultarCliente(this);
+            consulta.Show();
+
+        }
+
+       
+
+       
     }
 }

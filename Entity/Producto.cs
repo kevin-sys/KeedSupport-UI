@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entity
 {
-   public class Producto
+    public class Producto
     {
         public string CodigoProducto { get; set; }
         public string NombreProducto { get; set; }
@@ -18,20 +18,14 @@ namespace Entity
         public float SubTotal { get; set; }
         public DateTime FechaRegistro { get; set; }
         public float PorcentajeIVA { get; set; }
-
+        public float CalcularSubTotal()
+        {
+            return SubTotal = Cantidad * Precio;
+        }
         public float CalcularTotal()
         {
-            return Total = Cantidad * Precio;
+            return Total = ((CalcularSubTotal()*PorcentajeIVA)/100)+CalcularSubTotal();
         }
-        public float CalcularSubTotal()
-        { 
-            
-                return Cantidad * Precio;
-            
-        }
-
-
-
-
     }
+
 }

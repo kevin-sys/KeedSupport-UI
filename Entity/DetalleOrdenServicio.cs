@@ -8,7 +8,10 @@ namespace Entity
 {
     public class DetalleOrdenServicio
     {
-
+        public DetalleOrdenServicio()
+        {
+           
+        }
         public string DescripcionProducto { get; set; }
         public string CodigoDetalle { get; set; }
         public Producto Producto = new Producto();
@@ -19,32 +22,25 @@ namespace Entity
         public float ValorUnitario { get; set; }
         public float IVA { get; set; }
         public float Total { get; set; }
+        public float TotalIva { get; set; }
 
-        public float ganancia { get; set; }
-
-        public float CalcularSubtotal(float Cantidad)
+        public float CalcularSubtotal()
         {
-            SubTotal = Cantidad * ValorUnitario;
-            return SubTotal;
-
+          return   SubTotal = Cantidad * ValorUnitario;
         }
 
-        public float Calculartotal(float SubTotal)
-        {
-            Total = SubTotal * IVA;
-            return Total;
 
+        public float Calculartotal()
+        {
+            
+          return  Total = (CalcularSubtotal() * Producto.PorcentajeIVA/100)+ CalcularSubtotal();
         }
 
-        public float Iva
+        private float CalcularIva()
         {
-            get
-            {
-                float PrecioVenta = 0;
-                PrecioVenta = (ValorUnitario * ganancia) / 100 + ValorUnitario;
-                return PrecioVenta;
-            }
+         return   TotalIva = (SubTotal * IVA);
         }
+
 
     }
 }

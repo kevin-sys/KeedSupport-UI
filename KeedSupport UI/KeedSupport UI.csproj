@@ -115,6 +115,7 @@
     <Compile Include="FrmReparacion.Designer.cs">
       <DependentUpon>FrmReparacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="InterfaceIRecepcion.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmCliente.resx">
