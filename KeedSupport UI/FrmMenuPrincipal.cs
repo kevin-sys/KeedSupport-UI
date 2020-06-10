@@ -172,5 +172,12 @@ namespace KeedSupport_UI
             estadistica.Show();
             hideSubMenu();
         }
+
+        private void Bntproducto_Click(object sender, EventArgs e)
+        {
+            FrmProducto producto = new FrmProducto();
+            producto.Show();
+            hideSubMenu();
+        }
     }
 }

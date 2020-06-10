@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenuPrincipal));
             this.PanelMenuLateral = new System.Windows.Forms.Panel();
             this.PanelGestion = new System.Windows.Forms.Panel();
+            this.BtnEstadisticas = new System.Windows.Forms.Button();
             this.BtnBaseFalla = new System.Windows.Forms.Button();
             this.BtnCrearCupon = new System.Windows.Forms.Button();
             this.BtnEntregarEquipo = new System.Windows.Forms.Button();
@@ -50,7 +51,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.PanelCentral = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.BtnEstadisticas = new System.Windows.Forms.Button();
+            this.Bntproducto = new System.Windows.Forms.Button();
             this.PanelMenuLateral.SuspendLayout();
             this.PanelGestion.SuspendLayout();
             this.PanelConsultar.SuspendLayout();
@@ -86,10 +87,28 @@
             this.PanelGestion.Controls.Add(this.BtnCrearCupon);
             this.PanelGestion.Controls.Add(this.BtnEntregarEquipo);
             this.PanelGestion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelGestion.Location = new System.Drawing.Point(0, 505);
+            this.PanelGestion.Location = new System.Drawing.Point(0, 541);
             this.PanelGestion.Name = "PanelGestion";
             this.PanelGestion.Size = new System.Drawing.Size(217, 158);
             this.PanelGestion.TabIndex = 6;
+            // 
+            // BtnEstadisticas
+            // 
+            this.BtnEstadisticas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnEstadisticas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnEstadisticas.FlatAppearance.BorderSize = 0;
+            this.BtnEstadisticas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.BtnEstadisticas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.BtnEstadisticas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnEstadisticas.Location = new System.Drawing.Point(0, 111);
+            this.BtnEstadisticas.Name = "BtnEstadisticas";
+            this.BtnEstadisticas.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.BtnEstadisticas.Size = new System.Drawing.Size(217, 37);
+            this.BtnEstadisticas.TabIndex = 3;
+            this.BtnEstadisticas.Text = "Estadisticas";
+            this.BtnEstadisticas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnEstadisticas.UseVisualStyleBackColor = true;
+            this.BtnEstadisticas.Click += new System.EventHandler(this.BtnEstadisticas_Click);
             // 
             // BtnBaseFalla
             // 
@@ -146,7 +165,7 @@
             this.BtnGestion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnGestion.Dock = System.Windows.Forms.DockStyle.Top;
             this.BtnGestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnGestion.Location = new System.Drawing.Point(0, 460);
+            this.BtnGestion.Location = new System.Drawing.Point(0, 496);
             this.BtnGestion.Name = "BtnGestion";
             this.BtnGestion.Size = new System.Drawing.Size(217, 45);
             this.BtnGestion.TabIndex = 5;
@@ -162,7 +181,7 @@
             this.PanelConsultar.Controls.Add(this.BtnConsultaCliente);
             this.PanelConsultar.Controls.Add(this.BtnConsultarOrden);
             this.PanelConsultar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelConsultar.Location = new System.Drawing.Point(0, 303);
+            this.PanelConsultar.Location = new System.Drawing.Point(0, 339);
             this.PanelConsultar.Name = "PanelConsultar";
             this.PanelConsultar.Size = new System.Drawing.Size(217, 157);
             this.PanelConsultar.TabIndex = 4;
@@ -234,7 +253,7 @@
             this.BtnConsultar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnConsultar.Dock = System.Windows.Forms.DockStyle.Top;
             this.BtnConsultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnConsultar.Location = new System.Drawing.Point(0, 258);
+            this.BtnConsultar.Location = new System.Drawing.Point(0, 294);
             this.BtnConsultar.Name = "BtnConsultar";
             this.BtnConsultar.Size = new System.Drawing.Size(217, 45);
             this.BtnConsultar.TabIndex = 3;
@@ -245,13 +264,14 @@
             // PanelRegistrar
             // 
             this.PanelRegistrar.BackColor = System.Drawing.Color.DimGray;
+            this.PanelRegistrar.Controls.Add(this.Bntproducto);
             this.PanelRegistrar.Controls.Add(this.BtnReparacion);
             this.PanelRegistrar.Controls.Add(this.BtnRegistrarCliente);
             this.PanelRegistrar.Controls.Add(this.BtnRegistrarOrden);
             this.PanelRegistrar.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelRegistrar.Location = new System.Drawing.Point(0, 139);
             this.PanelRegistrar.Name = "PanelRegistrar";
-            this.PanelRegistrar.Size = new System.Drawing.Size(217, 119);
+            this.PanelRegistrar.Size = new System.Drawing.Size(217, 155);
             this.PanelRegistrar.TabIndex = 2;
             // 
             // BtnReparacion
@@ -358,23 +378,21 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // BtnEstadisticas
+            // Bntproducto
             // 
-            this.BtnEstadisticas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnEstadisticas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnEstadisticas.FlatAppearance.BorderSize = 0;
-            this.BtnEstadisticas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.BtnEstadisticas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.BtnEstadisticas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnEstadisticas.Location = new System.Drawing.Point(0, 111);
-            this.BtnEstadisticas.Name = "BtnEstadisticas";
-            this.BtnEstadisticas.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.BtnEstadisticas.Size = new System.Drawing.Size(217, 37);
-            this.BtnEstadisticas.TabIndex = 3;
-            this.BtnEstadisticas.Text = "Estadisticas";
-            this.BtnEstadisticas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnEstadisticas.UseVisualStyleBackColor = true;
-            this.BtnEstadisticas.Click += new System.EventHandler(this.BtnEstadisticas_Click);
+            this.Bntproducto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Bntproducto.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Bntproducto.FlatAppearance.BorderSize = 0;
+            this.Bntproducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Bntproducto.Location = new System.Drawing.Point(0, 111);
+            this.Bntproducto.Name = "Bntproducto";
+            this.Bntproducto.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.Bntproducto.Size = new System.Drawing.Size(217, 37);
+            this.Bntproducto.TabIndex = 3;
+            this.Bntproducto.Text = "Registrar productos";
+            this.Bntproducto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Bntproducto.UseVisualStyleBackColor = true;
+            this.Bntproducto.Click += new System.EventHandler(this.Bntproducto_Click);
             // 
             // FrmMenuPrincipal
             // 
@@ -424,5 +442,6 @@
         private System.Windows.Forms.Button BtnBaseFalla;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button BtnEstadisticas;
+        private System.Windows.Forms.Button Bntproducto;
     }
 }
