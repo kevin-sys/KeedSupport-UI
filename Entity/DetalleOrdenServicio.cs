@@ -8,14 +8,12 @@ namespace Entity
 {
     public class DetalleOrdenServicio
     {
-        public DetalleOrdenServicio()
-        {
-           
-        }
+
+        
         public string DescripcionProducto { get; set; }
         public string CodigoDetalle { get; set; }
-        public Producto Producto = new Producto();
-        public OrdenDeServicio OrdenDeServicio = new OrdenDeServicio();
+        public Producto Producto { get; set; }
+        public OrdenDeServicio OrdenDeServicio { get; set; }
         public string CodigoProducto { get; set; }
         public float Cantidad { get; set; }
         public float SubTotal { get; set; }
@@ -23,6 +21,11 @@ namespace Entity
         public float IVA { get; set; }
         public float Total { get; set; }
         public float TotalIva { get; set; }
+
+        public override string ToString()
+        {
+            return $"{CodigoDetalle};{OrdenDeServicio.NumeroOrden};{Producto.CodigoProducto};{Producto.NombreProducto};{Cantidad};{ValorUnitario};{SubTotal};{Producto.PorcentajeIVA};{Total}";
+        }
 
         public float CalcularSubtotal()
         {

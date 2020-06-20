@@ -10,9 +10,15 @@ namespace BLL
 {
     public class DetalleOrdenServicioService
     {
-        public List<DetalleOrdenServicio> detalleorden;
-        public DetalleOrdenServicioRepository repository;
         private readonly ConnectionManager conexion;
+        public List<DetalleOrdenServicio> detalleorden;
+        private readonly DetalleOrdenServicioRepository repository;
+        private static DetalleOrdenServicioRepository repo = new DetalleOrdenServicioRepository();
+
+        public DetalleOrdenServicioService()
+        {
+            repo = new DetalleOrdenServicioRepository();
+        }
 
         public DetalleOrdenServicioService(string connectionString)
         {
@@ -20,14 +26,35 @@ namespace BLL
             repository = new DetalleOrdenServicioRepository(conexion);
         }
 
-        public string Guardar(DetalleOrdenServicio detalles)
+
+        public string GuardarArchivo(DetalleOrdenServicio detalle)
+        {
+            try
+            {
+
+                repo.GuardarArchivo(detalle);
+                return "El producto ha sido añadido al carrito con exito!";
+
+            }
+            catch (Exception e)
+            {
+
+                return "Error de Datos: " + e.Message;
+            }
+        }
+        public void EliminarTxt()
+        {
+            repo.EliminarTxt();
+        }
+
+        public string GuardarDetalleBD()
         {
             try
             {
                 conexion.Open();
-                repository.Guardar(detalles);
+                repository.GuardarArchivoPlano();
                 conexion.Close();
-                return $"El producto se añadio al carrito de compra";
+                return $"Detalles de compra guardados con exito en la BD";
             }
             catch (Exception e)
             {
@@ -36,6 +63,25 @@ namespace BLL
             finally { conexion.Close(); }
         }
 
+
+        public string GuardarArchivoPlano()
+        {
+            try
+            {
+                conexion.Open();
+                repository.GuardarArchivoPlano();
+                conexion.Close();
+                return $"El producto se añadio al carrito de compra";
+
+
+            }
+            catch (Exception e)
+            {
+                return $"Error de la Aplicacion: {e.Message}";
+            }
+            finally { conexion.Close(); }
+
+        }
         public string Eliminar(string codigoDetalle)
         {
             try

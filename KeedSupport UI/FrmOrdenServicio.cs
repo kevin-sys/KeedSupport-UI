@@ -19,19 +19,29 @@ namespace KeedSupport_UI
 
 
         DetalleOrdenServicio detalleOrden;
+        OrdenDeServicio orden;
+        private Producto producto;
+        private OrdenDeServicio servi;
+        
+
         List<DetalleOrdenServicio> detallesordenes = new List<DetalleOrdenServicio>();
         DetalleOrdenServicioService detalleService;
-      
+
         private ProductoService productoService;
         OrdenServicioService service;
 
         public FrmOrdenServicio()
         {
             InitializeComponent();
+
             var connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
             service = new OrdenServicioService(connectionString);
             productoService = new ProductoService(connectionString);
             detalleService = new DetalleOrdenServicioService(connectionString);
+            servi = new OrdenDeServicio();
+            producto = new Producto();
+            detalleOrden = new DetalleOrdenServicio();
+            orden = new OrdenDeServicio();
             DgvDetalleServicio.AllowUserToAddRows = false;
             DgvDetalleServicio.ColumnCount = 8;
             DgvDetalleServicio.Columns[0].Name = "CodigoDetalle";
@@ -42,12 +52,12 @@ namespace KeedSupport_UI
             DgvDetalleServicio.Columns[5].Name = "SubTotal";
             DgvDetalleServicio.Columns[6].Name = "Porcentaje IVA";
             DgvDetalleServicio.Columns[7].Name = "Total";
-            
+
         }
 
         public void Recibir(Cliente cliente)
         {
-            if (cliente!=null)
+            if (cliente != null)
             {
                 TxtNombreCliente.Text = cliente.PrimerNombre.Trim();
                 TxtIentificacion.Text = cliente.Identificacion.Trim();
@@ -60,7 +70,7 @@ namespace KeedSupport_UI
         public void RecibirProducto(Producto producto)
         {
             if (producto != null)
-            { 
+            {
                 TxtServicioProducto.Text = producto.NombreProducto.Trim();
                 TxtCodigoProducto.Text = producto.CodigoProducto.Trim();
                 TxtPrecio.Text = producto.Precio.ToString();
@@ -70,13 +80,15 @@ namespace KeedSupport_UI
         }
         private void FrmOrdenServicio_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private OrdenDeServicio MapearOrden()
         {
-            OrdenDeServicio orden = new OrdenDeServicio();
-        
+            orden = new OrdenDeServicio();
+
+  
+
             orden.NumeroOrden = TxtNumeroOrden.Text.Trim();
             orden.FechaOrden = DtpFechaOrden.Value.Date;
             orden.equipo.Tipo = CmbTipoEquipo.Text.Trim();
@@ -108,6 +120,9 @@ namespace KeedSupport_UI
         private DetalleOrdenServicio MapearDetalles()
         {
             detalleOrden = new DetalleOrdenServicio();
+
+            detalleOrden.Producto = producto;
+            detalleOrden.OrdenDeServicio = servi;
             detalleOrden.CodigoDetalle = TxtCodigoDetalle.Text.Trim();
             detalleOrden.OrdenDeServicio.NumeroOrden = TxtNumeroOrden.Text.Trim();
             detalleOrden.Producto.CodigoProducto = TxtCodigoProducto.Text;
@@ -131,13 +146,13 @@ namespace KeedSupport_UI
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-         
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
-         
+
+
         }
 
         private void label18_Click(object sender, EventArgs e)
@@ -149,7 +164,6 @@ namespace KeedSupport_UI
         {
 
         }
-        //PARA GENERAR EL INFORME SE DEBERA IR ESCOGIENDO NO SE DEBE MAPEAR TODO, SOLO DE A POCO
         private void BtnCrearCliente_Click(object sender, EventArgs e)
         {
             FrmCliente cliente = new FrmCliente();
@@ -158,17 +172,16 @@ namespace KeedSupport_UI
 
         private void BtnCancelarOrden_Click(object sender, EventArgs e)
         {
+            detalleService.EliminarTxt();
 
-               string numeroOrden = TxtNumeroOrden.Text;
-            
-                var respuesta = MessageBox.Show("Se perderan todos los cambios, ¿esta seguro?", "Mensaje de alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (respuesta == DialogResult.Yes)
-                {
-                    string mensaje = detalleService.EliminarTodoDetalle(numeroOrden);
-                    MessageBox.Show(mensaje, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LimpiarCajas();
-                    this.Dispose();
-                }
+            var respuesta = MessageBox.Show("Se perderan todos los cambios, ¿esta seguro?", "Mensaje de alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (respuesta == DialogResult.Yes)
+            {
+                 detalleService.EliminarTxt();
+
+                LimpiarCajas();
+                this.Dispose();
+            }
         }
 
         private void TxtServicioProducto_TextChanged(object sender, EventArgs e)
@@ -182,11 +195,15 @@ namespace KeedSupport_UI
             if (respuesta == DialogResult.Yes)
             {
                 OrdenDeServicio ordenservicio = MapearOrden();
-                
+
                 String mensaje = service.Guardar(ordenservicio);
+                detalleService.GuardarDetalleBD();
                 MessageBox.Show(mensaje, "Mensaje de Guardado", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                LimpiarCajas();
+                detalleService.EliminarTxt();
+
             }
-          
+
 
         }
 
@@ -198,16 +215,14 @@ namespace KeedSupport_UI
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
+            DetalleOrdenServicioService service = new DetalleOrdenServicioService();
             DetalleOrdenServicio detalle = MapearDetalles();
             AñadirATabla();
-            string mensaje = detalleService.Guardar(detalle);
+            string mensaje = service.GuardarArchivo(detalle);
             MessageBox.Show(mensaje, "Mensaje de confirmación", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             LimpiarCajas();
             double total = 0;
             double subtotal = 0;
-
-
             foreach (DataGridViewRow row in DgvDetalleServicio.Rows)
             {
                 total += Convert.ToDouble(row.Cells["Total"].Value);
@@ -219,6 +234,7 @@ namespace KeedSupport_UI
 
             TxtDeuda.Text = Convert.ToString(total);
         }
+
 
         private void LimpiarCajas()
         {
@@ -232,7 +248,7 @@ namespace KeedSupport_UI
             TxtCodigoDetalle.Text = "";
         }
 
-      
+
 
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
@@ -285,10 +301,10 @@ namespace KeedSupport_UI
                 throw;
             }
         }
-        
+
         private void DgvDetalleServicio_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void BtnActualizar_Click(object sender, EventArgs e)
@@ -342,8 +358,16 @@ namespace KeedSupport_UI
 
         }
 
-       
+        private void BtnImprimirOrden_Click(object sender, EventArgs e)
+        {
+        
 
-       
+            
+        }
+
+        private void TxtAccesorios_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -13,6 +13,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entity", "Entity\Entity.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recursos", "Recursos\Recursos.csproj", "{E23D0DCC-E603-4B30-AEC1-8F70EFBEAF7C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ScriptBdSqlServer", "ScriptBdSqlServer", "{3E699676-D62E-4F6A-A211-B5D4414F28FD}"
+	ProjectSection(SolutionItems) = preProject
+		D:\PROGRAMACION 3\2020 I\Script.sql = D:\PROGRAMACION 3\2020 I\Script.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -188,6 +188,7 @@
             this.TxtAccesorios.Size = new System.Drawing.Size(190, 59);
             this.TxtAccesorios.TabIndex = 13;
             this.TxtAccesorios.Text = "";
+            this.TxtAccesorios.TextChanged += new System.EventHandler(this.TxtAccesorios_TextChanged);
             // 
             // label1
             // 
@@ -515,6 +516,7 @@
             this.TxtAbono.Name = "TxtAbono";
             this.TxtAbono.Size = new System.Drawing.Size(74, 20);
             this.TxtAbono.TabIndex = 51;
+            this.TxtAbono.Text = "0";
             // 
             // label22
             // 
@@ -881,6 +883,7 @@
             this.BtnImprimirOrden.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.BtnImprimirOrden.TabIndex = 67;
             this.BtnImprimirOrden.TabStop = false;
+            this.BtnImprimirOrden.Click += new System.EventHandler(this.BtnImprimirOrden_Click);
             // 
             // BtnCrearOrden
             // 
@@ -899,11 +902,13 @@
             // 
             this.DgvDetalleServicio.AllowUserToAddRows = false;
             this.DgvDetalleServicio.AllowUserToDeleteRows = false;
+            this.DgvDetalleServicio.BackgroundColor = System.Drawing.Color.Silver;
             this.DgvDetalleServicio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvDetalleServicio.GridColor = System.Drawing.Color.Silver;
             this.DgvDetalleServicio.Location = new System.Drawing.Point(16, 482);
             this.DgvDetalleServicio.Name = "DgvDetalleServicio";
             this.DgvDetalleServicio.ReadOnly = true;
-            this.DgvDetalleServicio.Size = new System.Drawing.Size(582, 110);
+            this.DgvDetalleServicio.Size = new System.Drawing.Size(594, 110);
             this.DgvDetalleServicio.TabIndex = 71;
             this.DgvDetalleServicio.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvDetalleServicio_CellClick);
             this.DgvDetalleServicio.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvDetalleServicio_CellContentClick);
@@ -928,7 +933,7 @@
             // 
             // TxtTotalOrden
             // 
-            this.TxtTotalOrden.Location = new System.Drawing.Point(146, 23);
+            this.TxtTotalOrden.Location = new System.Drawing.Point(159, 23);
             this.TxtTotalOrden.Name = "TxtTotalOrden";
             this.TxtTotalOrden.ReadOnly = true;
             this.TxtTotalOrden.Size = new System.Drawing.Size(68, 20);
@@ -938,7 +943,7 @@
             // 
             this.label37.AutoSize = true;
             this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.Location = new System.Drawing.Point(143, 7);
+            this.label37.Location = new System.Drawing.Point(156, 7);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(36, 13);
             this.label37.TabIndex = 78;
@@ -953,14 +958,14 @@
             this.panel5.Controls.Add(this.label35);
             this.panel5.Location = new System.Drawing.Point(381, 598);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(217, 46);
+            this.panel5.Size = new System.Drawing.Size(230, 46);
             this.panel5.TabIndex = 67;
             // 
             // FrmOrdenServicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkGray;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(958, 647);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.DgvDetalleServicio);

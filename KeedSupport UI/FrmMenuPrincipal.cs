@@ -131,7 +131,9 @@ namespace KeedSupport_UI
 
         private void BtnConsultarOrden_Click(object sender, EventArgs e)
         {
-
+            FrmGenerarInforme frmGenerar = new FrmGenerarInforme();
+            frmGenerar.Show();
+            hideSubMenu();
         }
 
         private void BtnConsultaCliente_Click(object sender, EventArgs e)
@@ -177,6 +179,20 @@ namespace KeedSupport_UI
         {
             FrmProducto producto = new FrmProducto();
             producto.Show();
+            hideSubMenu();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FrmReparacion reparacion = new FrmReparacion();
+            reparacion.Show();
+            hideSubMenu();
+        }
+
+        private void BtnConsultaEntregas_Click(object sender, EventArgs e)
+        {
+            FrmEntrega entrega = new FrmEntrega();
+            entrega.Show();
             hideSubMenu();
         }
     }

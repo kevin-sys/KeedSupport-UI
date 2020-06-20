@@ -5,17 +5,45 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+using System.Data;
 
 namespace DAL
 {
     public class DetalleOrdenServicioRepository
     {
+
+
         public List<DetalleOrdenServicio> detalles = new List<DetalleOrdenServicio>();
         private readonly SqlConnection _connection;
+
+        private string ruta = @"Detalle.txt";
+        private IList<DetalleOrdenServicio> detallesarchivo;
+
+        public DetalleOrdenServicioRepository()
+        {
+            detallesarchivo = new List<DetalleOrdenServicio>();
+
+        }
+
         public DetalleOrdenServicioRepository(ConnectionManager connection)
         {
             _connection = connection._conexion;
             detalles = new List<DetalleOrdenServicio>();
+        }
+
+        public void EliminarTxt()
+        {
+            File.Delete(@"Detalle.txt");
+        }
+
+        public void GuardarArchivo(DetalleOrdenServicio detalle)
+        {
+            FileStream fileStream = new FileStream(ruta, FileMode.Append);
+            StreamWriter writer = new StreamWriter(fileStream);
+            writer.WriteLine(detalle.ToString());
+            writer.Close();
+            fileStream.Close();
         }
 
         public void Guardar(DetalleOrdenServicio detalles)
@@ -35,6 +63,24 @@ namespace DAL
                 command.ExecuteNonQuery();
             }
         }
+
+
+        public void GuardarArchivoPlano()
+        {
+
+
+            using (var command = _connection.CreateCommand())
+            {
+                command.CommandText = "BULK INSERT DetalleOrden FROM 'C:\\Users\\Gomez\\source\\repos\\KeedSupport UI\\KeedSupport UI\\KeedSupport UI\\KeedSupport UI\\bin\\Debug\\Detalle.txt' WITH (FIELDTERMINATOR = ';' , ROWTERMINATOR = '\n')";
+
+                command.CommandType = CommandType.Text;
+
+                command.ExecuteNonQuery();
+                command.Parameters.Clear();
+            }
+
+        }
+
         private DetalleOrdenServicio Mapear(SqlDataReader reader)
         {
             if (!reader.HasRows) return null;

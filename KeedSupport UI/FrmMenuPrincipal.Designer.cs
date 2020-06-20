@@ -87,7 +87,7 @@
             this.PanelGestion.Controls.Add(this.BtnCrearCupon);
             this.PanelGestion.Controls.Add(this.BtnEntregarEquipo);
             this.PanelGestion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelGestion.Location = new System.Drawing.Point(0, 541);
+            this.PanelGestion.Location = new System.Drawing.Point(0, 547);
             this.PanelGestion.Name = "PanelGestion";
             this.PanelGestion.Size = new System.Drawing.Size(217, 158);
             this.PanelGestion.TabIndex = 6;
@@ -165,7 +165,7 @@
             this.BtnGestion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnGestion.Dock = System.Windows.Forms.DockStyle.Top;
             this.BtnGestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnGestion.Location = new System.Drawing.Point(0, 496);
+            this.BtnGestion.Location = new System.Drawing.Point(0, 502);
             this.BtnGestion.Name = "BtnGestion";
             this.BtnGestion.Size = new System.Drawing.Size(217, 45);
             this.BtnGestion.TabIndex = 5;
@@ -181,9 +181,9 @@
             this.PanelConsultar.Controls.Add(this.BtnConsultaCliente);
             this.PanelConsultar.Controls.Add(this.BtnConsultarOrden);
             this.PanelConsultar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelConsultar.Location = new System.Drawing.Point(0, 339);
+            this.PanelConsultar.Location = new System.Drawing.Point(0, 341);
             this.PanelConsultar.Name = "PanelConsultar";
-            this.PanelConsultar.Size = new System.Drawing.Size(217, 157);
+            this.PanelConsultar.Size = new System.Drawing.Size(217, 161);
             this.PanelConsultar.TabIndex = 4;
             // 
             // BtnConsultaEntregas
@@ -200,6 +200,7 @@
             this.BtnConsultaEntregas.Text = "Listado de entregas";
             this.BtnConsultaEntregas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnConsultaEntregas.UseVisualStyleBackColor = true;
+            this.BtnConsultaEntregas.Click += new System.EventHandler(this.BtnConsultaEntregas_Click);
             // 
             // button2
             // 
@@ -215,6 +216,7 @@
             this.button2.Text = "Listado de reparaciones";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // BtnConsultaCliente
             // 
@@ -253,7 +255,7 @@
             this.BtnConsultar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnConsultar.Dock = System.Windows.Forms.DockStyle.Top;
             this.BtnConsultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnConsultar.Location = new System.Drawing.Point(0, 294);
+            this.BtnConsultar.Location = new System.Drawing.Point(0, 296);
             this.BtnConsultar.Name = "BtnConsultar";
             this.BtnConsultar.Size = new System.Drawing.Size(217, 45);
             this.BtnConsultar.TabIndex = 3;
@@ -271,7 +273,7 @@
             this.PanelRegistrar.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelRegistrar.Location = new System.Drawing.Point(0, 139);
             this.PanelRegistrar.Name = "PanelRegistrar";
-            this.PanelRegistrar.Size = new System.Drawing.Size(217, 155);
+            this.PanelRegistrar.Size = new System.Drawing.Size(217, 157);
             this.PanelRegistrar.TabIndex = 2;
             // 
             // BtnReparacion
